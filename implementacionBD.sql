@@ -1,4 +1,4 @@
-﻿DROP TABLE IF EXISTS sedes CASCADE;
+DROP TABLE IF EXISTS sedes CASCADE;
 CREATE TABLE sedes
 (
 	id_sede SERIAL PRIMARY KEY,
@@ -16,7 +16,8 @@ CREATE TABLE usuarios
 	estado VARCHAR(30) NOT NULL,
 	nombre VARCHAR(60) NOT NULL,
 	cargo VARCHAR(30),
-	salario FLOAT NOT NULL,
+	salario VARCHAR(30) NOT NULL,
+	fecha DATE NOT NULL,
 	direccion VARCHAR(50),
 	id_sede SERIAL,
 	telefono VARCHAR(30),
@@ -66,6 +67,8 @@ CREATE TABLE ordenes
 (
 	id_orden SERIAL PRIMARY KEY,
 	id_jefe VARCHAR(30) NOT NULL,
+	id_producto VARCHAR(30) NOT NULL,
+	cantidad VARCHAR(30)
 
 	FOREIGN KEY (id_jefe) REFERENCES usuarios (cedula) ON DELETE CASCADE
 );
@@ -76,9 +79,9 @@ CREATE TABLE ordenes
 
 INSERT INTO sedes VALUES (1,'Carrear 77A #2B-34','Cali', '123456');
 
-INSERT INTO usuarios VALUES ('111','111' ,'activo','Santiago','Gerente' , 100000, 'Calle 5 #3C','1' , '654321');
-INSERT INTO usuarios VALUES ('222','222' ,'activo','Miguel','Vendedor' , 50000, 'Carrear 80 #2B-102','1' , '123123');
-INSERT INTO usuarios VALUES ('333','333' ,'activo','Juan','Jefe de taller' , 25000, 'Carrear 45 3D','1' , '567890');
+INSERT INTO usuarios VALUES ('111','111' ,'activo','Santiago','Gerente' , '$100000', 'Calle 5 #3C','1' , '654321');
+INSERT INTO usuarios VALUES ('222','222' ,'activo','Miguel','Vendedor' , '$50000', 'Carrear 80 #2B-102','1' , '123123');
+INSERT INTO usuarios VALUES ('333','333' ,'activo','Juan','Jefe de taller' , '$25000', 'Carrear 45 3D','1' , '567890');
 
 INSERT INTO inventario VALUES (1,'Silla','20', 200);
 
