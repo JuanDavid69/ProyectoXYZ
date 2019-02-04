@@ -29,6 +29,22 @@ public class Inventario {
     public String GetIdProducto(){
         return idProducto;
     }
+
+    public void setnProducto(String nProducto) {
+        this.nProducto = nProducto;
+    }
+
+    public void setIdProducto(String idProducto) {
+        this.idProducto = idProducto;
+    }
+
+    public void setValor(String valor) {
+        this.valor = valor;
+    }
+
+    public void setCantidadDisponible(String cantidadDisponible) {
+        this.cantidadDisponible = cantidadDisponible;
+    }
     
     public String GetValor(){
         return valor;
