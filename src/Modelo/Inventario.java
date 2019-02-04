@@ -10,48 +10,47 @@ package Modelo;
  * @author juandavid
  */
 public class Inventario {
-    private String nProducto;
-    private String idProducto;
-    private String valor;    
-    private String cantidadDisponible;
+    private int id_producto;
+    private String producto;
+    private int cantidad;    
+    private float precio_unidad;
     
-    public Inventario(String nProducto,String idProducto,String valor,String cantidadDisponible){
-        this.nProducto=nProducto;
-        this.idProducto=idProducto;
-        this.valor=valor;
-        this.cantidadDisponible=cantidadDisponible;
-    }
-    
-    public String GetNProducto(){
-        return nProducto;
-    }
-    
-    public String GetIdProducto(){
-        return idProducto;
+    public Inventario(int id_producto, String producto, int cantidad, float precio_unidad){
+        this.id_producto = id_producto;
+        this.producto = producto;
+        this.cantidad = cantidad;
+        this.precio_unidad = precio_unidad;
     }
 
-    public void setnProducto(String nProducto) {
-        this.nProducto = nProducto;
+    public int getId_producto() {
+        return id_producto;
     }
 
-    public void setIdProducto(String idProducto) {
-        this.idProducto = idProducto;
+    public String getProducto() {
+        return producto;
     }
 
-    public void setValor(String valor) {
-        this.valor = valor;
+    public int getCantidad() {
+        return cantidad;
     }
 
-    public void setCantidadDisponible(String cantidadDisponible) {
-        this.cantidadDisponible = cantidadDisponible;
+    public float getPrecio_unidad() {
+        return precio_unidad;
     }
-    
-    public String GetValor(){
-        return valor;
+
+    public void setId_producto(int id_producto) {
+        this.id_producto = id_producto;
     }
-    
-    public String GetCantidadDisponible(){
-        return cantidadDisponible;
+
+    public void setProducto(String producto) {
+        this.producto = producto;
     }
-    
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public void setPrecio_unidad(float precio_unidad) {
+        this.precio_unidad = precio_unidad;
+    }       
 }

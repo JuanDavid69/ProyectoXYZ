@@ -18,10 +18,10 @@ public class Usuario {
   private String salario; 
   private String fecha; 
   private String direccion; 
-  private String id_sede; 
+  private int id_sede; 
   private String telefono;
 
-    public Usuario(String cedula, String password, String estado, String nombre, String cargo, String salario, String fecha, String direccion, String id_sede, String telefono) {
+    public Usuario(String cedula, String password, String estado, String nombre, String cargo, String salario, String fecha, String direccion, int id_sede, String telefono) {
         this.cedula = cedula;
         this.password = password;
         this.estado = estado;
@@ -66,7 +66,7 @@ public class Usuario {
         return direccion;
     }
 
-    public String getId_sede() {
+    public int getId_sede() {
         return id_sede;
     }
 
@@ -106,13 +106,11 @@ public class Usuario {
         this.direccion = direccion;
     }
 
-    public void setId_sede(String id_sede) {
+    public void setId_sede(int id_sede) {
         this.id_sede = id_sede;
     }
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-  
-  
 }

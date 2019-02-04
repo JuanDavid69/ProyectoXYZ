@@ -10,33 +10,21 @@ package Modelo;
  * @author juandavid
  */
 public class Orden {
-    private String id_orden;
+    private int id_orden;
     private String id_jefe;
-    private String id_producto;
+    private int id_producto;
     private int cantidad;
     private String fecha;
-
-    public void setId_orden(String id_orden) {
+    
+    public Orden(int id_orden, String id_jefe, int id_producto, int cantidad, String fecha) {
         this.id_orden = id_orden;
-    }
-
-    public void setId_jefe(String id_jefe) {
         this.id_jefe = id_jefe;
-    }
-
-    public void setId_producto(String id_producto) {
         this.id_producto = id_producto;
-    }
-
-    public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
-    }
-
-    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
-    public String getId_orden() {
+    public int getId_orden() {
         return id_orden;
     }
 
@@ -44,7 +32,7 @@ public class Orden {
         return id_jefe;
     }
 
-    public String getId_producto() {
+    public int getId_producto() {
         return id_producto;
     }
 
@@ -56,11 +44,24 @@ public class Orden {
         return fecha;
     }
 
-    public Orden(String id_orden, String id_jefe, String id_producto, int cantidad, String fecha) {
+    public void setId_orden(int id_orden) {
         this.id_orden = id_orden;
+    }
+
+    public void setId_jefe(String id_jefe) {
         this.id_jefe = id_jefe;
+    }
+
+    public void setId_producto(int id_producto) {
         this.id_producto = id_producto;
+    }
+
+    public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+    }
+
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
+
 }
