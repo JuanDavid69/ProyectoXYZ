@@ -17,13 +17,13 @@ public class FachadaBD {
         FachadaBD(){
             url="jdbc:postgresql://localhost:5432/BaseXYZ";
             usuario="postgres";
-            password="zasertyq";
+            password="1631689";
         }
         
         public Connection conectar(){
             try {
             // Se carga el driver
-            Class.forName("postgresql-8.3-603.jdbc4.jar");
+            Class.forName("org.postgresql.Driver");
             System.out.println( "Driver Cargado" );
             } catch( Exception e ) {
                 System.out.println( "No se pudo cargar el driver." );
