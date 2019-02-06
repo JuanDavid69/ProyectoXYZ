@@ -79,16 +79,16 @@ CREATE TABLE ordenes
 
 
 
-INSERT INTO sedes VALUES (1,'Carrear 77A #2B-34','Cali', '123456');
+INSERT INTO sedes(direccion, ciudad, telefono) VALUES ('Carrear 77A #2B-34','Cali', '123456');
 
 INSERT INTO usuarios VALUES ('111','111' ,'activo','Santiago','Gerente' ,'$100000','31-07-2005' ,'Calle 5 #3C','1' , '654321');
 INSERT INTO usuarios VALUES ('222','222' ,'activo','Miguel','Vendedor' , '$50000','20-01-2005', 'Carrear 80 #2B-102','1' , '123123');
 INSERT INTO usuarios VALUES ('333','333' ,'activo','Juan','Jefe de taller' , '$25000','01-07-2011', 'Carrear 45 3D','1' , '567890');
 
-INSERT INTO inventario VALUES (1,'Silla', 20, 200);
+INSERT INTO inventario(producto, cantidad, precio_unidad) VALUES ('Silla', 20, 200);
 
-INSERT INTO ventas VALUES (1,'1','222', 2, '04-02-2019', 400);
+INSERT INTO ventas(id_producto, id_vendedor, cantidad, fecha, total) VALUES (1,'222', 2, '04-02-2019', 400);
 
-INSERT INTO cotizaciones VALUES (1, '1','222', 3, '04-02-2019', 600);
+INSERT INTO cotizaciones(id_producto, id_vendedor, cantidad, fecha, total) VALUES (1, '222', 3, '04-02-2019', 600);
 
-INSERT INTO ordenes VALUES (1, '333', 1, 5, '04-02-2019');
+INSERT INTO ordenes(id_jefe, id_producto, cantidad, fecha) VALUES ('333', 1, 5, '04-02-2019');

@@ -29,7 +29,7 @@ public class ControlUsuario {
     
     public String modificarUsuario(String cedula, String password, String estado, String nombre, String cargo, String salario, String fecha, String direccion, int id_sede, String telefono){
         Usuario u = new Usuario(cedula, password, estado, nombre, cargo, salario, fecha, direccion, id_sede, telefono);
-        return daoUsuario.guardarUsuario(u);
+        return daoUsuario.modificarUsuario(u);
     }
     
     public String eliminarUsuario (String cedula){

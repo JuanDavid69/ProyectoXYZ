@@ -24,7 +24,7 @@ public class DaoUsuario {
     
     public String guardarUsuario(Usuario u){
         String sql_guardar;
-        sql_guardar = "INSERT INTO usuario VALUES('" + u.getCedula()+ "', '" + 
+        sql_guardar = "INSERT INTO usuarios VALUES('" + u.getCedula()+ "', '" + 
                 u.getPassword()+ "', '" + u.getEstado() + "', '" + u.getNombre() + "', '" +
                 u.getCargo() + "', '" +  u.getSalario() + "', '" + u.getFecha() + "', '" + 
                 u.getDireccion() + "', " + u.getId_sede() + ", '" + u.getTelefono() + "')";
@@ -50,7 +50,7 @@ public class DaoUsuario {
     public String[] consultarUsuario(String id){
         String sql_select;        
         String consulta[] = new String[10];
-        sql_select = "SELECT * FROM usuario WHERE cedula = '" + id + "'";
+        sql_select = "SELECT * FROM usuarios WHERE cedula = '" + id + "'";
         try{
             Connection conn= fachada.getConnetion();            
             Statement sentencia = conn.createStatement();
@@ -79,7 +79,7 @@ public class DaoUsuario {
     
     public String modificarUsuario(Usuario u){
         String sql_modificar;
-        sql_modificar = "UPDATE usuario SET password='" + u.getPassword() + "', estado='" + u.getEstado() +
+        sql_modificar = "UPDATE usuarios SET password='" + u.getPassword() + "', estado='" + u.getEstado() +
                 "', nombre='" + u.getNombre() + "', cargo='" + u.getCargo() + "', salario='" + u.getSalario() +
                 "', fecha='" + u.getFecha() + "', direccion='" + u.getDireccion() + "', id_sede=" + u.getId_sede() + 
                 ", telefono='" + u.getTelefono() + "' WHERE cedula = '" + u.getCedula() + "'";
@@ -99,7 +99,7 @@ public class DaoUsuario {
     
     public String eliminarUsuario(String id){
         String sql_delete;
-        sql_delete = "DELETE FROM usuario WHERE cedula = '" + id + "'";
+        sql_delete = "DELETE FROM usuarios WHERE cedula = '" + id + "'";
         
         try{
             Connection conn= fachada.getConnetion();       
