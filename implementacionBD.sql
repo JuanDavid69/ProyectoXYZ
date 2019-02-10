@@ -38,13 +38,10 @@ DROP TABLE IF EXISTS ventas CASCADE;
 CREATE TABLE ventas
 (
 	id_venta SERIAL PRIMARY KEY,
-	id_producto SERIAL,
 	id_vendedor VARCHAR(30) NOT NULL,
-	cantidad INTEGER NOT NULL,
-	fecha DATE NOT NULL,
-	total FLOAT NOT NULL,
+	fecha DATE,
+	total FLOAT,
 
-	FOREIGN KEY (id_producto) REFERENCES inventario (id_producto) ON DELETE CASCADE,
 	FOREIGN KEY (id_vendedor) REFERENCES usuarios (cedula) ON DELETE CASCADE
 );
 
@@ -52,14 +49,33 @@ DROP TABLE IF EXISTS cotizaciones CASCADE;
 CREATE TABLE cotizaciones
 (
 	id_cotizacion SERIAL PRIMARY KEY,
-	id_producto SERIAL,
 	id_vendedor VARCHAR(30) NOT NULL,
-	cantidad INTEGER NOT NULL,
-	fecha DATE NOT NULL,
-	total FLOAT NOT NULL,
+	fecha DATE,
+	total FLOAT,
 
-	FOREIGN KEY (id_producto) REFERENCES inventario (id_producto) ON DELETE CASCADE,
 	FOREIGN KEY (id_vendedor) REFERENCES usuarios (cedula) ON DELETE CASCADE
+);
+
+DROP TABLE IF EXISTS carritoVen CASCADE;
+CREATE TABLE carritoVen	
+(
+	id_venta SERIAL NOT NULL,
+	id_producto SERIAL NOT NULL,
+	cantidad INTEGER NOT NULL,
+
+	FOREIGN KEY (id_venta) REFERENCES ventas (id_venta) ON DELETE CASCADE,
+	FOREIGN KEY (id_producto) REFERENCES inventario (id_producto) ON DELETE CASCADE
+);
+
+DROP TABLE IF EXISTS carritoCot CASCADE;
+CREATE TABLE carritoCot
+(
+	id_cotizacion SERIAL NOT NULL,
+	id_producto SERIAL NOT NULL,
+	cantidad INTEGER NOT NULL,
+
+	FOREIGN KEY (id_cotizacion) REFERENCES cotizaciones (id_cotizacion) ON DELETE CASCADE,
+	FOREIGN KEY (id_producto) REFERENCES inventario (id_producto) ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS ordenes CASCADE;
@@ -87,8 +103,8 @@ INSERT INTO usuarios VALUES ('333','333' ,'activo','Juan','Jefe de taller' , '$2
 
 INSERT INTO inventario(producto, cantidad, precio_unidad) VALUES ('Silla', 20, 200);
 
-INSERT INTO ventas(id_producto, id_vendedor, cantidad, fecha, total) VALUES (1,'222', 2, '04-02-2019', 400);
+INSERT INTO ventas(id_vendedor, fecha, total) VALUES ('222', '04-02-2019', 400);
 
-INSERT INTO cotizaciones(id_producto, id_vendedor, cantidad, fecha, total) VALUES (1, '222', 3, '04-02-2019', 600);
+INSERT INTO cotizaciones(id_vendedor, fecha, total) VALUES ('222', '04-02-2019', 600);
 
 INSERT INTO ordenes(id_jefe, id_producto, cantidad, fecha) VALUES ('333', 1, 5, '04-02-2019');
