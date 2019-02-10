@@ -81,14 +81,17 @@ public class Vendedor extends javax.swing.JFrame {
         jPanel1.add(ModificarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 34, 70, 70));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Agregar");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 113, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Modificar");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 113, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Consultar");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 113, -1, -1));
 
@@ -96,10 +99,12 @@ public class Vendedor extends javax.swing.JFrame {
         jPanel1.add(EliminarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 34, 71, 73));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Eliminar");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 113, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Gestionar Cotizaciones");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 11, -1, -1));
 
@@ -111,8 +116,9 @@ public class Vendedor extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Gestionar Facturacion");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, -1));
 
         AgregarFacturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agregarCotizacion.png"))); // NOI18N
         jPanel2.add(AgregarFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 34, 61, 68));
@@ -127,18 +133,22 @@ public class Vendedor extends javax.swing.JFrame {
         jPanel2.add(EliminarFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 34, 62, 68));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Agregar");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 108, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Consultar");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 108, -1, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Modificar");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 108, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Eliminar");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 108, -1, -1));
 
