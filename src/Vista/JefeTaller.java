@@ -52,8 +52,14 @@ public class JefeTaller extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Gestion Ordenes de Trabajo");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 11, -1, -1));
+
+        jButtonAgregarOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agregarOrden.png"))); // NOI18N
         getContentPane().add(jButtonAgregarOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 44, 65, 90));
+
+        jButtonModificarOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/modificarOrden.png"))); // NOI18N
         getContentPane().add(jButtonModificarOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 44, 65, 90));
+
+        jButtonConsultarOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/consultarOrden.png"))); // NOI18N
         getContentPane().add(jButtonConsultarOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 44, 65, 90));
         getContentPane().add(jButtonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 44, 65, 90));
         getContentPane().add(jButtonInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 44, 65, 90));
