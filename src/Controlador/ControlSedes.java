@@ -17,7 +17,7 @@ public class ControlSedes {
         daoSedes= new DaoSedes();
     }
     
-    public String agregarSede (int id_sede, String direccion, String ciudad, String telefono) {
+    public String agregarSede (String id_sede, String direccion, String ciudad, String telefono) {
         Sedes s = new Sedes(id_sede, direccion, ciudad, telefono);
         return daoSedes.guardarSede(s);
     }
@@ -26,7 +26,7 @@ public class ControlSedes {
         return daoSedes.consultarSede(id);
     }
     
-    public String modificarSede(int id_sede, String direccion, String ciudad, String telefono){
+    public String modificarSede(String id_sede, String direccion, String ciudad, String telefono){
         Sedes s = new Sedes(id_sede, direccion, ciudad, telefono);
         return daoSedes.modificarSede(s);
     }

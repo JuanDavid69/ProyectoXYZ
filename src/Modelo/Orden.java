@@ -10,21 +10,23 @@ package Modelo;
  * @author juandavid
  */
 public class Orden {
-    private int id_orden;
+    private String id_orden;
     private String id_jefe;
-    private int id_producto;
+    private String id_producto;
     private int cantidad;
     private String fecha;
+    private String estado;
     
-    public Orden(int id_orden, String id_jefe, int id_producto, int cantidad, String fecha) {
+    public Orden(String id_orden, String id_jefe, String id_producto, int cantidad, String fecha, String estado) {
         this.id_orden = id_orden;
         this.id_jefe = id_jefe;
         this.id_producto = id_producto;
         this.cantidad = cantidad;
         this.fecha = fecha;
+        this.estado = estado;
     }
 
-    public int getId_orden() {
+    public String getId_orden() {
         return id_orden;
     }
 
@@ -32,7 +34,7 @@ public class Orden {
         return id_jefe;
     }
 
-    public int getId_producto() {
+    public String getId_producto() {
         return id_producto;
     }
 
@@ -43,17 +45,13 @@ public class Orden {
     public String getFecha() {
         return fecha;
     }
-
-    public void setId_orden(int id_orden) {
-        this.id_orden = id_orden;
+    
+    public String getEstado(){
+        return estado;
     }
 
     public void setId_jefe(String id_jefe) {
         this.id_jefe = id_jefe;
-    }
-
-    public void setId_producto(int id_producto) {
-        this.id_producto = id_producto;
     }
 
     public void setCantidad(int cantidad) {
@@ -62,6 +60,10 @@ public class Orden {
 
     public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+    
+    public void setEstado(String estado){
+        this.estado = estado;
     }
 
 }

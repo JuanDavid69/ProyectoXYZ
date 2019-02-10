@@ -18,7 +18,7 @@ public class ControlUsuario {
         daoUsuario = new DaoUsuario();
     }
     
-    public String agregarUsuario (String cedula, String password, String estado, String nombre, String cargo, String salario, String fecha, String direccion, int id_sede, String telefono) {
+    public String agregarUsuario (String cedula, String password, String estado, String nombre, String cargo, String salario, String fecha, String direccion, String id_sede, String telefono) {
         Usuario u = new Usuario(cedula, password, estado, nombre, cargo, salario, fecha, direccion, id_sede, telefono);
         return daoUsuario.guardarUsuario(u);
     }
@@ -27,7 +27,7 @@ public class ControlUsuario {
         return daoUsuario.consultarUsuario(cedula);
     }
     
-    public String modificarUsuario(String cedula, String password, String estado, String nombre, String cargo, String salario, String fecha, String direccion, int id_sede, String telefono){
+    public String modificarUsuario(String cedula, String password, String estado, String nombre, String cargo, String salario, String fecha, String direccion, String id_sede, String telefono){
         Usuario u = new Usuario(cedula, password, estado, nombre, cargo, salario, fecha, direccion, id_sede, telefono);
         return daoUsuario.modificarUsuario(u);
     }

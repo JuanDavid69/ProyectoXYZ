@@ -10,36 +10,24 @@ package Modelo;
  * @author Usuario
  */
 public class Cotizacion {
-    private int id_cotizacion;
-    private int id_producto;
+    private String id_cotizacion;
     private String id_vendedor;
-    private int cantidad;
     private String fecha;
     private float total;
     
-    public Cotizacion(int id_cotizacion, int id_producto, String id_vendedor, int cantidad, String fecha, int total) {
+    public Cotizacion(String id_cotizacion, String id_vendedor, String fecha, float total) {
         this.id_cotizacion = id_cotizacion;
-        this.id_producto = id_producto;
         this.id_vendedor = id_vendedor;
-        this.cantidad = cantidad;
         this.fecha = fecha;
         this.total = total;
     }
 
-    public int getId_cotizacion() {
+    public String getId_cotizacion() {
         return id_cotizacion;
-    }
-
-    public int getId_producto() {
-        return id_producto;
     }
 
     public String getId_vendedor() {
         return id_vendedor;
-    }
-
-    public int getCantidad() {
-        return cantidad;
     }
 
     public String getFecha() {
@@ -50,20 +38,8 @@ public class Cotizacion {
         return total;
     }
 
-    public void setId_cotizacion(int id_cotizacion) {
-        this.id_cotizacion = id_cotizacion;
-    }
-
-    public void setId_producto(int id_producto) {
-        this.id_producto = id_producto;
-    }
-
     public void setId_vendedor(String id_vendedor) {
         this.id_vendedor = id_vendedor;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
     }
 
     public void setFecha(String fecha) {

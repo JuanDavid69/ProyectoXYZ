@@ -10,19 +10,19 @@ package Modelo;
  * @author juandavid
  */
 public class Inventario {
-    private int id_producto;
+    private String id_producto;
     private String producto;
     private int cantidad;    
     private float precio_unidad;
     
-    public Inventario(int id_producto, String producto, int cantidad, float precio_unidad){
+    public Inventario(String id_producto, String producto, int cantidad, float precio_unidad){
         this.id_producto = id_producto;
         this.producto = producto;
         this.cantidad = cantidad;
         this.precio_unidad = precio_unidad;
     }
 
-    public int getId_producto() {
+    public String getId_producto() {
         return id_producto;
     }
 
@@ -36,10 +36,6 @@ public class Inventario {
 
     public float getPrecio_unidad() {
         return precio_unidad;
-    }
-
-    public void setId_producto(int id_producto) {
-        this.id_producto = id_producto;
     }
 
     public void setProducto(String producto) {

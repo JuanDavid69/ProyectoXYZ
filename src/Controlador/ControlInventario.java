@@ -17,7 +17,7 @@ public class ControlInventario {
         daoInventario= new DaoInventario();
     }
     
-    public String agregarInventario (int id_producto, String producto, int cantidad, float precio_unidad) {
+    public String agregarInventario (String id_producto, String producto, int cantidad, float precio_unidad) {
         Inventario i = new Inventario(id_producto, producto, cantidad, precio_unidad);
         return daoInventario.guardarInventario(i);
     }
@@ -26,7 +26,7 @@ public class ControlInventario {
         return daoInventario.consultarInventario(id);
     }
     
-    public String modificarInventario(int id_producto, String producto, int cantidad, float precio_unidad){
+    public String modificarInventario(String id_producto, String producto, int cantidad, float precio_unidad){
         Inventario i = new Inventario(id_producto, producto, cantidad, precio_unidad);
         return daoInventario.modificarInvetario(i);
     }

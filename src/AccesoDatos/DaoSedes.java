@@ -22,8 +22,8 @@ public class DaoSedes {
     
     public String guardarSede(Sedes s){
         String sql_guardar;
-        sql_guardar = "INSERT INTO sedes(direccion, ciudad, telefono)) VALUES('" + 
-                s.getDireccion() + "', '" + s.getCiudad() + "', '" + s.getTelefono() + "')";
+        sql_guardar = "INSERT INTO sedes(id_sede, direccion, ciudad, telefono)) VALUES('" + 
+                s.getId_sede() + "', '" + s.getDireccion() + "', '" + s.getCiudad() + "', '" + s.getTelefono() + "')";
         try{
             Connection conn= fachada.conectar();
             Statement sentencia = conn.createStatement();             

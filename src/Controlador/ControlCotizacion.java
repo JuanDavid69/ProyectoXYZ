@@ -17,8 +17,8 @@ public class ControlCotizacion {
         daoCotizacion = new DaoCotizacion();
     }
     
-    public String agregarCotizacion (int id_cotizacion, int id_producto, String id_vendedor, int cantidad, String fecha, int total) {
-        Cotizacion c = new Cotizacion(id_cotizacion, id_producto, id_vendedor, cantidad, fecha, total);
+    public String agregarCotizacion (String id_cotizacion, String id_vendedor, String fecha, float total) {
+        Cotizacion c = new Cotizacion(id_cotizacion, id_vendedor, fecha, total);
         return daoCotizacion.guardarCotizacion(c);
     }
     
@@ -26,8 +26,8 @@ public class ControlCotizacion {
         return daoCotizacion.consultarCotizacion(id);
     }
     
-    public String modificarCotizacion(int id_cotizacion, int id_producto, String id_vendedor, int cantidad, String fecha, int total){
-        Cotizacion u = new Cotizacion(id_cotizacion, id_producto, id_vendedor, cantidad, fecha, total);
+    public String modificarCotizacion(String id_cotizacion, String id_vendedor, String fecha, float total){
+        Cotizacion u = new Cotizacion(id_cotizacion, id_vendedor, fecha, total);
         return daoCotizacion.modificarCotizacion(u);
     }
     

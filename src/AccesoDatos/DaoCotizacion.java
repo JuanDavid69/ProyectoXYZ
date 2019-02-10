@@ -25,9 +25,8 @@ public class DaoCotizacion {
     
     public String guardarCotizacion(Cotizacion c){
         String sql_guardar;
-        sql_guardar = "INSERT INTO cotizaciones(id_producto, id_vendedor, cantidad, fecha, total) VALUES(" + 
-                c.getId_producto() + ", '" + c.getId_vendedor() + "', " + c.getCantidad() + ", '" + c.getFecha() + 
-                "', " + c.getTotal() + ")";
+        sql_guardar = "INSERT INTO cotizaciones(id_cotizacion, id_vendedor, fecha, total) VALUES('" + 
+                c.getId_cotizacion() +  "', '" + c.getId_vendedor() + "', " + c.getFecha() + "', " + c.getTotal() + ")";
         try{
             Connection conn= fachada.conectar();
             Statement sentencia = conn.createStatement();             
@@ -49,8 +48,8 @@ public class DaoCotizacion {
     
     public String[] consultarCotizacion(String id){
         String sql_select;        
-        String consulta[] = new String[6];
-        sql_select = "SELECT * FROM cotizaciones WHERE id_cotizacion = " + id;
+        String consulta[] = new String[4];
+        sql_select = "SELECT * FROM cotizaciones WHERE id_cotizacion = '" + id + "'";
         try{
             Connection conn= fachada.getConnetion();            
             Statement sentencia = conn.createStatement();
@@ -60,9 +59,7 @@ public class DaoCotizacion {
                 consulta[0] = tabla.getString(1);
                 consulta[1] = tabla.getString(2);
                 consulta[2] = tabla.getString(3);
-                consulta[3] = tabla.getString(4);
-                consulta[4] = tabla.getString(5);
-                consulta[5] = tabla.getString(6);   
+                consulta[3] = tabla.getString(4);  
             }else{
                 consulta = null;
             }
@@ -75,9 +72,9 @@ public class DaoCotizacion {
     
     public String modificarCotizacion(Cotizacion c){
         String sql_modificar;
-        sql_modificar = "UPDATE cotizaciones SET id_producto=" + c.getId_producto() + ", id_vendedor='" + c.getId_vendedor() +
-                "', cantidad=" + c.getCantidad() + ", fecha='" + c.getFecha() + "', total=" + c.getTotal() +
-                " WHERE id_cotizacion = " + c.getId_cotizacion();
+        sql_modificar = "UPDATE cotizaciones SET id_vendedor='" + c.getId_vendedor() +
+                "', fecha='" + c.getFecha() + "', total=" + c.getTotal() +
+                " WHERE id_cotizacion = '" + c.getId_cotizacion() + "'";
         try{
             Connection conn= fachada.getConnetion();
             Statement sentencia = conn.createStatement();
@@ -94,7 +91,7 @@ public class DaoCotizacion {
     
     public String eliminarCotizacion(String id){
         String sql_delete;
-        sql_delete = "DELETE FROM cotizaciones WHERE id_cotizacion = " + id;
+        sql_delete = "DELETE FROM cotizaciones WHERE id_cotizacion = '" + id + "'";
         
         try{
             Connection conn= fachada.getConnetion();       

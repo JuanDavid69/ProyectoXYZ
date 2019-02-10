@@ -23,9 +23,9 @@ public class DaoOrden {
     
     public String guardarOrden(Orden o){
         String sql_guardar;
-        sql_guardar = "INSERT INTO ordenes(id_jefe, id_producto, cantidad, fecha) VALUES('" + 
-                o.getId_jefe() + "', " + o.getId_producto() + ", " + o.getCantidad() + ", '" + 
-                o.getFecha() + "')";
+        sql_guardar = "INSERT INTO ordenes(id_orden, id_jefe, id_producto, cantidad, fecha, estado) VALUES('" + 
+                o.getId_orden() + "', '" + o.getId_jefe() + "', " + o.getId_producto() + ", " + o.getCantidad() + ", '" + 
+                o.getFecha() + "', 'no aprobado')";
         try{
             Connection conn= fachada.conectar();
             Statement sentencia = conn.createStatement();             
@@ -48,7 +48,7 @@ public class DaoOrden {
     public String[] consultarOrden(String id){
         String sql_select;        
         String consulta[] = new String[5];
-        sql_select = "SELECT * FROM ordenes WHERE id_orden = " + id;
+        sql_select = "SELECT * FROM ordenes WHERE id_orden = '" + id + "'";
         try{
             Connection conn= fachada.getConnetion();            
             Statement sentencia = conn.createStatement();
@@ -72,9 +72,9 @@ public class DaoOrden {
     
     public String modificarOrden(Orden o){
         String sql_modificar;
-        sql_modificar = "UPDATE ordenes SET id_orden='" + o.getId_jefe() + "', id_producto=" + 
-                o.getId_producto() + ", cantidad=" + o.getCantidad() + ", fecha='" + o.getFecha() + 
-                " WHERE id_orden = " + o.getId_orden();
+        sql_modificar = "UPDATE ordenes SET id_jefe='" + o.getId_jefe() + "', id_producto='" + 
+                o.getId_producto() + "', cantidad=" + o.getCantidad() + ", fecha ='" + o.getFecha() + 
+                "', estado = 'no aprobado' WHERE id_orden = '" + o.getId_orden() + "'";
         try{
             Connection conn= fachada.getConnetion();
             Statement sentencia = conn.createStatement();
@@ -91,7 +91,7 @@ public class DaoOrden {
     
     public String eliminarOrden(String id){
         String sql_delete;
-        sql_delete = "DELETE FROM ordenes WHERE id_orden= " + id;
+        sql_delete = "DELETE FROM ordenes WHERE id_orden= '" + id + "'";
         
         try{
             Connection conn= fachada.getConnetion();       
@@ -105,6 +105,25 @@ public class DaoOrden {
             System.out.println(e);
             return "Ocurrió un problema al eliminar la orden";
         }                             
+    }
+    
+    public String aprobarOrden(Orden o){
+        String sql_modificar;
+        sql_modificar = "UPDATE ordenes SET id_jefe='" + o.getId_jefe() + "', id_producto='" + 
+                o.getId_producto() + "', cantidad=" + o.getCantidad() + ", fecha ='" + o.getFecha() + 
+                "', estado = 'aprobado' WHERE id_orden = '" + o.getId_orden() + "'";
+        try{
+            Connection conn= fachada.getConnetion();
+            Statement sentencia = conn.createStatement();
+            if(sentencia.executeUpdate(sql_modificar)==1){
+                return "Orden modificada exitosamente";
+            }else{
+                return "No existe una orden con ese id";
+            }            
+        }catch(Exception e){
+            System.out.println(e);
+            return "Ha ocurrido un error al modificar la orden";
+        }
     }
     
     public void cerrarConexionBD(){

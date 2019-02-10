@@ -17,8 +17,8 @@ public class ControlOrden {
         daoOrden= new DaoOrden();
     }
     
-    public String agregarOrden (int id_orden, String id_jefe, int id_producto, int cantidad, String fecha) {
-        Orden o = new Orden(id_orden, id_jefe, id_producto, cantidad, fecha);
+    public String agregarOrden (String id_orden, String id_jefe, String id_producto, int cantidad, String fecha, String estado) {
+        Orden o = new Orden(id_orden, id_jefe, id_producto, cantidad, fecha, estado);
         return daoOrden.guardarOrden(o);
     }
     
@@ -26,13 +26,18 @@ public class ControlOrden {
         return daoOrden.consultarOrden(id);
     }
     
-    public String modificarOrden(int id_orden, String id_jefe, int id_producto, int cantidad, String fecha){
-        Orden o = new Orden(id_orden, id_jefe, id_producto, cantidad, fecha);
+    public String modificarOrden(String id_orden, String id_jefe, String id_producto, int cantidad, String fecha, String estado){
+        Orden o = new Orden(id_orden, id_jefe, id_producto, cantidad, fecha, estado);
         return daoOrden.modificarOrden(o);
     }
     
     public String eliminarOrden (String id){
         return daoOrden.eliminarOrden(id);
+    }
+    
+    public String aprobarOrden(String id_orden, String id_jefe, String id_producto, int cantidad, String fecha, String estado){
+        Orden o = new Orden(id_orden, id_jefe, id_producto, cantidad, fecha, estado);
+        return daoOrden.aprobarOrden(o);
     }
     
     public void cerrarConexionBD(){

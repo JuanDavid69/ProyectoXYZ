@@ -18,8 +18,8 @@ public class ControlVenta {
         daoVenta = new DaoVenta();
     }
     
-    public String agregarVenta (int id_venta, int id_producto, String id_vendedor, int cantidad, String fecha, int total) {
-        Venta c = new Venta(id_venta, id_producto, id_vendedor, cantidad, fecha, total);
+    public String agregarVenta (String id_venta, String id_vendedor, String fecha, float total) {
+        Venta c = new Venta(id_venta, id_vendedor, fecha, total);
         return daoVenta.guardarVenta(c);
     }
     
@@ -27,8 +27,8 @@ public class ControlVenta {
         return daoVenta.consultarVenta(id);
     }
     
-    public String modificarVenta(int id_venta, int id_producto, String id_vendedor, int cantidad, String fecha, int total){
-        Venta u = new Venta(id_venta, id_producto, id_vendedor, cantidad, fecha, total);
+    public String modificarVenta(String id_venta, String id_vendedor, String fecha, float total){
+        Venta u = new Venta(id_venta, id_vendedor, fecha, total);
         return daoVenta.modificarVenta(u);
     }
     

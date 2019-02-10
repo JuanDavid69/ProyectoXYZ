@@ -22,8 +22,8 @@ public class DaoVenta {
     
     public String guardarVenta(Venta v){
         String sql_guardar;
-        sql_guardar = "INSERT INTO ventas(id_producto, id_vendedor, cantidad, fecha, total) VALUES(" + 
-                v.getId_producto() + ", '" + v.getId_vendedor() + "', " + v.getCantidad() + ", '" + v.getFecha() + 
+        sql_guardar = "INSERT INTO ventas(id_venta, id_vendedor, fecha, total) VALUES('" + 
+                v.getId_venta() + "', '" + v.getId_vendedor() + "', '" + v.getFecha() + 
                 "', " + v.getTotal() + ")";
         try{
             Connection conn= fachada.conectar();
@@ -72,9 +72,9 @@ public class DaoVenta {
     
     public String modificarVenta(Venta v){
         String sql_modificar;
-        sql_modificar = "UPDATE ventas SET id_producto=" + v.getId_producto() + ", id_vendedor='" + v.getId_vendedor() +
-                "', cantidad=" + v.getCantidad() + ", fecha='" + v.getFecha() + "', total=" + v.getTotal() +
-                " WHERE id_venta = " + v.getId_venta();
+        sql_modificar = "UPDATE ventas SET id_vendedor='" + v.getId_vendedor() +
+                "', fecha='" + v.getFecha() + "', total=" + v.getTotal() +
+                " WHERE id_venta = '" + v.getId_venta() + "'";
         try{
             Connection conn= fachada.getConnetion();
             Statement sentencia = conn.createStatement();

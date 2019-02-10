@@ -23,8 +23,8 @@ public class DaoInventario {
     
     public String guardarInventario(Inventario i){
         String sql_guardar;
-        sql_guardar = "INSERT INTO inventario(producto, cantidad, precio_unidad) VALUES('" + 
-                i.getProducto() + "', " + i.getCantidad() + ", " + i.getPrecio_unidad() + ")";
+        sql_guardar = "INSERT INTO inventario(id_producto, producto, cantidad, precio_unidad) VALUES('" + 
+                i.getId_producto() + "', '" + i.getProducto() + "', " + i.getCantidad() + ", " + i.getPrecio_unidad() + ")";
         try{
             Connection conn= fachada.conectar();
             Statement sentencia = conn.createStatement();             
@@ -47,7 +47,7 @@ public class DaoInventario {
     public String[] consultarInventario(String id){
         String sql_select;        
         String consulta[] = new String[4];
-        sql_select = "SELECT * FROM inventario WHERE id_producto = " + id;
+        sql_select = "SELECT * FROM inventario WHERE id_producto = '" + id + "'";
         try{
             Connection conn= fachada.getConnetion();            
             Statement sentencia = conn.createStatement();
@@ -70,8 +70,8 @@ public class DaoInventario {
     
     public String modificarInvetario(Inventario i){
         String sql_modificar;
-        sql_modificar = "UPDATE inventario SET id_producto='" + i.getProducto() + "', id_cantidad=" + 
-                i.getCantidad() + ", precio_unidad=" + i.getPrecio_unidad() + " WHERE id_producto = " + i.getId_producto();
+        sql_modificar = "UPDATE inventario SET producto='" + i.getProducto() + "', cantidad=" + 
+                i.getCantidad() + ", precio_unidad=" + i.getPrecio_unidad() + " WHERE id_producto = '" + i.getId_producto() + "'";
         try{
             Connection conn= fachada.getConnetion();
             Statement sentencia = conn.createStatement();
@@ -88,7 +88,7 @@ public class DaoInventario {
     
     public String eliminarInvetario(String id){
         String sql_delete;
-        sql_delete = "DELETE FROM inventario WHERE id_producto= " + id;
+        sql_delete = "DELETE FROM inventario WHERE id_producto= '" + id + "'";
         
         try{
             Connection conn= fachada.getConnetion();       
