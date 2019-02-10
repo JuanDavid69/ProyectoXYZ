@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Natalia
@@ -41,6 +43,11 @@ public class eliminarCotizacion extends javax.swing.JFrame {
         jLabelNumeroCotizacionNumero.setText("Numero cotizacion: ");
 
         jButtonEliminarCotizacion.setText("Eliminar");
+        jButtonEliminarCotizacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEliminarCotizacionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,6 +85,10 @@ public class eliminarCotizacion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonEliminarCotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarCotizacionActionPerformed
+        JOptionPane.showConfirmDialog(this, "Esta seguro que desea eliminar esta monda?");
+    }//GEN-LAST:event_jButtonEliminarCotizacionActionPerformed
 
     /**
      * @param args the command line arguments
