@@ -52,22 +52,24 @@ public class Vendedor extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        AgregarCotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agregar.png"))); // NOI18N
+        AgregarCotizacion.setBackground(new java.awt.Color(153, 153, 255));
+        AgregarCotizacion.setForeground(new java.awt.Color(153, 153, 255));
+        AgregarCotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agregarCotizacion.png"))); // NOI18N
         AgregarCotizacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AgregarCotizacionActionPerformed(evt);
             }
         });
-        jPanel1.add(AgregarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 34, 70, 73));
+        jPanel1.add(AgregarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 37, 70, 70));
 
-        ConsultarCotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Consultar.png"))); // NOI18N
+        ConsultarCotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/consultarCotizacion.png"))); // NOI18N
         ConsultarCotizacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConsultarCotizacionActionPerformed(evt);
@@ -75,64 +77,85 @@ public class Vendedor extends javax.swing.JFrame {
         });
         jPanel1.add(ConsultarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 34, 70, 73));
 
-        ModificarCotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Modificar.png"))); // NOI18N
-        jPanel1.add(ModificarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 34, 76, -1));
+        ModificarCotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/modificarCotizacion.png"))); // NOI18N
+        jPanel1.add(ModificarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 34, 70, 70));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Agregar");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 113, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Modificar");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 113, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Consultar");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 113, -1, -1));
 
-        EliminarCotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Eliminar.png"))); // NOI18N
+        EliminarCotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminarCotizacion.png"))); // NOI18N
         jPanel1.add(EliminarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 34, 71, 73));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Eliminar");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 113, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Gestionar Cotizaciones");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 11, -1, -1));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoVendedor.jpg"))); // NOI18N
-        jLabel11.setText("jLabel11");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 140));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 140));
 
         jTabbedPane1.addTab("Cotizaciones", jPanel1);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Gestionar Facturacion");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 11, -1, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, -1));
+
+        AgregarFacturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agregarCotizacion.png"))); // NOI18N
         jPanel2.add(AgregarFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 34, 61, 68));
+
+        ConsultarFacturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/consultarCotizacion.png"))); // NOI18N
         jPanel2.add(ConsultarFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 34, 58, 68));
+
+        ModificarFacturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/modificarCotizacion.png"))); // NOI18N
         jPanel2.add(ModificarFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 34, 60, 68));
+
+        EliminarFacturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminarCotizacion.png"))); // NOI18N
         jPanel2.add(EliminarFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 34, 62, 68));
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Agregar");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 108, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Consultar");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 108, -1, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Modificar");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 108, -1, -1));
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Eliminar");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 108, -1, -1));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoVendedor.jpg"))); // NOI18N
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 140));
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoVendedor.jpg"))); // NOI18N
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 140));
 
-        jTabbedPane1.addTab("Facturacion", jPanel2);
+        jTabbedPane1.addTab("Ventas", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -205,7 +228,7 @@ public class Vendedor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
