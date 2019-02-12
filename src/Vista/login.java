@@ -4,13 +4,14 @@
  * and open the template in the editor.
  */
 package Vista;
-
+import Controlador.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Usuario
  */
 public class login extends javax.swing.JFrame {
-
+    ControlUsuario ControlUsuario = new ControlUsuario();
     /**
      * Creates new form login
      */
@@ -18,7 +19,7 @@ public class login extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,7 +33,7 @@ public class login extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         usuario = new javax.swing.JTextField();
-        constraseña = new javax.swing.JTextField();
+        contraseña = new javax.swing.JTextField();
         acceder = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
@@ -40,8 +41,9 @@ public class login extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Empresa XYZ");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
 
         jLabel2.setText("Usuario:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 46, -1, -1));
@@ -52,10 +54,15 @@ public class login extends javax.swing.JFrame {
         usuario.setBackground(new java.awt.Color(204, 204, 204));
         getContentPane().add(usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 43, 224, -1));
 
-        constraseña.setBackground(new java.awt.Color(204, 204, 204));
-        getContentPane().add(constraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 81, 224, -1));
+        contraseña.setBackground(new java.awt.Color(204, 204, 204));
+        getContentPane().add(contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 81, 224, -1));
 
         acceder.setText("Acceder");
+        acceder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accederActionPerformed(evt);
+            }
+        });
         getContentPane().add(acceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo.jpg"))); // NOI18N
@@ -63,6 +70,38 @@ public class login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void accederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accederActionPerformed
+        // TODO add your handling code here:
+        String usuario = this.usuario.getText();
+        String password = this.contraseña.getText();
+        String resultado = ControlUsuario.verificarUsuario(usuario, password);
+        if("Gerente".equals(resultado))
+        {
+            this.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Bienvenido");
+            Menu_Gerente ingreso = new Menu_Gerente(usuario);
+            ingreso.setVisible(true);
+        }
+        if("Vendedor".equals(resultado))
+        {
+            this.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Bienvenido");
+            Vendedor ingreso = new Vendedor(usuario);
+            ingreso.setVisible(true);
+        }
+        if("Jefe de taller".equals(resultado))
+        {
+            this.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Bienvenido");
+            JefeTaller ingreso = new JefeTaller(usuario);
+            ingreso.setVisible(true);
+        }
+        if("El usuario o la contraseña son incorrectos".equals(resultado))
+        {
+            JOptionPane.showMessageDialog(null, resultado);
+        }
+    }//GEN-LAST:event_accederActionPerformed
 
     /**
      * @param args the command line arguments
@@ -101,7 +140,7 @@ public class login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton acceder;
-    private javax.swing.JTextField constraseña;
+    private javax.swing.JTextField contraseña;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

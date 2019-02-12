@@ -115,6 +115,27 @@ public class DaoUsuario {
         }                             
     }
     
+    public String verificar(String cedula, String password){
+        String sql_select;        
+        String consulta;
+        sql_select = "SELECT cargo FROM usuarios WHERE cedula = '" + cedula + "' and password = '" + password + "'";
+        try{
+            Connection conn= fachada.getConnetion();            
+            Statement sentencia = conn.createStatement();
+            ResultSet tabla = sentencia.executeQuery(sql_select);   
+            
+            if(tabla.next()){
+                consulta = tabla.getString(1);   
+            }else{
+                consulta = "El usuario o la contraseña son incorrectos";
+            }
+            return consulta;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+    }
+    
     public void cerrarConexionBD(){
         fachada.closeConection(fachada.getConnetion());
     }

@@ -36,6 +36,10 @@ public class ControlUsuario {
         return daoUsuario.eliminarUsuario(cedula);
     }
     
+    public String verificarUsuario(String cedula, String password) {
+        return daoUsuario.verificar(cedula, password);
+    }
+    
     public void cerrarConexionBD(){
         daoUsuario.cerrarConexionBD();
     }
