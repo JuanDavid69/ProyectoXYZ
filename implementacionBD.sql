@@ -62,6 +62,7 @@ CREATE TABLE carritoVen
 	id_venta VARCHAR(30) NOT NULL,
 	id_producto VARCHAR(30) NOT NULL,
 	cantidad INTEGER NOT NULL,
+	subtotal FLOAT NOT NULL,
 
 	FOREIGN KEY (id_venta) REFERENCES ventas (id_venta) ON DELETE CASCADE,
 	FOREIGN KEY (id_producto) REFERENCES inventario (id_producto) ON DELETE CASCADE
@@ -73,6 +74,7 @@ CREATE TABLE carritoCot
 	id_cotizacion VARCHAR(30) NOT NULL,
 	id_producto VARCHAR(30) NOT NULL,
 	cantidad INTEGER NOT NULL,
+	subtotal FLOAT NOT NULL,
 
 	FOREIGN KEY (id_cotizacion) REFERENCES cotizaciones (id_cotizacion) ON DELETE CASCADE,
 	FOREIGN KEY (id_producto) REFERENCES inventario (id_producto) ON DELETE CASCADE
@@ -102,7 +104,13 @@ INSERT INTO usuarios VALUES ('111','111' ,'activo','Santiago','Gerente' ,'$10000
 INSERT INTO usuarios VALUES ('222','222' ,'activo','Miguel','Vendedor' , '$50000','20-01-2005', 'Carrear 80 #2B-102', '01' , '123123');
 INSERT INTO usuarios VALUES ('333','333' ,'activo','Juan','Jefe de taller' , '$25000','01-07-2011', 'Carrear 45 3D', '01' , '567890');
 
-INSERT INTO inventario VALUES ('001', 'Silla', 20, 200);
+INSERT INTO inventario VALUES ('001', 'Silla', 20, 100);
+INSERT INTO inventario VALUES ('002', 'Sillon', 10, 650);
+INSERT INTO inventario VALUES ('003', 'Armario', 5, 1000);
+INSERT INTO inventario VALUES ('004', 'Nochero', 30, 470);
+INSERT INTO inventario VALUES ('005', 'Comedor', 15, 2200);
+INSERT INTO inventario VALUES ('006', 'Tocador', 9, 700);
+INSERT INTO inventario VALUES ('007', 'Escritorio', 11, 1500);
 
 INSERT INTO ventas VALUES ('001', '222', '04-02-2019', 400);
 

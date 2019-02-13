@@ -16,6 +16,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class agregarVenta extends javax.swing.JFrame {
     ControlVenta controlVenta = new ControlVenta();
+    ControlCarritoVen controlCarritoVen = new ControlCarritoVen();
     String usuario;
     Date date = new Date();
     /**
@@ -304,6 +305,19 @@ public class agregarVenta extends javax.swing.JFrame {
                 float total = Float.parseFloat(this.total.getText());
 
                 String mensaje = controlVenta.agregarVenta(id_venta, id_vendedor, fecha, total);
+                    
+                for(int i=0; i<this.tbdetbol.getRowCount(); i++){
+                    
+                    String codigo = tbdetbol.getValueAt(i, 0).toString();
+                    String cantidad = tbdetbol.getValueAt(i, 2).toString();
+                    String valor = tbdetbol.getValueAt(i, 4).toString();
+                    int peticion = Integer.parseInt(cantidad);
+                    float subtotal = Float.parseFloat(valor);
+                    
+                    controlCarritoVen.agregarProducto(id_venta, codigo, peticion, subtotal);
+                    controlCarritoVen.restarProducto(codigo, cantidad);
+                }
+                
                 JOptionPane.showMessageDialog(this, mensaje);
             }   
         }catch(Exception e){
