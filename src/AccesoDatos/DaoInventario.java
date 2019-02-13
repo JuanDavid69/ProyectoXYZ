@@ -10,11 +10,14 @@ import java.sql.*;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author juandavid
  */
 public class DaoInventario {
+    DefaultTableModel tabla;
     FachadaBD fachada;
 
     public DaoInventario() {
@@ -44,24 +47,25 @@ public class DaoInventario {
         }        
     }
     
-    public String[] consultarInventario(String id){
+    public DefaultTableModel cargarInventario(String busqueda){
+        String [] Titulo = {"CODIGO","PRODUCTO","CANTIDAD","PRECIO"};
+        tabla=new DefaultTableModel(null,Titulo);
         String sql_select;        
         String consulta[] = new String[4];
-        sql_select = "SELECT * FROM inventario WHERE id_producto = '" + id + "'";
+        sql_select = "SELECT * FROM inventario WHERE (producto) ilike '%" +busqueda + "%'";
         try{
             Connection conn= fachada.getConnetion();            
             Statement sentencia = conn.createStatement();
-            ResultSet tabla = sentencia.executeQuery(sql_select);   
+            ResultSet rs = sentencia.executeQuery(sql_select);   
             
-            if(tabla.next()){
-                consulta[0] = tabla.getString(1);
-                consulta[1] = tabla.getString(2);
-                consulta[2] = tabla.getString(3);
-                consulta[3] = tabla.getString(4);   
-            }else{
-                consulta = null;
+            while(rs.next()){
+                consulta[0] = rs.getString(1);
+                consulta[1] = rs.getString(2);
+                consulta[2] = rs.getString(3);
+                consulta[3] = rs.getString(4);
+                tabla.addRow(consulta);
             }
-            return consulta;
+            return tabla;
         }catch(Exception e){
             System.out.println(e);
             return null;

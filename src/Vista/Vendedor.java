@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Vista;
-
 import javax.swing.JOptionPane;
 
 /**
@@ -122,6 +121,11 @@ public class Vendedor extends javax.swing.JFrame {
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, -1));
 
         AgregarFacturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agregarCotizacion.png"))); // NOI18N
+        AgregarFacturacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarFacturacionActionPerformed(evt);
+            }
+        });
         jPanel2.add(AgregarFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 34, 61, 68));
 
         ConsultarFacturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/consultarCotizacion.png"))); // NOI18N
@@ -177,10 +181,17 @@ public class Vendedor extends javax.swing.JFrame {
     }//GEN-LAST:event_ConsultarCotizacionActionPerformed
 
     private void AgregarCotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarCotizacionActionPerformed
-        agregarCotizacion U = new agregarCotizacion();
-        U.setVisible(true);
+        agregarCotizacion agregarCotizacion = new agregarCotizacion();
+        agregarCotizacion.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_AgregarCotizacionActionPerformed
+
+    private void AgregarFacturacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarFacturacionActionPerformed
+        // TODO add your handling code here:
+        agregarVenta agregarVenta = new agregarVenta(usuario);
+        agregarVenta.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_AgregarFacturacionActionPerformed
 
     /**
      * @param args the command line arguments

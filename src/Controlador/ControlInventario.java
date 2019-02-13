@@ -6,6 +6,7 @@
 package Controlador;
 import Modelo.Inventario;
 import AccesoDatos.*;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author juandavid
@@ -22,8 +23,8 @@ public class ControlInventario {
         return daoInventario.guardarInventario(i);
     }
     
-    public String[] consultarInventario(String id){
-        return daoInventario.consultarInventario(id);
+    public DefaultTableModel cargarInventario(String busqueda){
+        return daoInventario.cargarInventario(busqueda);
     }
     
     public String modificarInventario(String id_producto, String producto, int cantidad, float precio_unidad){

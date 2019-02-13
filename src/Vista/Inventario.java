@@ -4,19 +4,30 @@
  * and open the template in the editor.
  */
 package Vista;
+import Controlador.*;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Natalia
  */
 public class Inventario extends javax.swing.JFrame {
-
+    DefaultTableModel tabla;
+    ControlInventario controlInventario = new ControlInventario();
     /**
      * Creates new form Inventario
      */
     public Inventario() {
         initComponents();
         this.setLocationRelativeTo(null);
+        cargarInventario("");
+    }
+    
+    void cargarInventario(String busqueda){
+        tabla = controlInventario.cargarInventario(busqueda);
+        this.inventario.setModel(tabla);
     }
 
     /**
@@ -29,8 +40,11 @@ public class Inventario extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        inventario = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        Busqueda = new javax.swing.JTextField();
+        cerrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -38,43 +52,159 @@ public class Inventario extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Inventario");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        inventario.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        inventario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inventarioMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(inventario);
+
+        jLabel2.setText("Buscar:");
+
+        Busqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BusquedaActionPerformed(evt);
+            }
+        });
+        Busqueda.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BusquedaKeyReleased(evt);
+            }
+        });
+
+        cerrar.setText("Cerrar");
+        cerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cerrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addGap(175, 175, 175)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(158, 158, 158))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cerrar)))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(Busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cerrar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BusquedaActionPerformed
+
+    private void BusquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BusquedaKeyReleased
+        // TODO add your handling code here:
+        cargarInventario(this.Busqueda.getText());
+    }//GEN-LAST:event_BusquedaKeyReleased
+
+    private void inventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inventarioMouseClicked
+        // TODO add your handling code here:
+        try {
+            DefaultTableModel tablaVenta = (DefaultTableModel)agregarVenta.tbdetbol.getModel();
+            String[]  registro = new String[5];
+            
+            int  fila = inventario.getSelectedRow();
+            
+            String codigo = inventario.getValueAt(fila, 0).toString();
+            String producto = inventario.getValueAt(fila, 1).toString();
+            String cantidad = inventario.getValueAt(fila, 2).toString();
+            String precio = inventario.getValueAt(fila, 3).toString();
+            int c=0;
+            String  numero = JOptionPane.showInputDialog("Proporcione la cantidad a registrar");
+            if((numero.equals("")) || (numero.equals("0")))
+            {
+                JOptionPane.showMessageDialog(this, "Debe proporcionar una cantidad diferente de 0");
+            }
+            else
+            {
+                int peticion = Integer.parseInt(numero);
+                int valorActual = Integer.parseInt(cantidad);
+                if((0 >= peticion) || (valorActual < peticion))
+                {
+                    JOptionPane.showMessageDialog(this,"No hay suficientes unidades en el inventario ó proporcionó una cantidad invalida");
+                }
+                else
+                {
+                    for(int i=0;i<agregarVenta.tbdetbol.getRowCount();i++)
+                    {
+                        Object id_producto = agregarVenta.tbdetbol.getValueAt(i,0);
+                        if(codigo.equals(id_producto))
+                        {
+                            agregarVenta.tbdetbol.setValueAt(numero, i, 2);
+                            c=1;
+                        }
+                    }
+                    if(c==0)
+                        {
+                            registro[0] = codigo;
+                            registro[1] = producto;
+                            registro[2] = numero;
+                            registro[3] = precio;
+                            tablaVenta.addRow(registro);
+                            agregarVenta.tbdetbol.setModel(tablaVenta);
+                        }
+                    }
+                }
+            
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_inventarioMouseClicked
+
+    private void cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_cerrarActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Busqueda;
+    private javax.swing.JButton cerrar;
+    private javax.swing.JTable inventario;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }
