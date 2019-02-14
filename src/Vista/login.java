@@ -33,8 +33,8 @@ public class login extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         usuario = new javax.swing.JTextField();
-        contraseña = new javax.swing.JTextField();
         acceder = new javax.swing.JButton();
+        contraseña = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,7 +43,7 @@ public class login extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Empresa XYZ");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
 
         jLabel2.setText("Usuario:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 46, -1, -1));
@@ -52,10 +52,7 @@ public class login extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 84, -1, -1));
 
         usuario.setBackground(new java.awt.Color(204, 204, 204));
-        getContentPane().add(usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 43, 224, -1));
-
-        contraseña.setBackground(new java.awt.Color(204, 204, 204));
-        getContentPane().add(contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 81, 224, -1));
+        getContentPane().add(usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 190, -1));
 
         acceder.setText("Acceder");
         acceder.addActionListener(new java.awt.event.ActionListener() {
@@ -64,6 +61,7 @@ public class login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(acceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
+        getContentPane().add(contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 190, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo.jpg"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 150));
@@ -74,7 +72,7 @@ public class login extends javax.swing.JFrame {
     private void accederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accederActionPerformed
         // TODO add your handling code here:
         String usuario = this.usuario.getText();
-        String password = this.contraseña.getText();
+        String password = new String(contraseña.getPassword());
         String resultado = ControlUsuario.verificarUsuario(usuario, password);
         if("Gerente".equals(resultado))
         {
@@ -140,7 +138,7 @@ public class login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton acceder;
-    private javax.swing.JTextField contraseña;
+    private javax.swing.JPasswordField contraseña;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -315,7 +315,7 @@ public class agregarVenta extends javax.swing.JFrame {
                     float subtotal = Float.parseFloat(valor);
                     
                     controlCarritoVen.agregarProducto(id_venta, codigo, peticion, subtotal);
-                    controlCarritoVen.restarProducto(codigo, cantidad);
+                    controlCarritoVen.restarProducto(codigo, peticion);
                 }
                 
                 JOptionPane.showMessageDialog(this, mensaje);
