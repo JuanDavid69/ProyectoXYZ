@@ -123,7 +123,7 @@ public class agregarVenta extends javax.swing.JFrame {
             }
         });
 
-        salir.setText("Salir");
+        salir.setText("Cerrar");
         salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 salirActionPerformed(evt);

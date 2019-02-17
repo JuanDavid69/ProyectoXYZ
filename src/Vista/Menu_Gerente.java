@@ -35,11 +35,11 @@ public class Menu_Gerente extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButtonAgregarSede = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jButtonConsultarSede = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        jButtonModificarSede = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        jButtonEliminarSede = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -57,6 +57,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
 
         Gestion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -79,24 +80,29 @@ public class Menu_Gerente extends javax.swing.JFrame {
         jLabel6.setText("Agregar");
         Gestion.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/consultarSede.png"))); // NOI18N
-        Gestion.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 65, 75));
+        jButtonConsultarSede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/consultarSede.png"))); // NOI18N
+        jButtonConsultarSede.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConsultarSedeActionPerformed(evt);
+            }
+        });
+        Gestion.add(jButtonConsultarSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 65, 75));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Consultar");
         Gestion.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, -1, -1));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/modificarSede.png"))); // NOI18N
-        Gestion.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 65, 75));
+        jButtonModificarSede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/modificarSede.png"))); // NOI18N
+        Gestion.add(jButtonModificarSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 65, 75));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Modificar");
         Gestion.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, -1, -1));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminarSede.png"))); // NOI18N
-        Gestion.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 65, 75));
+        jButtonEliminarSede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminarSede.png"))); // NOI18N
+        Gestion.add(jButtonEliminarSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 65, 75));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -231,6 +237,10 @@ public class Menu_Gerente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAgregarSedeActionPerformed
 
+    private void jButtonConsultarSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarSedeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonConsultarSedeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -239,14 +249,14 @@ public class Menu_Gerente extends javax.swing.JFrame {
     private javax.swing.JPanel Gestion;
     private javax.swing.JTabbedPane PanelPrincipal;
     private javax.swing.JPanel Usuario;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButtonAgreagarEmpleado;
     private javax.swing.JButton jButtonAgregarSede;
     private javax.swing.JButton jButtonConsultarEmpleado;
+    private javax.swing.JButton jButtonConsultarSede;
     private javax.swing.JButton jButtonEliminarEmpleado;
+    private javax.swing.JButton jButtonEliminarSede;
     private javax.swing.JButton jButtonModificarEmpleado;
+    private javax.swing.JButton jButtonModificarSede;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
