@@ -2,6 +2,7 @@
 CREATE TABLE sedes
 (
 	id_sede VARCHAR(30) PRIMARY KEY,
+	nombre VARCHAR(30) NOT NULL,
 	direccion VARCHAR(30) NOT NULL,
 	ciudad VARCHAR(30) NOT NULL,
 	telefono VARCHAR(30) NOT NULL
@@ -98,7 +99,7 @@ CREATE TABLE ordenes
 
 
 
-INSERT INTO sedes VALUES ('01', 'Carrear 77A #2B-34','Cali', '123456');
+INSERT INTO sedes VALUES ('01', 'Sede sur', 'Carrear 77A #2B-34','Cali', '123456');
 
 INSERT INTO usuarios VALUES ('111','111' ,'activo','Santiago','Gerente' ,'$100000','31-07-2005' ,'Calle 5 #3C', '01' , '654321');
 INSERT INTO usuarios VALUES ('222','222' ,'activo','Miguel','Vendedor' , '$50000','20-01-2005', 'Carrear 80 #2B-102', '01' , '123123');
