@@ -11,12 +11,14 @@ package Modelo;
  */
 public class Sedes {
     private String id_sede;
+    private String nombre;
     private String direccion;
     private String ciudad;
     private String telefono;
 
-    public Sedes(String id_sede, String direccion, String ciudad, String telefono) {
+    public Sedes(String id_sede, String nombre, String direccion, String ciudad, String telefono) {
         this.id_sede = id_sede;
+        this.nombre =nombre;
         this.direccion = direccion;
         this.ciudad = ciudad;
         this.telefono = telefono;
@@ -24,6 +26,10 @@ public class Sedes {
 
     public String getId_sede() {
         return id_sede;
+    }
+    
+    public String getNombre() {
+        return nombre;
     }
 
     public String getDireccion() {
@@ -36,6 +42,10 @@ public class Sedes {
 
     public String getTelefono() {
         return telefono;
+    }
+    
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public void setDireccion(String direccion) {
