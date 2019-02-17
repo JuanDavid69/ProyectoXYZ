@@ -16,6 +16,7 @@ public class consultarCotizacion extends javax.swing.JFrame {
      */
     public consultarCotizacion() {
         initComponents();
+        setDefaultCloseOperation(0);
     }
 
     /**

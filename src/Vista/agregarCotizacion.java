@@ -16,6 +16,7 @@ public class agregarCotizacion extends javax.swing.JFrame {
      */
     public agregarCotizacion() {
         initComponents();
+        setDefaultCloseOperation(0);
         this.setLocationRelativeTo(null);
     }
 

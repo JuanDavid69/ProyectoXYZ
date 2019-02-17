@@ -57,7 +57,6 @@ public class Menu_Gerente extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
         setResizable(false);
 
         Gestion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

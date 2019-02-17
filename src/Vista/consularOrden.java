@@ -16,6 +16,7 @@ public class consularOrden extends javax.swing.JFrame {
      */
     public consularOrden() {
         initComponents();
+        setDefaultCloseOperation(0);
         this.setLocationRelativeTo(null);
     }
 

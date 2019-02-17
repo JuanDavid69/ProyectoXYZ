@@ -16,6 +16,7 @@ public class modificarOrden extends javax.swing.JFrame {
      */
     public modificarOrden() {
         initComponents();
+        setDefaultCloseOperation(0);
         this.setLocationRelativeTo(null);
     }
 

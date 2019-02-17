@@ -16,6 +16,7 @@ public class eliminarOrden extends javax.swing.JFrame {
      */
     public eliminarOrden() {
         initComponents();
+        setDefaultCloseOperation(0);
         this.setLocationRelativeTo(null);
     }
 

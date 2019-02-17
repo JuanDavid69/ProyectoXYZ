@@ -18,6 +18,7 @@ public class eliminarCotizacion extends javax.swing.JFrame {
      */
     public eliminarCotizacion() {
         initComponents();
+        setDefaultCloseOperation(0);
     }
 
     /**

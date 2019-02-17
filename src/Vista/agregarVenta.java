@@ -25,6 +25,7 @@ public class agregarVenta extends javax.swing.JFrame {
     public agregarVenta(String usuario) {
         this.usuario = usuario;
         initComponents();
+        setDefaultCloseOperation(0);
         this.setLocationRelativeTo(null);
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         this.cedulaVen.setText(usuario);
@@ -58,6 +59,7 @@ public class agregarVenta extends javax.swing.JFrame {
         eliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabelCrearVenta.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelCrearVenta.setText("Factura de venta");
