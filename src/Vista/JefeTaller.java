@@ -17,6 +17,7 @@ public class JefeTaller extends javax.swing.JFrame {
     public JefeTaller(String usuario) {
         this.usuario = usuario;
         initComponents();
+        setDefaultCloseOperation(0);
         this.setLocationRelativeTo(null);
     }
 
@@ -48,7 +49,7 @@ public class JefeTaller extends javax.swing.JFrame {
         jButton4.setText("jButton4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -57,18 +58,43 @@ public class JefeTaller extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 11, -1, -1));
 
         jButtonAgregarOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agregarOrden.png"))); // NOI18N
+        jButtonAgregarOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAgregarOrdenActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonAgregarOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 44, 65, 90));
 
         jButtonModificarOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/modificarOrden.png"))); // NOI18N
+        jButtonModificarOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonModificarOrdenActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonModificarOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 44, 65, 90));
 
         jButtonConsultarOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/consultarOrden.png"))); // NOI18N
+        jButtonConsultarOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConsultarOrdenActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonConsultarOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 44, 65, 90));
 
         jButtonEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminarOrden.png"))); // NOI18N
+        jButtonEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEliminarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 44, 65, 90));
 
         jButtonInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/inventario.png"))); // NOI18N
+        jButtonInventario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonInventarioActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 44, 70, 90));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -107,6 +133,11 @@ public class JefeTaller extends javax.swing.JFrame {
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, -1, -1));
 
         jButtonAprobar.setText("Aprobar ordenes");
+        jButtonAprobar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAprobarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonAprobar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 390, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoVendedor.jpg"))); // NOI18N
@@ -120,6 +151,42 @@ public class JefeTaller extends javax.swing.JFrame {
         U.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jButtonAgregarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarOrdenActionPerformed
+       agregarOrden u = new agregarOrden(usuario);
+       u.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_jButtonAgregarOrdenActionPerformed
+
+    private void jButtonModificarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificarOrdenActionPerformed
+        modificarOrden u = new modificarOrden(usuario);
+        u.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_jButtonModificarOrdenActionPerformed
+
+    private void jButtonConsultarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarOrdenActionPerformed
+        consularOrden u = new consularOrden(usuario);
+        u.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonConsultarOrdenActionPerformed
+
+    private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
+       eliminarOrden u = new eliminarOrden(usuario);
+       u.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_jButtonEliminarActionPerformed
+
+    private void jButtonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInventarioActionPerformed
+        InventarioTaller u = new InventarioTaller(usuario);
+        u.setVisible(true);
+    }//GEN-LAST:event_jButtonInventarioActionPerformed
+
+    private void jButtonAprobarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAprobarActionPerformed
+        AprobarOrden u = new AprobarOrden(usuario);
+        u.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonAprobarActionPerformed
 
     /**
      * @param args the command line arguments

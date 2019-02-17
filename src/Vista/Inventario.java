@@ -21,6 +21,7 @@ public class Inventario extends javax.swing.JFrame {
      */
     public Inventario() {
         initComponents();
+        setDefaultCloseOperation(0);
         this.setLocationRelativeTo(null);
         cargarInventario("");
     }

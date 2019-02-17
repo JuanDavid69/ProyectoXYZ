@@ -22,8 +22,8 @@ public class DaoSedes {
     
     public String guardarSede(Sedes s){
         String sql_guardar;
-        sql_guardar = "INSERT INTO sedes(id_sede, direccion, ciudad, telefono)) VALUES('" + 
-                s.getId_sede() + "', '" + s.getDireccion() + "', '" + s.getCiudad() + "', '" + s.getTelefono() + "')";
+        sql_guardar = "INSERT INTO sedes(id_sede, nombre, direccion, ciudad, telefono)) VALUES('" + 
+                s.getId_sede() + "', '" + s.getNombre() + "', '" + s.getDireccion() + "', '" + s.getCiudad() + "', '" + s.getTelefono() + "')";
         try{
             Connection conn= fachada.conectar();
             Statement sentencia = conn.createStatement();             
@@ -45,7 +45,7 @@ public class DaoSedes {
     
     public String[] consultarSede(String id){
         String sql_select;        
-        String consulta[] = new String[4];
+        String consulta[] = new String[5];
         sql_select = "SELECT * FROM sedes WHERE id_sede = " + id;
         try{
             Connection conn= fachada.getConnetion();            
@@ -57,6 +57,7 @@ public class DaoSedes {
                 consulta[1] = tabla.getString(2);
                 consulta[2] = tabla.getString(3);
                 consulta[3] = tabla.getString(4);
+                consulta[4] = tabla.getString(5);
             }else{
                 consulta = null;
             }
@@ -69,7 +70,7 @@ public class DaoSedes {
     
     public String modificarSede(Sedes s){
         String sql_modificar;
-        sql_modificar = "UPDATE sedes SET direccion='" + s.getDireccion() + "', ciudad='" + 
+        sql_modificar = "UPDATE sedes SET nombre = '" + s.getNombre() +"', direccion='" + s.getDireccion() + "', ciudad='" + 
                 s.getCiudad() + "', telefono='" + s.getTelefono() + "' WHERE id_sede = " + s.getId_sede();
         try{
             Connection conn= fachada.getConnetion();

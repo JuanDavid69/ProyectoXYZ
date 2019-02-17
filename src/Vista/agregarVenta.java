@@ -25,6 +25,7 @@ public class agregarVenta extends javax.swing.JFrame {
     public agregarVenta(String usuario) {
         this.usuario = usuario;
         initComponents();
+        setDefaultCloseOperation(0);
         this.setLocationRelativeTo(null);
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         this.cedulaVen.setText(usuario);
@@ -58,6 +59,7 @@ public class agregarVenta extends javax.swing.JFrame {
         eliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabelCrearVenta.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelCrearVenta.setText("Factura de venta");
@@ -220,9 +222,9 @@ public class agregarVenta extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(Agregar)
                     .addComponent(eliminar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(1, 1, 1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(salir)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)

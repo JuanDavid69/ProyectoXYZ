@@ -16,6 +16,7 @@ public class modificarCotizacion extends javax.swing.JFrame {
      */
     public modificarCotizacion() {
         initComponents();
+        setDefaultCloseOperation(0);
     }
 
     /**
