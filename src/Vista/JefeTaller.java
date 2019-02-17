@@ -17,6 +17,7 @@ public class JefeTaller extends javax.swing.JFrame {
     public JefeTaller(String usuario) {
         this.usuario = usuario;
         initComponents();
+        setDefaultCloseOperation(0);
         this.setLocationRelativeTo(null);
     }
 
@@ -48,7 +49,7 @@ public class JefeTaller extends javax.swing.JFrame {
         jButton4.setText("jButton4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -57,6 +58,11 @@ public class JefeTaller extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 11, -1, -1));
 
         jButtonAgregarOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agregarOrden.png"))); // NOI18N
+        jButtonAgregarOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAgregarOrdenActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonAgregarOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 44, 65, 90));
 
         jButtonModificarOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/modificarOrden.png"))); // NOI18N
@@ -120,6 +126,12 @@ public class JefeTaller extends javax.swing.JFrame {
         U.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jButtonAgregarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarOrdenActionPerformed
+       agregarOrden u = new agregarOrden(usuario);
+       u.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_jButtonAgregarOrdenActionPerformed
 
     /**
      * @param args the command line arguments
