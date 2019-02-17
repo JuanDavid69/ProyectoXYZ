@@ -28,78 +28,74 @@ public class agregarOrden extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabelCrearOrden = new javax.swing.JLabel();
-        jLabelProductoOrden = new javax.swing.JLabel();
-        jTextFieldProductoOrden = new javax.swing.JTextField();
-        jLabelCantidadOrden = new javax.swing.JLabel();
-        jTextFieldCantidadOrden = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jRadioButtonExistente = new javax.swing.JRadioButton();
+        jRadioButtonNuevo = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jLabelCrearOrden.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabelCrearOrden.setText("Crear Orden de Trabajo");
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setText("Agregar Ordenes");
 
-        jLabelProductoOrden.setText("Producto: ");
+        jRadioButtonExistente.setText("Producto Existente");
 
-        jTextFieldProductoOrden.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldProductoOrdenActionPerformed(evt);
-            }
-        });
+        jRadioButtonNuevo.setText("Producto Nuevo");
 
-        jLabelCantidadOrden.setText("Cantidad:");
+        jLabel1.setText("Producto:");
+
+        jLabel2.setText("Id Producto:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(107, 107, 107)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelCrearOrden)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(71, 71, 71)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelProductoOrden)
-                            .addComponent(jLabelCantidadOrden))
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextFieldProductoOrden)
-                            .addComponent(jTextFieldCantidadOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(107, Short.MAX_VALUE))
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jRadioButtonExistente)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioButtonNuevo))
+                            .addComponent(jLabel2))))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabelCrearOrden)
+                .addContainerGap()
+                .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelProductoOrden)
-                    .addComponent(jTextFieldProductoOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelCantidadOrden)
-                    .addComponent(jTextFieldCantidadOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(39, Short.MAX_VALUE))
+                    .addComponent(jRadioButtonExistente)
+                    .addComponent(jRadioButtonNuevo))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addContainerGap(193, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextFieldProductoOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldProductoOrdenActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldProductoOrdenActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabelCantidadOrden;
-    private javax.swing.JLabel jLabelCrearOrden;
-    private javax.swing.JLabel jLabelProductoOrden;
-    private javax.swing.JTextField jTextFieldCantidadOrden;
-    private javax.swing.JTextField jTextFieldProductoOrden;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JRadioButton jRadioButtonExistente;
+    private javax.swing.JRadioButton jRadioButtonNuevo;
     // End of variables declaration//GEN-END:variables
 }

@@ -16,6 +16,7 @@ public class agregarSede extends javax.swing.JFrame {
      */
     public agregarSede() {
         initComponents();
+        setDefaultCloseOperation(0);
     }
 
     /**
