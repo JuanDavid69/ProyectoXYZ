@@ -7,18 +7,17 @@ package Vista;
 import Controlador.*;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
 /**
  *
- * @author Natalia
+ * @author juandavid
  */
-public class Inventario extends javax.swing.JFrame {
+public class InventarioCot extends javax.swing.JFrame {
     DefaultTableModel tabla;
     ControlInventario controlInventario = new ControlInventario();
     /**
-     * Creates new form Inventario
+     * Creates new form InventarioCot
      */
-    public Inventario() {
+    public InventarioCot() {
         initComponents();
         setDefaultCloseOperation(0);
         this.setLocationRelativeTo(null);
@@ -39,15 +38,32 @@ public class Inventario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Busqueda = new javax.swing.JTextField();
+        cerrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         inventario = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        Busqueda = new javax.swing.JTextField();
-        cerrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
+
+        Busqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BusquedaActionPerformed(evt);
+            }
+        });
+        Busqueda.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BusquedaKeyReleased(evt);
+            }
+        });
+
+        cerrar.setText("Cerrar");
+        cerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cerrarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Inventario");
@@ -72,24 +88,6 @@ public class Inventario extends javax.swing.JFrame {
 
         jLabel2.setText("Buscar:");
 
-        Busqueda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BusquedaActionPerformed(evt);
-            }
-        });
-        Busqueda.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                BusquedaKeyReleased(evt);
-            }
-        });
-
-        cerrar.setText("Cerrar");
-        cerrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cerrarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -108,7 +106,7 @@ public class Inventario extends javax.swing.JFrame {
                         .addComponent(Busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(cerrar)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,7 +120,7 @@ public class Inventario extends javax.swing.JFrame {
                     .addComponent(cerrar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -137,14 +135,19 @@ public class Inventario extends javax.swing.JFrame {
         cargarInventario(this.Busqueda.getText());
     }//GEN-LAST:event_BusquedaKeyReleased
 
+    private void cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_cerrarActionPerformed
+
     private void inventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inventarioMouseClicked
         // TODO add your handling code here:
         try {
-            DefaultTableModel tablaVenta = (DefaultTableModel)agregarVenta.tbdetbol.getModel();
+            DefaultTableModel tablaCotizacion = (DefaultTableModel)agregarCotizacion.tbdetbol.getModel();
             String[]  registro = new String[5];
-            
+
             int  fila = inventario.getSelectedRow();
-            
+
             String codigo = inventario.getValueAt(fila, 0).toString();
             String producto = inventario.getValueAt(fila, 1).toString();
             String cantidad = inventario.getValueAt(fila, 2).toString();
@@ -159,45 +162,71 @@ public class Inventario extends javax.swing.JFrame {
             {
                 int peticion = Integer.parseInt(numero);
                 int valorActual = Integer.parseInt(cantidad);
-                if((0 >= peticion) || (valorActual < peticion))
+                if((0 >= peticion))
                 {
-                    JOptionPane.showMessageDialog(this,"No hay suficientes unidades en el inventario ó proporcionó una cantidad invalida");
+                    JOptionPane.showMessageDialog(this,"Proporcionó una cantidad invalida");
                 }
                 else
                 {
-                    for(int i=0;i<agregarVenta.tbdetbol.getRowCount();i++)
+                    for(int i=0;i<agregarCotizacion.tbdetbol.getRowCount();i++)
                     {
-                        Object id_producto = agregarVenta.tbdetbol.getValueAt(i,0);
+                        Object id_producto = agregarCotizacion.tbdetbol.getValueAt(i,0);
                         if(codigo.equals(id_producto))
                         {
-                            agregarVenta.tbdetbol.setValueAt(numero, i, 2);
+                            agregarCotizacion.tbdetbol.setValueAt(numero, i, 2);
                             c=1;
                         }
                     }
                     if(c==0)
-                        {
-                            registro[0] = codigo;
-                            registro[1] = producto;
-                            registro[2] = numero;
-                            registro[3] = precio;
-                            tablaVenta.addRow(registro);
-                            agregarVenta.tbdetbol.setModel(tablaVenta);
-                        }
+                    {
+                        registro[0] = codigo;
+                        registro[1] = producto;
+                        registro[2] = numero;
+                        registro[3] = precio;
+                        tablaCotizacion.addRow(registro);
+                        agregarCotizacion.tbdetbol.setModel(tablaCotizacion);
                     }
                 }
-            
+            }
+
         } catch (Exception e) {
         }
     }//GEN-LAST:event_inventarioMouseClicked
 
-    private void cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-    }//GEN-LAST:event_cerrarActionPerformed
-
     /**
      * @param args the command line arguments
      */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(InventarioCot.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(InventarioCot.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(InventarioCot.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(InventarioCot.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new InventarioCot().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Busqueda;

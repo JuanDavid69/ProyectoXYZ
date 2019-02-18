@@ -4,20 +4,33 @@
  * and open the template in the editor.
  */
 package Vista;
+import Controlador.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Natalia
  */
 public class agregarCotizacion extends javax.swing.JFrame {
-
+    ControlCotizacion controlCotizacion = new ControlCotizacion();
+    ControlCarritoCot controlCarritoCot = new ControlCarritoCot();
+    String usuario;
+    Date date = new Date();
     /**
      * Creates new form agregarCotizacion
      */
-    public agregarCotizacion() {
+    public agregarCotizacion(String usuario) {
+        this.usuario = usuario;
         initComponents();
         setDefaultCloseOperation(0);
         this.setLocationRelativeTo(null);
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        this.cedulaVen.setText(usuario);
+        this.fecha.setText(dateFormat.format(date));
     }
 
     /**
@@ -29,91 +42,330 @@ public class agregarCotizacion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        Agregar = new javax.swing.JButton();
+        fecha = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        cedulaVen = new javax.swing.JLabel();
+        agregarProducto = new javax.swing.JButton();
+        eliminar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        NCotizacion = new javax.swing.JTextField();
+        Calcular = new javax.swing.JButton();
+        salir = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        total = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tbdetbol = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jLabel1.setText("Vendedor ");
-
-        jTextField1.setText(" ");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setText("Valor");
-
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setText("Crear cotizacion");
+        jLabel3.setText("Registro de cotizaciones");
+
+        Agregar.setText("Registrar cotizacion");
+        Agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarActionPerformed(evt);
+            }
+        });
+
+        fecha.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        fecha.setText(" ");
+
+        jLabel2.setText("Cedula vendedor:");
+
+        jLabel4.setText("fecha de registro:");
+
+        cedulaVen.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cedulaVen.setText(" ");
+
+        agregarProducto.setText("Agregar producto");
+        agregarProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarProductoActionPerformed(evt);
+            }
+        });
+
+        eliminar.setText("Eliminar producto");
+        eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("N° Cotizacion:");
+
+        NCotizacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NCotizacionActionPerformed(evt);
+            }
+        });
+        NCotizacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NCotizacionKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NCotizacionKeyTyped(evt);
+            }
+        });
+
+        Calcular.setText("Calcular monto");
+        Calcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CalcularActionPerformed(evt);
+            }
+        });
+
+        salir.setText("Cerrar");
+        salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Total:");
+
+        total.setEditable(false);
+
+        tbdetbol.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "CODIGO", "PRODUCTO", "CANTIDAD", "PRECIO UNIDAD", "PRECIO VENTA"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tbdetbol);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(52, 52, 52)
+                        .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
-                            .addComponent(jTextField2)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(jLabel3)))
-                .addContainerGap(45, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(fecha))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(cedulaVen))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(NCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(158, 158, 158)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(agregarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Calcular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Agregar)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(salir, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(222, 222, 222))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addContainerGap()
                 .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(NCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(cedulaVen))
+                        .addGap(3, 3, 3)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(fecha)
+                            .addComponent(jLabel4)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Calcular)
+                            .addComponent(agregarProducto))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Agregar)
+                            .addComponent(eliminar))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(salir)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5)))
+                .addGap(18, 18, 18))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+        try{
+            if((NCotizacion.getText().equals(""))||(total.getText().equals(""))){
+                JOptionPane.showMessageDialog(this, "Ingrese el numero de la cotizacion o realice el calculo del monto");
+            }
+            else{
+                String id_cotizacion = this.NCotizacion.getText();
+                String id_vendedor = this.cedulaVen.getText();
+                String fecha = this.fecha.getText();
+                float total = Float.parseFloat(this.total.getText());
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+                String mensaje = controlCotizacion.agregarCotizacion(id_cotizacion, id_vendedor, fecha, total);
+
+                for(int i=0; i<this.tbdetbol.getRowCount(); i++){
+
+                    String codigo = tbdetbol.getValueAt(i, 0).toString();
+                    String cantidad = tbdetbol.getValueAt(i, 2).toString();
+                    String valor = tbdetbol.getValueAt(i, 4).toString();
+                    int peticion = Integer.parseInt(cantidad);
+                    float subtotal = Float.parseFloat(valor);
+
+                    controlCarritoCot.agregarProducto(id_cotizacion, codigo, peticion, subtotal);
+                }
+
+                JOptionPane.showMessageDialog(this, mensaje);
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Ha ocurrido un error al capturar los datos");
+            System.out.println(e);
+        }
+
+    }//GEN-LAST:event_AgregarActionPerformed
+
+    private void agregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarProductoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+        InventarioCot inventarioCot = new InventarioCot();
+        inventarioCot.setVisible(true);
+    }//GEN-LAST:event_agregarProductoActionPerformed
+
+    private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)tbdetbol.getModel();
+        int fila = tbdetbol.getSelectedRow();
+        if(fila>=0) {
+            model.removeRow(fila);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Seleccione un producto");
+        }
+    }//GEN-LAST:event_eliminarActionPerformed
+
+    private void NCotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NCotizacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NCotizacionActionPerformed
+
+    private void NCotizacionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NCotizacionKeyReleased
+        // TODO add your handling co
+    }//GEN-LAST:event_NCotizacionKeyReleased
+
+    private void NCotizacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NCotizacionKeyTyped
+        // TODO add your handling code here:
+        char id_venta = evt.getKeyChar();
+        if(Character.isLetter(id_venta)){
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "Solo caracteres numericos");
+        }
+    }//GEN-LAST:event_NCotizacionKeyTyped
+
+    private void CalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalcularActionPerformed
+        // TODO add your handling code here:
+        if(tbdetbol.getRowCount()<1){
+            JOptionPane.showMessageDialog(this, "Seleccione al menos un producto");
+        }
+        else{
+            String pre;
+            String can;
+            double precio;
+            int cantidad;
+            double subtotal=0;
+            double precioTotal=0;
+
+            for(int i=0;i<tbdetbol.getRowCount();i++){
+                pre=tbdetbol.getValueAt(i, 3).toString();
+                can=tbdetbol.getValueAt(i, 2).toString();
+                precio=Double.parseDouble(pre);
+                cantidad=Integer.parseInt(can);
+                subtotal = precio*cantidad;
+                precioTotal = precioTotal +subtotal;
+
+                tbdetbol.setValueAt(subtotal, i, 4);
+
+            }
+            total.setText("" + precioTotal);
+        }
+    }//GEN-LAST:event_CalcularActionPerformed
+
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        Vendedor vendedor = new Vendedor(usuario);
+        vendedor.setVisible(true);
+    }//GEN-LAST:event_salirActionPerformed
 
     /**
      * @param args the command line arguments
      */
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Agregar;
+    private javax.swing.JButton Calcular;
+    private javax.swing.JTextField NCotizacion;
+    private javax.swing.JButton agregarProducto;
+    private javax.swing.JLabel cedulaVen;
+    private javax.swing.JButton eliminar;
+    private javax.swing.JLabel fecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton salir;
+    public static javax.swing.JTable tbdetbol;
+    private javax.swing.JTextField total;
     // End of variables declaration//GEN-END:variables
 }

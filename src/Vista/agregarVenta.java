@@ -62,7 +62,7 @@ public class agregarVenta extends javax.swing.JFrame {
         setResizable(false);
 
         jLabelCrearVenta.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabelCrearVenta.setText("Factura de venta");
+        jLabelCrearVenta.setText("Registro de ventas");
 
         jLabel2.setText("Cedula vendedor:");
 
@@ -194,7 +194,7 @@ public class agregarVenta extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabelCrearVenta)
-                .addGap(232, 232, 232))
+                .addGap(226, 226, 226))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

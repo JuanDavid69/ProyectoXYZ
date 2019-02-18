@@ -207,7 +207,7 @@ public class Vendedor extends javax.swing.JFrame {
     }//GEN-LAST:event_ConsultarCotizacionActionPerformed
 
     private void AgregarCotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarCotizacionActionPerformed
-        agregarCotizacion agregarCotizacion = new agregarCotizacion();
+        agregarCotizacion agregarCotizacion = new agregarCotizacion(usuario);
         agregarCotizacion.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_AgregarCotizacionActionPerformed

@@ -26,7 +26,7 @@ public class DaoCotizacion {
     public String guardarCotizacion(Cotizacion c){
         String sql_guardar;
         sql_guardar = "INSERT INTO cotizaciones(id_cotizacion, id_vendedor, fecha, total) VALUES('" + 
-                c.getId_cotizacion() +  "', '" + c.getId_vendedor() + "', " + c.getFecha() + "', " + c.getTotal() + ")";
+                c.getId_cotizacion() +  "', '" + c.getId_vendedor() + "', '" + c.getFecha() + "', " + c.getTotal() + ")";
         try{
             Connection conn= fachada.conectar();
             Statement sentencia = conn.createStatement();             
