@@ -27,7 +27,7 @@ public class DaoUsuario {
         sql_guardar = "INSERT INTO usuarios VALUES('" + u.getCedula()+ "', '" + 
                 u.getPassword()+ "', '" + u.getEstado() + "', '" + u.getNombre() + "', '" +
                 u.getCargo() + "', '" +  u.getSalario() + "', '" + u.getFecha() + "', '" + 
-                u.getDireccion() + "', " + u.getId_sede() + ", '" + u.getTelefono() + "')";
+                u.getDireccion() + "', '" + u.getId_sede() + "', '" + u.getTelefono() + "')";
         try{
             Connection conn= fachada.conectar();
             Statement sentencia = conn.createStatement();             
@@ -39,7 +39,7 @@ public class DaoUsuario {
         }
         catch(SQLException e){
             System.out.println(e);
-            return "Ya existe un usuario con ese id";
+            return "Ha ocurrido un error al crear el usuario";
         }
         catch(Exception e){ 
             System.out.println(e); 
@@ -133,6 +133,25 @@ public class DaoUsuario {
         }catch(Exception e){
             System.out.println(e);
             return null;
+        }
+    }
+    
+    public boolean verificarSede(String sede){
+        String sql_select; 
+        sql_select = "SELECT id_sede FROM usuarios WHERE id_sede = '" + sede + "' and cargo = 'Gerente'";
+        try{
+            Connection conn= fachada.getConnetion();            
+            Statement sentencia = conn.createStatement();
+            ResultSet tabla = sentencia.executeQuery(sql_select);   
+            
+            if(tabla.next()){
+                return true;    
+            }else{
+                return false;
+            }
+        }catch(Exception e){
+            System.out.println(e);
+            return true;
         }
     }
     

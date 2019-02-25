@@ -24,8 +24,8 @@ public class DaoOrden {
     public String guardarOrden(Orden o){
         String sql_guardar;
         sql_guardar = "INSERT INTO ordenes(id_orden, id_jefe, id_producto, cantidad, fecha, estado) VALUES('" + 
-                o.getId_orden() + "', '" + o.getId_jefe() + "', " + o.getId_producto() + ", " + o.getCantidad() + ", '" + 
-                o.getFecha() + "', 'no aprobado')";
+                o.getId_orden() + "', '" + o.getId_jefe() + "', '" + o.getId_producto() + "', " + o.getCantidad() + ", '" + 
+                o.getFecha() + "', 'Sin aprobar')";
         try{
             Connection conn= fachada.conectar();
             Statement sentencia = conn.createStatement();             

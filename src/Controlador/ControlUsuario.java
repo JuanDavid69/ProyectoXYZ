@@ -20,7 +20,16 @@ public class ControlUsuario {
     
     public String agregarUsuario (String cedula, String password, String estado, String nombre, String cargo, String salario, String fecha, String direccion, String id_sede, String telefono) {
         Usuario u = new Usuario(cedula, password, estado, nombre, cargo, salario, fecha, direccion, id_sede, telefono);
-        return daoUsuario.guardarUsuario(u);
+        if(cargo.equals("Gerente")){
+            if(daoUsuario.verificarSede(id_sede)){
+                return "La sede que seleccionó ya tiene un gerente a cargo";
+            }
+            {
+                 return daoUsuario.guardarUsuario(u);
+            }
+        }else{
+             return daoUsuario.guardarUsuario(u);
+        }
     }
     
     public String[] consultarUsuario(String cedula){

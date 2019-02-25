@@ -16,6 +16,7 @@ public class ConsultarEmpleado extends javax.swing.JFrame {
      */
     public ConsultarEmpleado() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

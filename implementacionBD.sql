@@ -101,9 +101,9 @@ CREATE TABLE ordenes
 
 INSERT INTO sedes VALUES ('01', 'Sede sur', 'Carrear 77A #2B-34','Cali', '123456');
 
-INSERT INTO usuarios VALUES ('111','111' ,'activo','Santiago','Gerente' ,'$100000','31-07-2005' ,'Calle 5 #3C', '01' , '654321');
-INSERT INTO usuarios VALUES ('222','222' ,'activo','Miguel','Vendedor' , '$50000','20-01-2005', 'Carrear 80 #2B-102', '01' , '123123');
-INSERT INTO usuarios VALUES ('333','333' ,'activo','Juan','Jefe de taller' , '$25000','01-07-2011', 'Carrear 45 3D', '01' , '567890');
+INSERT INTO usuarios VALUES ('111','111' ,'Activo','Santiago','Gerente' ,'$100000','31-07-2005' ,'Calle 5 #3C', '01' , '654321');
+INSERT INTO usuarios VALUES ('222','222' ,'Activo','Miguel','Vendedor' , '$50000','20-01-2005', 'Carrear 80 #2B-102', '01' , '123123');
+INSERT INTO usuarios VALUES ('333','333' ,'Activo','Juan','Jefe de taller' , '$25000','01-07-2011', 'Carrear 45 3D', '01' , '567890');
 
 INSERT INTO inventario VALUES ('001', 'Silla', 20, 100);
 INSERT INTO inventario VALUES ('002', 'Sillon', 10, 650);
@@ -117,4 +117,4 @@ INSERT INTO ventas VALUES ('001', '222', '04-02-2019', 400);
 
 INSERT INTO cotizaciones VALUES ('001', '222', '04-02-2019', 600);
 
-INSERT INTO ordenes VALUES ('001', '333', '001', 5, '04-02-2019', 'no aprobado');
+INSERT INTO ordenes VALUES ('001', '333', '001', 5, '04-02-2019', 'Sin aprobar');

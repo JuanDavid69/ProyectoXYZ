@@ -18,6 +18,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
         this.usuario = usuario;
         initComponents();
         this.setLocationRelativeTo(null);
+        setDefaultCloseOperation(0);
     }
 
     /**
@@ -115,7 +116,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
                 jLabel13MouseClicked(evt);
             }
         });
-        Gestion.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, -1, -1));
+        Gestion.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, -1, -1));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoVendedor.jpg"))); // NOI18N
         Gestion.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 150));
@@ -130,6 +131,11 @@ public class Menu_Gerente extends javax.swing.JFrame {
         Usuario.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 11, -1, -1));
 
         jButtonAgreagarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agregarUsuario.png"))); // NOI18N
+        jButtonAgreagarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAgreagarEmpleadoActionPerformed(evt);
+            }
+        });
         Usuario.add(jButtonAgreagarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 39, 60, 75));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -178,7 +184,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
                 jLabel14MouseClicked(evt);
             }
         });
-        Usuario.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, -1, -1));
+        Usuario.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, -1, -1));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoVendedor.jpg"))); // NOI18N
         Usuario.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 150));
@@ -233,12 +239,20 @@ public class Menu_Gerente extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel14MouseClicked
 
     private void jButtonAgregarSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarSedeActionPerformed
-        // TODO add your handling code here:
+        agregarSede g = new agregarSede(usuario);
+        g.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonAgregarSedeActionPerformed
 
     private void jButtonConsultarSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarSedeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonConsultarSedeActionPerformed
+
+    private void jButtonAgreagarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgreagarEmpleadoActionPerformed
+        agregarEmpleado g = new agregarEmpleado(usuario);
+        g.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonAgreagarEmpleadoActionPerformed
 
     /**
      * @param args the command line arguments

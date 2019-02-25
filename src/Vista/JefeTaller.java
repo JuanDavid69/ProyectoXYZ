@@ -122,7 +122,6 @@ public class JefeTaller extends javax.swing.JFrame {
         jLabel6.setText("Inventario");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 140, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Cerrar Sesion");
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -130,7 +129,7 @@ public class JefeTaller extends javax.swing.JFrame {
                 jLabel7MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, -1, -1));
 
         jButtonAprobar.setText("Aprobar ordenes");
         jButtonAprobar.addActionListener(new java.awt.event.ActionListener() {
