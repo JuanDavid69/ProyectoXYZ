@@ -4,13 +4,22 @@
  * and open the template in the editor.
  */
 package Vista;
-
+import Controlador.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Natalia
  */
 public class modificarOrden extends javax.swing.JFrame {
-String usuario;
+    String usuario;
+    DefaultTableModel tabla;
+    DefaultTableModel tabla2;
+    ControlOrden controlOrden = new ControlOrden();
+    Date date = new Date();
     /**
      * Creates new form modificarOrden
      */
@@ -19,6 +28,10 @@ String usuario;
         initComponents();
         setDefaultCloseOperation(0);
         this.setLocationRelativeTo(null);
+        cargarOrdenes("");
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        this.cedula.setText(usuario);
+        this.fecha.setText(dateFormat.format(date));
     }
 
     /**
@@ -31,17 +44,27 @@ String usuario;
     private void initComponents() {
 
         jLabelModificarOrden = new javax.swing.JLabel();
-        jLabelNumeroOrden = new javax.swing.JLabel();
-        jButtonBuscarModificar = new javax.swing.JButton();
-        jLabelProducto = new javax.swing.JLabel();
-        jLabelCantidad = new javax.swing.JLabel();
-        jTextFieldCantidad = new javax.swing.JTextField();
-        jButtonModificarOrden = new javax.swing.JButton();
-        jComboBoxNumeroOrden = new javax.swing.JComboBox<>();
+        modificar = new javax.swing.JButton();
         jLabelModificacionProducto = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabelFecha = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        estado = new javax.swing.JTextField();
+        jLabelNumeroOrden1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        consultar = new javax.swing.JButton();
+        fecha = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        orden = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        producto = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ordenes = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
+        busqueda = new javax.swing.JTextField();
+        cantidad = new javax.swing.JTextField();
+        cedula = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -49,19 +72,12 @@ String usuario;
         jLabelModificarOrden.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelModificarOrden.setText("Modificar Orden de Trabajo");
 
-        jLabelNumeroOrden.setText("Numero de Orden:");
-
-        jButtonBuscarModificar.setText("Buscar");
-
-        jLabelProducto.setText("Producto:");
-
-        jLabelCantidad.setText("Cantidad:");
-
-        jButtonModificarOrden.setText("Modificar");
-
-        jComboBoxNumeroOrden.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel1.setText("Fecha:");
+        modificar.setText("Modificar");
+        modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificarActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Cerrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -70,92 +86,258 @@ String usuario;
             }
         });
 
+        jLabel6.setText("Cedula Jefe:");
+
+        estado.setEditable(false);
+
+        jLabelNumeroOrden1.setText("Buscar:");
+
+        jLabel5.setText("Estado:");
+
+        consultar.setText("Consultar");
+        consultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultarActionPerformed(evt);
+            }
+        });
+
+        fecha.setEditable(false);
+
+        jLabel2.setText("N° Orden:");
+
+        orden.setEditable(false);
+
+        jLabel3.setText("Producto:");
+
+        ordenes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(ordenes);
+
+        jLabel4.setText("Cantidad:");
+
+        busqueda.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                busquedaKeyReleased(evt);
+            }
+        });
+
+        cedula.setEditable(false);
+
+        jLabel7.setText("Fecha:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelModificarOrden)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jButton1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonModificarOrden))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabelProducto)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabelModificacionProducto)
-                            .addGap(117, 117, 117)
-                            .addComponent(jLabel1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabelFecha))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jLabelNumeroOrden)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jComboBoxNumeroOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButtonBuscarModificar))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(57, 57, 57)
-                            .addComponent(jLabelCantidad)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextFieldCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(39, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabelNumeroOrden1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(busqueda))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(18, 18, 18)
+                                .addComponent(consultar)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(18, 18, 18)
+                                .addComponent(cedula, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel5))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(producto, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(fecha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(estado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(10, 10, 10)
+                                            .addComponent(modificar)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(orden, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addComponent(jLabelModificacionProducto)
+                        .addGap(156, 156, 156)
+                        .addComponent(jLabelFecha))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(jLabelModificarOrden)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(5, 5, 5)
                 .addComponent(jLabelModificarOrden)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelNumeroOrden1)
+                    .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNumeroOrden)
-                    .addComponent(jButtonBuscarModificar)
-                    .addComponent(jComboBoxNumeroOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelProducto)
-                    .addComponent(jLabelModificacionProducto)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabelFecha))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelCantidad))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonModificarOrden)
-                    .addComponent(jButton1))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(consultar)
+                            .addComponent(jButton1)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabelModificacionProducto)
+                                    .addComponent(jLabelFecha)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel2)
+                                .addComponent(orden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cedula, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addGap(14, 14, 14)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(modificar)))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    void cargarOrdenes(String busqueda){
+        tabla = controlOrden.cargarOrdenes(busqueda);
+        String[]  registro = new String[2];
+        String [] Titulo = {"CODIGO", "ESTADO"};
+        tabla2=new DefaultTableModel(null,Titulo);
+        
+        for(int i=0;i<tabla.getRowCount();i++){
+            registro[0] = tabla.getValueAt(i, 0).toString();
+            registro[1] = tabla.getValueAt(i, 5).toString();
+            tabla2.addRow(registro);
+        }
+        
+        this.ordenes.setModel(tabla2);
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JefeTaller u = new JefeTaller(usuario);
         u.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarActionPerformed
+        int  fila = this.ordenes.getSelectedRow();
+        if (fila<0) {
+            JOptionPane.showMessageDialog(this, "Seleccione una orden para consultar");
+        } else {
+            String id = this.ordenes.getValueAt(fila, 0).toString();
+            String[] orden = controlOrden.consultarOrden(id);
+            if (orden == null) {
+                JOptionPane.showMessageDialog(this, "No se pudo consultar la orden seleccionada");
+            } else {
+                this.orden.setText(orden[0]);
+                this.producto.setText(orden[2]);
+                this.cantidad.setText(orden[3]);
+                this.estado.setText(orden[5]);
+            }
+        }
+    }//GEN-LAST:event_consultarActionPerformed
+
+    private void busquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busquedaKeyReleased
+        cargarOrdenes(this.busqueda.getText());
+    }//GEN-LAST:event_busquedaKeyReleased
+
+    private void modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarActionPerformed
+        try{
+            int  fila = this.ordenes.getSelectedRow();
+            if((this.producto.getText().equals(""))|| (this.cantidad.getText().equals("")) || (this.orden.getText().equals(""))){
+                JOptionPane.showMessageDialog(this, "Ingrese la informacion correspondiente en cada campo");
+            }else{
+                String id_orden = this.orden.getText();
+                String id_jefe = this.cedula.getText();
+                String id_producto = this.producto.getText();
+                String cant = this.cantidad.getText();
+                int cantidad = Integer.parseInt(cant);
+                String fecha = this.fecha.getText();
+                    
+                String mensaje = controlOrden.modificarOrden(id_orden, id_jefe, id_producto, cantidad, fecha, "Sin aprobar");
+                JOptionPane.showMessageDialog(this, mensaje);
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Ha ocurrido un error al capturar los datos");
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_modificarActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField busqueda;
+    private javax.swing.JTextField cantidad;
+    private javax.swing.JTextField cedula;
+    private javax.swing.JButton consultar;
+    private javax.swing.JTextField estado;
+    private javax.swing.JTextField fecha;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButtonBuscarModificar;
-    private javax.swing.JButton jButtonModificarOrden;
-    private javax.swing.JComboBox<String> jComboBoxNumeroOrden;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabelCantidad;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelFecha;
     private javax.swing.JLabel jLabelModificacionProducto;
     private javax.swing.JLabel jLabelModificarOrden;
-    private javax.swing.JLabel jLabelNumeroOrden;
-    private javax.swing.JLabel jLabelProducto;
-    private javax.swing.JTextField jTextFieldCantidad;
+    private javax.swing.JLabel jLabelNumeroOrden1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton modificar;
+    private javax.swing.JTextField orden;
+    private javax.swing.JTable ordenes;
+    private javax.swing.JTextField producto;
     // End of variables declaration//GEN-END:variables
 }

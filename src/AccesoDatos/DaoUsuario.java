@@ -10,12 +10,14 @@ import java.sql.*;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author juandavid
  */
 public class DaoUsuario {
+    DefaultTableModel tabla;
     FachadaBD fachada;
 
     public DaoUsuario() {
@@ -152,6 +154,29 @@ public class DaoUsuario {
         }catch(Exception e){
             System.out.println(e);
             return true;
+        }
+    }
+    
+    public DefaultTableModel cargarUsuarios(String busqueda){
+        String [] Titulo = {"CEDULA","NOMBRE"};
+        tabla=new DefaultTableModel(null,Titulo);
+        String sql_select;        
+        String consulta[] = new String[2];
+        sql_select = "SELECT * FROM usuarios WHERE (nombre) ilike '%" +busqueda + "%'";
+        try{
+            Connection conn= fachada.getConnetion();            
+            Statement sentencia = conn.createStatement();
+            ResultSet rs = sentencia.executeQuery(sql_select);   
+            
+            while(rs.next()){
+                consulta[0] = rs.getString(1);
+                consulta[1] = rs.getString(4);
+                tabla.addRow(consulta);
+            }
+            return tabla;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
         }
     }
     

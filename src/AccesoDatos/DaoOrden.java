@@ -10,11 +10,13 @@ import java.sql.*;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author juandavid
  */
 public class DaoOrden {
+    DefaultTableModel tabla;
     FachadaBD fachada;
 
     public DaoOrden() {
@@ -47,7 +49,7 @@ public class DaoOrden {
     
     public String[] consultarOrden(String id){
         String sql_select;        
-        String consulta[] = new String[5];
+        String consulta[] = new String[6];
         sql_select = "SELECT * FROM ordenes WHERE id_orden = '" + id + "'";
         try{
             Connection conn= fachada.getConnetion();            
@@ -60,6 +62,7 @@ public class DaoOrden {
                 consulta[2] = tabla.getString(3);
                 consulta[3] = tabla.getString(4);
                 consulta[4] = tabla.getString(5);
+                consulta[5] = tabla.getString(6);
             }else{
                 consulta = null;
             }
@@ -74,7 +77,7 @@ public class DaoOrden {
         String sql_modificar;
         sql_modificar = "UPDATE ordenes SET id_jefe='" + o.getId_jefe() + "', id_producto='" + 
                 o.getId_producto() + "', cantidad=" + o.getCantidad() + ", fecha ='" + o.getFecha() + 
-                "', estado = 'no aprobado' WHERE id_orden = '" + o.getId_orden() + "'";
+                "' WHERE id_orden = '" + o.getId_orden() + "'";
         try{
             Connection conn= fachada.getConnetion();
             Statement sentencia = conn.createStatement();
@@ -107,26 +110,107 @@ public class DaoOrden {
         }                             
     }
     
-    public String aprobarOrden(Orden o){
+    public void cerrarConexionBD(){
+        fachada.closeConection(fachada.getConnetion());
+    }
+    
+    public DefaultTableModel cargarOrdenes(String busqueda){
+        String [] Titulo = {"CODIGO","CEDULA JEFE","PRODUCTO","CANTIDAD","FECHA","ESTADO"};
+        tabla=new DefaultTableModel(null,Titulo);
+        String sql_select;        
+        String consulta[] = new String[6];
+        sql_select = "SELECT * FROM ordenes WHERE (id_orden) ilike '%" +busqueda + "%' and estado = 'Sin aprobar'";
+        try{
+            Connection conn= fachada.getConnetion();            
+            Statement sentencia = conn.createStatement();
+            ResultSet rs = sentencia.executeQuery(sql_select);   
+            
+            while(rs.next()){
+                consulta[0] = rs.getString(1);
+                consulta[1] = rs.getString(2);
+                consulta[2] = rs.getString(3);
+                consulta[3] = rs.getString(4);
+                consulta[4] = rs.getString(5);
+                consulta[5] = rs.getString(6);
+                tabla.addRow(consulta);
+            }
+            return tabla;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+    }
+    
+    public DefaultTableModel cargarTodasOrdenes(String busqueda){
+        String [] Titulo = {"CODIGO", "ESTADO"};
+        tabla=new DefaultTableModel(null,Titulo);
+        String sql_select;        
+        String consulta[] = new String[6];
+        sql_select = "SELECT * FROM ordenes WHERE (id_orden) ilike '%" + busqueda + "%'";
+        try{
+            Connection conn= fachada.getConnetion();            
+            Statement sentencia = conn.createStatement();
+            ResultSet rs = sentencia.executeQuery(sql_select);   
+            
+            while(rs.next()){
+                consulta[0] = rs.getString(1);
+                consulta[1] = rs.getString(6);
+                tabla.addRow(consulta);
+            }
+            return tabla;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+    }
+    
+    public void sumarProducto(String id_producto, int peticion){
+        String sql_select;
+        String consulta = "";
+        sql_select = "SELECT cantidad FROM inventario WHERE id_producto = '" + id_producto + "'";
         String sql_modificar;
-        sql_modificar = "UPDATE ordenes SET id_jefe='" + o.getId_jefe() + "', id_producto='" + 
-                o.getId_producto() + "', cantidad=" + o.getCantidad() + ", fecha ='" + o.getFecha() + 
-                "', estado = 'aprobado' WHERE id_orden = '" + o.getId_orden() + "'";
+        
+        try{
+            Connection conn= fachada.conectar();
+            Statement sentencia = conn.createStatement(); 
+             ResultSet tabla = sentencia.executeQuery(sql_select);   
+            
+            if(tabla.next()){
+                consulta = tabla.getString(1);
+            }
+            
+            int cantidad = Integer.parseInt(consulta);
+            int valorActualizado = cantidad + peticion;
+              
+            sql_modificar = "UPDATE inventario SET cantidad=" + valorActualizado + " WHERE id_producto ='" + id_producto + "'";
+            sentencia.executeQuery(sql_modificar);
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }       
+    }
+    
+    public String aprobarOrden(String id, String producto, int peticion){
+        String sql_modificar;
+        sql_modificar = "UPDATE ordenes SET estado='Aprobada' WHERE id_orden = '" + id + "'";
         try{
             Connection conn= fachada.getConnetion();
             Statement sentencia = conn.createStatement();
             if(sentencia.executeUpdate(sql_modificar)==1){
-                return "Orden modificada exitosamente";
+                sumarProducto(producto, peticion);
+                return "La orden fue aprobada exitosamente";
             }else{
-                return "No existe una orden con ese id";
-            }            
+                return "Ha ocurrido un error al aprobar la orden";
+            } 
         }catch(Exception e){
             System.out.println(e);
             return "Ha ocurrido un error al modificar la orden";
         }
     }
     
-    public void cerrarConexionBD(){
-        fachada.closeConection(fachada.getConnetion());
-    }
+    
+    
+    
 }
+    
+

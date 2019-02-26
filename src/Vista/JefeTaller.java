@@ -179,6 +179,7 @@ public class JefeTaller extends javax.swing.JFrame {
     private void jButtonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInventarioActionPerformed
         InventarioTaller u = new InventarioTaller(usuario);
         u.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonInventarioActionPerformed
 
     private void jButtonAprobarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAprobarActionPerformed

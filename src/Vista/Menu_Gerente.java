@@ -144,6 +144,11 @@ public class Menu_Gerente extends javax.swing.JFrame {
         Usuario.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
         jButtonConsultarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/consultarUsuario.png"))); // NOI18N
+        jButtonConsultarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConsultarEmpleadoActionPerformed(evt);
+            }
+        });
         Usuario.add(jButtonConsultarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 39, 60, 75));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -253,6 +258,12 @@ public class Menu_Gerente extends javax.swing.JFrame {
         g.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonAgreagarEmpleadoActionPerformed
+
+    private void jButtonConsultarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarEmpleadoActionPerformed
+        ConsultarEmpleado g = new ConsultarEmpleado(usuario);
+        g.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonConsultarEmpleadoActionPerformed
 
     /**
      * @param args the command line arguments

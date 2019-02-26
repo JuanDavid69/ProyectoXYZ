@@ -6,6 +6,7 @@
 package Controlador;
 import Modelo.Orden;
 import AccesoDatos.*;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author juandavid
@@ -35,9 +36,16 @@ public class ControlOrden {
         return daoOrden.eliminarOrden(id);
     }
     
-    public String aprobarOrden(String id_orden, String id_jefe, String id_producto, int cantidad, String fecha, String estado){
-        Orden o = new Orden(id_orden, id_jefe, id_producto, cantidad, fecha, estado);
-        return daoOrden.aprobarOrden(o);
+    public String aprobarOrden(String id_orden, String producto, int peticion){
+        return daoOrden.aprobarOrden(id_orden, producto, peticion);
+    }
+    
+    public DefaultTableModel cargarOrdenes(String busqueda){
+        return daoOrden.cargarOrdenes(busqueda);
+    }
+    
+    public DefaultTableModel cargarTodasOrdenes(String busqueda){
+        return daoOrden.cargarTodasOrdenes(busqueda);
     }
     
     public void cerrarConexionBD(){

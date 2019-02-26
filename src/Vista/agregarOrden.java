@@ -240,7 +240,7 @@ public class agregarOrden extends javax.swing.JFrame {
             if((this.cantidad.getText().equals(""))|| (this.orden.getText().equals(""))){
                 JOptionPane.showMessageDialog(this, "Ingrese la informacion correspondiente en cada campo");
             }else{
-                if(fila<=0){
+                if(fila<0){
                 JOptionPane.showMessageDialog(this, "Seleccione un producto para enviar la orden");
                 }
                 else{

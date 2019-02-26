@@ -6,6 +6,7 @@
 package Controlador;
 import Modelo.Usuario;
 import AccesoDatos.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -47,6 +48,10 @@ public class ControlUsuario {
     
     public String verificarUsuario(String cedula, String password) {
         return daoUsuario.verificar(cedula, password);
+    }
+    
+    public DefaultTableModel cargarUsuarios(String busqueda){
+        return daoUsuario.cargarUsuarios(busqueda);
     }
     
     public void cerrarConexionBD(){
