@@ -6,6 +6,7 @@
 package Controlador;
 import Modelo.Sedes;
 import AccesoDatos.*;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author juandavid
@@ -33,6 +34,10 @@ public class ControlSedes {
     
     public String eliminarSede (String id){
         return daoSedes.eliminarSede(id);
+    }
+    
+    public DefaultTableModel cargarSedes(String busqueda){
+        return daoSedes.cargarSedes(busqueda);
     }
     
     public void cerrarConexionBD(){

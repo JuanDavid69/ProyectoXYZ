@@ -9,11 +9,13 @@ import java.sql.*;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author juandavid
  */
 public class DaoSedes {
+    DefaultTableModel tabla;
     FachadaBD fachada;
 
     public DaoSedes() {
@@ -46,7 +48,7 @@ public class DaoSedes {
     public String[] consultarSede(String id){
         String sql_select;        
         String consulta[] = new String[5];
-        sql_select = "SELECT * FROM sedes WHERE id_sede = " + id;
+        sql_select = "SELECT * FROM sedes WHERE id_sede = '" + id + "'";
         try{
             Connection conn= fachada.getConnetion();            
             Statement sentencia = conn.createStatement();
@@ -71,7 +73,7 @@ public class DaoSedes {
     public String modificarSede(Sedes s){
         String sql_modificar;
         sql_modificar = "UPDATE sedes SET nombre = '" + s.getNombre() +"', direccion='" + s.getDireccion() + "', ciudad='" + 
-                s.getCiudad() + "', telefono='" + s.getTelefono() + "' WHERE id_sede = " + s.getId_sede();
+                s.getCiudad() + "', telefono='" + s.getTelefono() + "' WHERE id_sede = '" + s.getId_sede() + "'";
         try{
             Connection conn= fachada.getConnetion();
             Statement sentencia = conn.createStatement();
@@ -102,6 +104,29 @@ public class DaoSedes {
             System.out.println(e);
             return "Ocurrió un problema al eliminar la sede";
         }                             
+    }
+    
+    public DefaultTableModel cargarSedes(String busqueda){
+        String [] Titulo = {"N° SEDE", "NOMBRE SEDE"};
+        tabla=new DefaultTableModel(null,Titulo);
+        String sql_select;        
+        String consulta[] = new String[2];
+        sql_select = "SELECT id_sede,nombre FROM sedes WHERE (nombre) ilike '%" + busqueda + "%'";
+        try{
+            Connection conn= fachada.getConnetion();            
+            Statement sentencia = conn.createStatement();
+            ResultSet rs = sentencia.executeQuery(sql_select);   
+            
+            while(rs.next()){
+                consulta[0] = rs.getString(1);
+                consulta[1] = rs.getString(2);
+                tabla.addRow(consulta);
+            }
+            return tabla;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
     }
     
     public void cerrarConexionBD(){

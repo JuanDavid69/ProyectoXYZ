@@ -94,12 +94,17 @@ public class Menu_Gerente extends javax.swing.JFrame {
         Gestion.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, -1, -1));
 
         jButtonModificarSede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/modificarSede.png"))); // NOI18N
+        jButtonModificarSede.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonModificarSedeActionPerformed(evt);
+            }
+        });
         Gestion.add(jButtonModificarSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 65, 75));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Modificar");
-        Gestion.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, -1, -1));
+        Gestion.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, -1, -1));
 
         jButtonEliminarSede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminarSede.png"))); // NOI18N
         Gestion.add(jButtonEliminarSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 65, 75));
@@ -254,7 +259,9 @@ public class Menu_Gerente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAgregarSedeActionPerformed
 
     private void jButtonConsultarSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarSedeActionPerformed
-        // TODO add your handling code here:
+        consultarSede g = new consultarSede(usuario);
+        g.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonConsultarSedeActionPerformed
 
     private void jButtonAgreagarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgreagarEmpleadoActionPerformed
@@ -268,6 +275,12 @@ public class Menu_Gerente extends javax.swing.JFrame {
         g.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonConsultarEmpleadoActionPerformed
+
+    private void jButtonModificarSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificarSedeActionPerformed
+        modificarSede g = new modificarSede(usuario);
+        g.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonModificarSedeActionPerformed
 
     /**
      * @param args the command line arguments
