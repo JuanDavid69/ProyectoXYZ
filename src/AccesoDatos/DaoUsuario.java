@@ -83,8 +83,8 @@ public class DaoUsuario {
         String sql_modificar;
         sql_modificar = "UPDATE usuarios SET password='" + u.getPassword() + "', estado='" + u.getEstado() +
                 "', nombre='" + u.getNombre() + "', cargo='" + u.getCargo() + "', salario='" + u.getSalario() +
-                "', fecha='" + u.getFecha() + "', direccion='" + u.getDireccion() + "', id_sede=" + u.getId_sede() + 
-                ", telefono='" + u.getTelefono() + "' WHERE cedula = '" + u.getCedula() + "'";
+                "', fecha='" + u.getFecha() + "', direccion='" + u.getDireccion() + "', id_sede='" + u.getId_sede() + 
+                "', telefono='" + u.getTelefono() + "' WHERE cedula = '" + u.getCedula() + "'";
         try{
             Connection conn= fachada.getConnetion();
             Statement sentencia = conn.createStatement();
@@ -117,19 +117,21 @@ public class DaoUsuario {
         }                             
     }
     
-    public String verificar(String cedula, String password){
+    public String[] verificar(String cedula, String password){
         String sql_select;        
-        String consulta;
-        sql_select = "SELECT cargo FROM usuarios WHERE cedula = '" + cedula + "' and password = '" + password + "'";
+        String consulta[] = new String[2];
+        sql_select = "SELECT cargo,estado FROM usuarios WHERE cedula = '" + cedula + "' and password = '" + password + "'";
         try{
             Connection conn= fachada.getConnetion();            
             Statement sentencia = conn.createStatement();
             ResultSet tabla = sentencia.executeQuery(sql_select);   
             
             if(tabla.next()){
-                consulta = tabla.getString(1);   
+                consulta[0] = tabla.getString(1);
+                consulta[1] = tabla.getString(2);     
             }else{
-                consulta = "El usuario o la contraseña son incorrectos";
+                consulta[0] = "El usuario o la contraseña son incorrectos";
+                consulta[1] = "";
             }
             return consulta;
         }catch(Exception e){
@@ -138,16 +140,20 @@ public class DaoUsuario {
         }
     }
     
-    public boolean verificarSede(String sede){
+    public boolean verificarSede(String sede, String cedula){
         String sql_select; 
-        sql_select = "SELECT id_sede FROM usuarios WHERE id_sede = '" + sede + "' and cargo = 'Gerente'";
+        sql_select = "SELECT id_sede,cedula FROM usuarios WHERE id_sede = '" + sede + "' and cargo = 'Gerente'";
         try{
             Connection conn= fachada.getConnetion();            
             Statement sentencia = conn.createStatement();
             ResultSet tabla = sentencia.executeQuery(sql_select);   
             
             if(tabla.next()){
-                return true;    
+                if((tabla.getString(2).equals(cedula)) && (tabla.getString(1).equals(sede))){
+                    return false;
+                }else{
+                    return true;
+                } 
             }else{
                 return false;
             }
@@ -177,6 +183,46 @@ public class DaoUsuario {
         }catch(Exception e){
             System.out.println(e);
             return null;
+        }
+    }
+    
+    public DefaultTableModel cargarUsuariosActivos(String busqueda){
+        String [] Titulo = {"CEDULA","NOMBRE"};
+        tabla=new DefaultTableModel(null,Titulo);
+        String sql_select;        
+        String consulta[] = new String[2];
+        sql_select = "SELECT * FROM usuarios WHERE (nombre) ilike '%" +busqueda + "%' and estado = 'Activo' and cargo != 'Gerente'";
+        try{
+            Connection conn= fachada.getConnetion();            
+            Statement sentencia = conn.createStatement();
+            ResultSet rs = sentencia.executeQuery(sql_select);   
+            
+            while(rs.next()){
+                consulta[0] = rs.getString(1);
+                consulta[1] = rs.getString(4);
+                tabla.addRow(consulta);
+            }
+            return tabla;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+    }
+    
+    public String desactivarUsuario(String cedula){
+        String sql_modificar;
+        sql_modificar = "UPDATE usuarios SET estado='Inactivo' WHERE cedula = '" + cedula + "'";
+        try{
+            Connection conn= fachada.getConnetion();
+            Statement sentencia = conn.createStatement();
+            if(sentencia.executeUpdate(sql_modificar)==1){
+                return "Usuario desctivado exitosamente";
+            }else{
+                return "No existe un usuario con ese id";
+            }            
+        }catch(Exception e){
+            System.out.println(e);
+            return "Ha ocurrido un error al desactivar el usuario";
         }
     }
     

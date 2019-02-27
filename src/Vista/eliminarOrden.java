@@ -4,13 +4,17 @@
  * and open the template in the editor.
  */
 package Vista;
-
+import Controlador.ControlOrden;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Natalia
  */
 public class eliminarOrden extends javax.swing.JFrame {
     String usuario;
+    DefaultTableModel tabla;
+    ControlOrden controlOrden = new ControlOrden();
     /**
      * Creates new form eliminarOrden
      */
@@ -19,6 +23,12 @@ public class eliminarOrden extends javax.swing.JFrame {
         initComponents();
         setDefaultCloseOperation(0);
         this.setLocationRelativeTo(null);
+        cargarOrdenes("");
+    }
+    
+    void cargarOrdenes(String busqueda){
+        tabla = controlOrden.cargarOrdenes(busqueda);
+        this.ordenes.setModel(tabla);
     }
 
     /**
@@ -31,22 +41,17 @@ public class eliminarOrden extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabelEliminarOrden = new javax.swing.JLabel();
-        jLabelNumeroOrden = new javax.swing.JLabel();
-        jButtonEliminar = new javax.swing.JButton();
-        jComboBoxNumeroOrden = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        busqueda = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ordenes = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         jLabelEliminarOrden.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelEliminarOrden.setText("Eliminar Orden de Trabajo");
-
-        jLabelNumeroOrden.setText("Numero de orden:");
-
-        jButtonEliminar.setText("Eliminar");
-
-        jComboBoxNumeroOrden.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jButton1.setText("Cerrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -55,41 +60,67 @@ public class eliminarOrden extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("N° Orden:");
+
+        busqueda.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                busquedaKeyReleased(evt);
+            }
+        });
+
+        ordenes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        ordenes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ordenesMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(ordenes);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(0, 34, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonEliminar))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(31, 31, 31))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabelNumeroOrden)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBoxNumeroOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(31, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelEliminarOrden)
-                .addGap(62, 62, 62))
+                        .addComponent(jLabelEliminarOrden)
+                        .addGap(191, 191, 191))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(18, 18, 18)
                 .addComponent(jLabelEliminarOrden)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNumeroOrden)
-                    .addComponent(jComboBoxNumeroOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2)
+                    .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonEliminar)
-                    .addComponent(jButton1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -101,15 +132,42 @@ public class eliminarOrden extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void busquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busquedaKeyReleased
+        String busqueda = this.busqueda.getText();
+        cargarOrdenes(busqueda);
+    }//GEN-LAST:event_busquedaKeyReleased
+
+    private void ordenesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordenesMouseClicked
+        try {
+            int  fila = ordenes.getSelectedRow();
+
+            String codigo = ordenes.getValueAt(fila, 0).toString();
+
+            int  numero = JOptionPane.showConfirmDialog(rootPane, "¿Desea eliminar la orden N°"+ codigo +"?");
+            System.out.println( numero );
+            if((numero == 1) || (numero == 2)){
+                JOptionPane.showMessageDialog(this, "La orden no fue eliminada");
+            }
+            else{
+                String mensaje = controlOrden.eliminarOrden(codigo);
+                JOptionPane.showMessageDialog(this, mensaje);
+                cargarOrdenes("");
+            }
+
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_ordenesMouseClicked
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField busqueda;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButtonEliminar;
-    private javax.swing.JComboBox<String> jComboBoxNumeroOrden;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelEliminarOrden;
-    private javax.swing.JLabel jLabelNumeroOrden;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable ordenes;
     // End of variables declaration//GEN-END:variables
 }

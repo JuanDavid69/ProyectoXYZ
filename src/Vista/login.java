@@ -73,32 +73,37 @@ public class login extends javax.swing.JFrame {
         // TODO add your handling code here:
         String usuario = this.usuario.getText();
         String password = new String(contraseña.getPassword());
-        String resultado = ControlUsuario.verificarUsuario(usuario, password);
-        if("Gerente".equals(resultado))
-        {
-            this.setVisible(false);
-            JOptionPane.showMessageDialog(null, "Bienvenido");
-            Menu_Gerente ingreso = new Menu_Gerente(usuario);
-            ingreso.setVisible(true);
+        String resultado[] = ControlUsuario.verificarUsuario(usuario, password);
+        if("Inactivo".equals(resultado[1])){
+            JOptionPane.showMessageDialog(null, "El usuario ha sido desactivado");
+        }else{
+            if("Gerente".equals(resultado[0]))
+            {
+                this.setVisible(false);
+                JOptionPane.showMessageDialog(null, "Bienvenido");
+                Menu_Gerente ingreso = new Menu_Gerente(usuario);
+                ingreso.setVisible(true);
+            }
+            if("Vendedor".equals(resultado[0]))
+            {
+                this.setVisible(false);
+                JOptionPane.showMessageDialog(null, "Bienvenido");
+                Vendedor ingreso = new Vendedor(usuario);
+                ingreso.setVisible(true);
+            }
+            if("Jefe de taller".equals(resultado[0]))
+            {
+                this.setVisible(false);
+                JOptionPane.showMessageDialog(null, "Bienvenido");
+                JefeTaller ingreso = new JefeTaller(usuario);
+                ingreso.setVisible(true);
+            }
+            if("El usuario o la contraseña son incorrectos".equals(resultado[0]))
+            {
+                JOptionPane.showMessageDialog(null, resultado[0]);
+            }
         }
-        if("Vendedor".equals(resultado))
-        {
-            this.setVisible(false);
-            JOptionPane.showMessageDialog(null, "Bienvenido");
-            Vendedor ingreso = new Vendedor(usuario);
-            ingreso.setVisible(true);
-        }
-        if("Jefe de taller".equals(resultado))
-        {
-            this.setVisible(false);
-            JOptionPane.showMessageDialog(null, "Bienvenido");
-            JefeTaller ingreso = new JefeTaller(usuario);
-            ingreso.setVisible(true);
-        }
-        if("El usuario o la contraseña son incorrectos".equals(resultado))
-        {
-            JOptionPane.showMessageDialog(null, resultado);
-        }
+        
     }//GEN-LAST:event_accederActionPerformed
 
     /**

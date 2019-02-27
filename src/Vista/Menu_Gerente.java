@@ -224,11 +224,15 @@ public class Menu_Gerente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonEliminarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarEmpleadoActionPerformed
-        // TODO add your handling code here:
+        eliminarEmpleado e = new eliminarEmpleado(usuario);
+        e.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonEliminarEmpleadoActionPerformed
 
     private void jButtonModificarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificarEmpleadoActionPerformed
-        // TODO add your handling code here:
+        modificarEmpleado e = new modificarEmpleado(usuario);
+        e.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonModificarEmpleadoActionPerformed
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
