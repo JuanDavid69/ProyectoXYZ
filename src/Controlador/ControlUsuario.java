@@ -21,15 +21,19 @@ public class ControlUsuario {
     
     public String agregarUsuario (String cedula, String password, String estado, String nombre, String cargo, String salario, String fecha, String direccion, String id_sede, String telefono) {
         Usuario u = new Usuario(cedula, password, estado, nombre, cargo, salario, fecha, direccion, id_sede, telefono);
-        if(cargo.equals("Gerente")){
-            if(daoUsuario.verificarSede(id_sede, cedula)){
-                return "La sede que seleccionó ya tiene un gerente a cargo";
-            }
-            {
-                 return daoUsuario.guardarUsuario(u);
-            }
+        if(daoUsuario.verificarSedeInactiva(id_sede)){
+            return "La sede que seleccionó está incativa";
         }else{
-             return daoUsuario.guardarUsuario(u);
+            if(cargo.equals("Gerente")){
+                if(daoUsuario.verificarSede(id_sede, cedula)){
+                    return "La sede que seleccionó ya tiene un gerente a cargo";
+                }else{
+                    return daoUsuario.guardarUsuario(u);
+                }
+            }
+            else{
+                return daoUsuario.guardarUsuario(u);
+            }
         }
     }
     
@@ -39,15 +43,19 @@ public class ControlUsuario {
     
     public String modificarUsuario(String cedula, String password, String estado, String nombre, String cargo, String salario, String fecha, String direccion, String id_sede, String telefono){
         Usuario u = new Usuario(cedula, password, estado, nombre, cargo, salario, fecha, direccion, id_sede, telefono);
-        if(cargo.equals("Gerente")){
-            if(daoUsuario.verificarSede(id_sede, cedula)){
-                return "La sede que seleccionó ya tiene un gerente a cargo";
-            }
-            {
+        if(daoUsuario.verificarSedeInactiva(id_sede)){
+            return "La sede que seleccionó está incativa";
+        }else{
+            if(cargo.equals("Gerente")){
+                if(daoUsuario.verificarSede(id_sede, cedula)){
+                    return "La sede que seleccionó ya tiene un gerente a cargo";
+                }
+                {
+                     return daoUsuario.modificarUsuario(u);
+                }
+            }else{
                  return daoUsuario.modificarUsuario(u);
             }
-        }else{
-             return daoUsuario.modificarUsuario(u);
         }
     }
     
@@ -67,8 +75,16 @@ public class ControlUsuario {
         return daoUsuario.cargarUsuariosActivos(busqueda);
     }
     
+    public DefaultTableModel cargarUsuariosiInactivos(String busqueda){
+        return daoUsuario.cargarUsuariosInactivos(busqueda);
+    }
+    
     public String desactivarUsuario(String cedula){
         return daoUsuario.desactivarUsuario(cedula);
+    }
+    
+    public String activarUsuario(String cedula){
+        return daoUsuario.activarUsuario(cedula);
     }
     
     public void cerrarConexionBD(){

@@ -185,7 +185,7 @@ public class agregarSede extends javax.swing.JFrame {
                 String nombre = this.nombre.getText();
                 String direccion = this.direccion.getText();
                 String ciudad = this.ciudad.getText();
-                String telefono = this.ciudad.getText();
+                String telefono = this.telefono.getText();
                 
                 String mensaje = controlSedes.agregarSede(id_sede, nombre, direccion, ciudad, telefono);
                 JOptionPane.showMessageDialog(this, mensaje);

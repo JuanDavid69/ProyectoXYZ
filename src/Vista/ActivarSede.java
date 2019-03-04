@@ -11,24 +11,24 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Usuario
  */
-public class eliminarEmpleado extends javax.swing.JFrame {
+public class ActivarSede extends javax.swing.JFrame {
     String usuario;
     DefaultTableModel tabla;
-    ControlUsuario controlUsuario = new ControlUsuario();
+    ControlSedes controlSedes = new ControlSedes();
     /**
-     * Creates new form eliminarEmpleado
+     * Creates new form AprobarOrden
      */
-    public eliminarEmpleado(String usuario) {
+    public ActivarSede(String usuario) {
         this.usuario = usuario;
         initComponents();
         setDefaultCloseOperation(0);
         this.setLocationRelativeTo(null);
-        cargarUsuarios("");
+        cargarSedes("");
     }
     
-    void cargarUsuarios(String busqueda){
-        tabla = controlUsuario.cargarUsuariosActivos(busqueda);
-        this.empleados.setModel(tabla);
+    void cargarSedes(String busqueda){
+        tabla = controlSedes.cargarSedes(busqueda, "Inactiva");
+        this.sedes.setModel(tabla);
     }
 
     /**
@@ -41,25 +41,18 @@ public class eliminarEmpleado extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         busqueda = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        empleados = new javax.swing.JTable();
+        sedes = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Eliminar Empleado");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("Sedes inactivas");
 
-        jButton2.setText("Cerrar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jLabel3.setText("Buscar:");
+        jLabel2.setText("Buscar:");
 
         busqueda.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -67,7 +60,7 @@ public class eliminarEmpleado extends javax.swing.JFrame {
             }
         });
 
-        empleados.setModel(new javax.swing.table.DefaultTableModel(
+        sedes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -78,47 +71,53 @@ public class eliminarEmpleado extends javax.swing.JFrame {
 
             }
         ));
-        empleados.addMouseListener(new java.awt.event.MouseAdapter() {
+        sedes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                empleadosMouseClicked(evt);
+                sedesMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(empleados);
+        jScrollPane1.setViewportView(sedes);
+
+        jButton2.setText("Cerrar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(busqueda))
-                            .addComponent(jButton2)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jLabel1)))
-                .addContainerGap(37, Short.MAX_VALUE))
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton2)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(33, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(118, 118, 118))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(6, 6, 6)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(jLabel2)
                     .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -130,43 +129,40 @@ public class eliminarEmpleado extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void busquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busquedaKeyReleased
-        String busqueda = this.busqueda.getText();
-        cargarUsuarios(busqueda);
-    }//GEN-LAST:event_busquedaKeyReleased
-
-    private void empleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empleadosMouseClicked
+    private void sedesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sedesMouseClicked
         try {
-            int  fila = empleados.getSelectedRow();
-
-            String codigo = empleados.getValueAt(fila, 0).toString();
-
-            int  numero = JOptionPane.showConfirmDialog(rootPane, "¿Desea desactivar al empleado con cedula "+ codigo +"?");
+            int  fila = sedes.getSelectedRow();
+            
+            String codigo = sedes.getValueAt(fila, 0).toString();
+            
+            int  numero = JOptionPane.showConfirmDialog(rootPane, "¿Desea activar la sede N°"+ codigo +"?");
             System.out.println( numero );
             if((numero == 1) || (numero == 2)){
-                JOptionPane.showMessageDialog(this, "El empleado no fue desactivado");
+                JOptionPane.showMessageDialog(this, "La sede no fue activada");
             }
             else{
-                String mensaje = controlUsuario.desactivarUsuario(codigo);
+                String mensaje = controlSedes.activarSede(codigo);
                 JOptionPane.showMessageDialog(this, mensaje);
-                cargarUsuarios("");
+                cargarSedes("");
             }
-
+            
         } catch (Exception e) {
         }
-    }//GEN-LAST:event_empleadosMouseClicked
+    }//GEN-LAST:event_sedesMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    private void busquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busquedaKeyReleased
+        String busqueda = this.busqueda.getText();
+        cargarSedes(busqueda);
+    }//GEN-LAST:event_busquedaKeyReleased
 
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField busqueda;
-    private javax.swing.JTable empleados;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable sedes;
     // End of variables declaration//GEN-END:variables
 }

@@ -27,7 +27,7 @@ public class modificarSede extends javax.swing.JFrame {
     }
     
     void cargarSedes(String busqueda){
-        tabla = controlSedes.cargarSedes(busqueda);
+        tabla = controlSedes.cargarSedes(busqueda, "Activa");
         this.sedes.setModel(tabla);
     }
 
@@ -93,6 +93,15 @@ public class modificarSede extends javax.swing.JFrame {
         cerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cerrarActionPerformed(evt);
+            }
+        });
+
+        telefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                telefonoKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                telefonoKeyTyped(evt);
             }
         });
 
@@ -176,8 +185,8 @@ public class modificarSede extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNumeroOrden)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelNumeroOrden, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,6 +276,19 @@ public class modificarSede extends javax.swing.JFrame {
             System.out.println(e);
         }
     }//GEN-LAST:event_ModificarActionPerformed
+
+    private void telefonoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_telefonoKeyReleased
+        
+    }//GEN-LAST:event_telefonoKeyReleased
+
+    private void telefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_telefonoKeyTyped
+        char tel = evt.getKeyChar();
+        if(Character.isLetter(tel)){
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "Solo caracteres numericos");
+        }
+    }//GEN-LAST:event_telefonoKeyTyped
 
     /**
      * @param args the command line arguments

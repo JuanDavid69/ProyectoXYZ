@@ -15,13 +15,15 @@ public class Sedes {
     private String direccion;
     private String ciudad;
     private String telefono;
+    private String estado;
 
-    public Sedes(String id_sede, String nombre, String direccion, String ciudad, String telefono) {
+    public Sedes(String id_sede, String nombre, String direccion, String ciudad, String telefono, String estado) {
         this.id_sede = id_sede;
         this.nombre =nombre;
         this.direccion = direccion;
         this.ciudad = ciudad;
         this.telefono = telefono;
+        this.estado = estado;
     }
 
     public String getId_sede() {
@@ -59,6 +61,16 @@ public class Sedes {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
+    
 
     
 }

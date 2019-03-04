@@ -24,8 +24,9 @@ public class DaoSedes {
     
     public String guardarSede(Sedes s){
         String sql_guardar;
-        sql_guardar = "INSERT INTO sedes(id_sede, nombre, direccion, ciudad, telefono) VALUES('" + 
-                s.getId_sede() + "', '" + s.getNombre() + "', '" + s.getDireccion() + "', '" + s.getCiudad() + "', '" + s.getTelefono() + "')";
+        sql_guardar = "INSERT INTO sedes(id_sede, nombre, direccion, ciudad, telefono, estado) VALUES('" + 
+                s.getId_sede() + "', '" + s.getNombre() + "', '" + s.getDireccion() + "', '" + s.getCiudad() + 
+                "', '" + s.getTelefono() + "', '" + s.getEstado() + "')";
         try{
             Connection conn= fachada.conectar();
             Statement sentencia = conn.createStatement();             
@@ -47,7 +48,7 @@ public class DaoSedes {
     
     public String[] consultarSede(String id){
         String sql_select;        
-        String consulta[] = new String[5];
+        String consulta[] = new String[6];
         sql_select = "SELECT * FROM sedes WHERE id_sede = '" + id + "'";
         try{
             Connection conn= fachada.getConnetion();            
@@ -60,6 +61,7 @@ public class DaoSedes {
                 consulta[2] = tabla.getString(3);
                 consulta[3] = tabla.getString(4);
                 consulta[4] = tabla.getString(5);
+                consulta[5] = tabla.getString(6);
             }else{
                 consulta = null;
             }
@@ -106,12 +108,14 @@ public class DaoSedes {
         }                             
     }
     
-    public DefaultTableModel cargarSedes(String busqueda){
+  
+    public DefaultTableModel cargarSedes(String busqueda , String estado){
         String [] Titulo = {"N° SEDE", "NOMBRE SEDE"};
         tabla=new DefaultTableModel(null,Titulo);
         String sql_select;        
         String consulta[] = new String[2];
-        sql_select = "SELECT id_sede,nombre FROM sedes WHERE (nombre) ilike '%" + busqueda + "%'";
+        sql_select = "SELECT id_sede,nombre FROM sedes WHERE (nombre) ilike '%" + 
+                busqueda + "%' and estado LIKE '%" + estado + "%'";
         try{
             Connection conn= fachada.getConnetion();            
             Statement sentencia = conn.createStatement();
@@ -128,6 +132,42 @@ public class DaoSedes {
             return null;
         }
     }
+    
+    
+    public String desactivarSede(String id){
+        String sql_modificar;
+        sql_modificar = "UPDATE sedes SET estado='Inactiva' WHERE id_sede = '" + id + "'";
+        try{
+            Connection conn= fachada.getConnetion();
+            Statement sentencia = conn.createStatement();
+            if(sentencia.executeUpdate(sql_modificar)==1){
+                return "Sede desctivada exitosamente";
+            }else{
+                return "No existe una sede con ese id";
+            }            
+        }catch(Exception e){
+            System.out.println(e);
+            return "Ha ocurrido un error al desactivar la sede";
+        }
+    }
+    
+    public String activarSede(String id){
+        String sql_modificar;
+        sql_modificar = "UPDATE sedes SET estado='Activa' WHERE id_sede = '" + id + "'";
+        try{
+            Connection conn= fachada.getConnetion();
+            Statement sentencia = conn.createStatement();
+            if(sentencia.executeUpdate(sql_modificar)==1){
+                return "Sede activada exitosamente";
+            }else{
+                return "No existe una sede con ese id";
+            }            
+        }catch(Exception e){
+            System.out.println(e);
+            return "Ha ocurrido un error al activar la sede";
+        }
+    }
+    
     
     public void cerrarConexionBD(){
         fachada.closeConection(fachada.getConnetion());

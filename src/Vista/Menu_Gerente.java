@@ -43,6 +43,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
         jButtonEliminarSede = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        activar = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         Usuario = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -55,6 +56,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
         jButtonEliminarEmpleado = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        activarE = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -107,6 +109,11 @@ public class Menu_Gerente extends javax.swing.JFrame {
         Gestion.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, -1, -1));
 
         jButtonEliminarSede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminarSede.png"))); // NOI18N
+        jButtonEliminarSede.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEliminarSedeActionPerformed(evt);
+            }
+        });
         Gestion.add(jButtonEliminarSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 65, 75));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -123,8 +130,17 @@ public class Menu_Gerente extends javax.swing.JFrame {
         });
         Gestion.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, -1, -1));
 
+        activar.setText("Activar sedes");
+        activar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                activarActionPerformed(evt);
+            }
+        });
+        Gestion.add(activar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 330, -1));
+
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoVendedor.jpg"))); // NOI18N
-        Gestion.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 150));
+        jLabel11.setText("ttt");
+        Gestion.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 190));
 
         PanelPrincipal.addTab("Sede", Gestion);
 
@@ -141,12 +157,12 @@ public class Menu_Gerente extends javax.swing.JFrame {
                 jButtonAgreagarEmpleadoActionPerformed(evt);
             }
         });
-        Usuario.add(jButtonAgreagarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 39, 60, 75));
+        Usuario.add(jButtonAgreagarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 60, 75));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Agregar");
-        Usuario.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+        Usuario.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
         jButtonConsultarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/consultarUsuario.png"))); // NOI18N
         jButtonConsultarEmpleado.addActionListener(new java.awt.event.ActionListener() {
@@ -154,12 +170,12 @@ public class Menu_Gerente extends javax.swing.JFrame {
                 jButtonConsultarEmpleadoActionPerformed(evt);
             }
         });
-        Usuario.add(jButtonConsultarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 39, 60, 75));
+        Usuario.add(jButtonConsultarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 60, 75));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Consultar");
-        Usuario.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 120, -1, -1));
+        Usuario.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, -1, -1));
 
         jButtonModificarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/modificarUsuario.png"))); // NOI18N
         jButtonModificarEmpleado.addActionListener(new java.awt.event.ActionListener() {
@@ -167,7 +183,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
                 jButtonModificarEmpleadoActionPerformed(evt);
             }
         });
-        Usuario.add(jButtonModificarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 39, 60, 75));
+        Usuario.add(jButtonModificarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 60, 75));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -196,8 +212,16 @@ public class Menu_Gerente extends javax.swing.JFrame {
         });
         Usuario.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, -1, -1));
 
+        activarE.setText("Activar empleados");
+        activarE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                activarEActionPerformed(evt);
+            }
+        });
+        Usuario.add(activarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 330, -1));
+
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoVendedor.jpg"))); // NOI18N
-        Usuario.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 150));
+        Usuario.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 190));
 
         PanelPrincipal.addTab("Empleado", Usuario);
 
@@ -205,24 +229,22 @@ public class Menu_Gerente extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelPrincipal)
+            .addComponent(PanelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(PanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(PanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -282,6 +304,24 @@ public class Menu_Gerente extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButtonModificarSedeActionPerformed
 
+    private void jButtonEliminarSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarSedeActionPerformed
+        eliminarSede g = new eliminarSede(usuario);
+        g.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonEliminarSedeActionPerformed
+
+    private void activarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_activarActionPerformed
+        ActivarSede g = new ActivarSede(usuario);
+        g.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_activarActionPerformed
+
+    private void activarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_activarEActionPerformed
+        ActivarEmpleado g = new ActivarEmpleado(usuario);
+        g.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_activarEActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -290,6 +330,8 @@ public class Menu_Gerente extends javax.swing.JFrame {
     private javax.swing.JPanel Gestion;
     private javax.swing.JTabbedPane PanelPrincipal;
     private javax.swing.JPanel Usuario;
+    private javax.swing.JButton activar;
+    private javax.swing.JButton activarE;
     private javax.swing.JButton jButtonAgreagarEmpleado;
     private javax.swing.JButton jButtonAgregarSede;
     private javax.swing.JButton jButtonConsultarEmpleado;

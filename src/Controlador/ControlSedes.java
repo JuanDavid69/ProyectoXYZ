@@ -19,7 +19,7 @@ public class ControlSedes {
     }
     
     public String agregarSede (String id_sede, String nombre, String direccion, String ciudad, String telefono) {
-        Sedes s = new Sedes(id_sede, nombre, direccion, ciudad, telefono);
+        Sedes s = new Sedes(id_sede, nombre, direccion, ciudad, telefono, "Activa");
         return daoSedes.guardarSede(s);
     }
     
@@ -28,7 +28,7 @@ public class ControlSedes {
     }
     
     public String modificarSede(String id_sede, String nombre, String direccion, String ciudad, String telefono){
-        Sedes s = new Sedes(id_sede, nombre, direccion, ciudad, telefono);
+        Sedes s = new Sedes(id_sede, nombre, direccion, ciudad, telefono, "Activa");
         return daoSedes.modificarSede(s);
     }
     
@@ -36,8 +36,16 @@ public class ControlSedes {
         return daoSedes.eliminarSede(id);
     }
     
-    public DefaultTableModel cargarSedes(String busqueda){
-        return daoSedes.cargarSedes(busqueda);
+    public DefaultTableModel cargarSedes(String busqueda, String estado){
+        return daoSedes.cargarSedes(busqueda, estado);
+    }
+    
+    public String desactivarSede(String id){
+        return daoSedes.desactivarSede(id);
+    }
+    
+    public String activarSede(String id){
+        return daoSedes.activarSede(id);
     }
     
     public void cerrarConexionBD(){

@@ -20,6 +20,7 @@ public class login extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
     
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -179,21 +180,18 @@ public class login extends javax.swing.JFrame {
             if("Gerente".equals(resultado[0]))
             {
                 this.setVisible(false);
-                JOptionPane.showMessageDialog(null, "Bienvenido");
                 Menu_Gerente ingreso = new Menu_Gerente(usuario);
                 ingreso.setVisible(true);
             }
             if("Vendedor".equals(resultado[0]))
             {
                 this.setVisible(false);
-                JOptionPane.showMessageDialog(null, "Bienvenido");
                 Vendedor ingreso = new Vendedor(usuario);
                 ingreso.setVisible(true);
             }
             if("Jefe de taller".equals(resultado[0]))
             {
                 this.setVisible(false);
-                JOptionPane.showMessageDialog(null, "Bienvenido");
                 JefeTaller ingreso = new JefeTaller(usuario);
                 ingreso.setVisible(true);
             }
