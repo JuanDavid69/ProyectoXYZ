@@ -233,7 +233,9 @@ public class Vendedor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ConsultarCotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarCotizacionActionPerformed
-        // TODO add your handling code here:
+        consultarCotizacion u = new consultarCotizacion(usuario);
+        u.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_ConsultarCotizacionActionPerformed
 
     private void AgregarCotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarCotizacionActionPerformed
@@ -256,7 +258,9 @@ public class Vendedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel12MouseClicked
 
     private void ConsultarFacturacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarFacturacionActionPerformed
-        JOptionPane.showMessageDialog(this, "Aqui ponemos toda l informacion jiji");
+        consultarVenta u = new consultarVenta(usuario);
+        u.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_ConsultarFacturacionActionPerformed
 
     /**

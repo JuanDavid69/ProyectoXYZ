@@ -7,6 +7,7 @@ package AccesoDatos;
 import Modelo.Venta;
 import java.sql.*;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
@@ -46,8 +47,8 @@ public class DaoVenta {
     
     public String[] consultarVenta(String id){
         String sql_select;        
-        String consulta[] = new String[6];
-        sql_select = "SELECT * FROM ventas WHERE id_venta = " + id;
+        String consulta[] = new String[4];
+        sql_select = "SELECT * FROM ventas WHERE id_venta = '" + id + "'";
         try{
             Connection conn= fachada.getConnetion();            
             Statement sentencia = conn.createStatement();
@@ -57,9 +58,7 @@ public class DaoVenta {
                 consulta[0] = tabla.getString(1);
                 consulta[1] = tabla.getString(2);
                 consulta[2] = tabla.getString(3);
-                consulta[3] = tabla.getString(4);
-                consulta[4] = tabla.getString(5);
-                consulta[5] = tabla.getString(6);   
+                consulta[3] = tabla.getString(4);  
             }else{
                 consulta = null;
             }
@@ -105,6 +104,27 @@ public class DaoVenta {
             System.out.println(e);
             return "Ocurrió un problema al eliminar la venta";
         }                             
+    }
+    
+    public ArrayList cargarVentas(){
+        String sql_select;
+        ArrayList<String> ventas = new ArrayList<String>();
+        int i = 0;
+        sql_select = "SELECT id_venta FROM ventas";
+        try{
+            Connection conn= fachada.getConnetion();            
+            Statement sentencia = conn.createStatement();
+            ResultSet tabla = sentencia.executeQuery(sql_select);   
+            
+            while(tabla.next()){
+                ventas.add(tabla.getString(1));
+                i++;  
+            }
+            return ventas;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
     }
     
     public void cerrarConexionBD(){

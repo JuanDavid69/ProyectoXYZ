@@ -6,6 +6,7 @@
 package Controlador;
 import AccesoDatos.DaoCarritoVen;
 import Modelo.CarritoVen;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -25,5 +26,9 @@ public class ControlCarritoVen {
     
     public void restarProducto (String id_producto, int cantidad){
         daoCarritoVen.restarProducto(id_producto, cantidad);
+    }
+    
+    public DefaultTableModel cargarProductosVen(String id_venta){
+        return daoCarritoVen.cargarProductosVen(id_venta);
     }
 }

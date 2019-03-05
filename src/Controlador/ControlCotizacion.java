@@ -6,6 +6,7 @@
 package Controlador;
 import Modelo.Cotizacion;
 import AccesoDatos.*;
+import java.util.ArrayList;
 /**
  *
  * @author juandavid
@@ -33,6 +34,10 @@ public class ControlCotizacion {
     
     public String eliminarCotizacion (String id){
         return daoCotizacion.eliminarCotizacion(id);
+    }
+    
+    public ArrayList cargarCotizaciones(){
+        return daoCotizacion.cargarCotizaciones();
     }
     
     public void cerrarConexionBD(){

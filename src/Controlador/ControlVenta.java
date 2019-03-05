@@ -6,6 +6,7 @@
 package Controlador;
 import Modelo.Venta;
 import AccesoDatos.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -34,6 +35,10 @@ public class ControlVenta {
     
     public String eliminarVenta (String id){
         return daoVenta.eliminarVenta(id);
+    }
+    
+    public ArrayList cargarVentas(){
+        return daoVenta.cargarVentas();
     }
     
     public void cerrarConexionBD(){

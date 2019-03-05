@@ -10,6 +10,7 @@ import java.sql.*;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.ArrayList;
 
 /**
  *
@@ -69,6 +70,29 @@ public class DaoCotizacion {
             return null;
         }
     }
+    
+    public ArrayList cargarCotizaciones(){
+        String sql_select;
+        ArrayList<String> cotizaciones = new ArrayList<String>();
+        int i = 0;
+        sql_select = "SELECT id_cotizacion FROM cotizaciones";
+        try{
+            Connection conn= fachada.getConnetion();            
+            Statement sentencia = conn.createStatement();
+            ResultSet tabla = sentencia.executeQuery(sql_select);   
+            
+            while(tabla.next()){
+                cotizaciones.add(tabla.getString(1));
+                i++;  
+            }
+            return cotizaciones;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+    }
+    
+    
     
     public String modificarCotizacion(Cotizacion c){
         String sql_modificar;

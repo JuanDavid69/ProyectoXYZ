@@ -75,7 +75,7 @@ public class agregarVenta extends javax.swing.JFrame {
 
             },
             new String [] {
-                "CODIGO", "PRODUCTO", "CANTIDAD", "PRECIO UNIDAD", "PRECIO VENTA"
+                "CODIGO", "PRODUCTO", "CANTIDAD", "PRECIO UNIDAD", "SUBTOTAL"
             }
         ) {
             Class[] types = new Class [] {

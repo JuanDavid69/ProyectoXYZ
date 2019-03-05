@@ -12,26 +12,26 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Natalia
  */
-public class consultarCotizacion extends javax.swing.JFrame {
+public class consultarVenta extends javax.swing.JFrame {
     String usuario;
     DefaultTableModel tabla;
-    ControlCotizacion controlCotizacion = new ControlCotizacion();
-    ControlCarritoCot controlCarritoCot = new ControlCarritoCot();
+    ControlVenta controlVenta = new ControlVenta();
+    ControlCarritoVen controlCarritoVen = new ControlCarritoVen();
     /**
      * Creates new form consultarCotizacion
      */
-    public consultarCotizacion(String usuario) {
+    public consultarVenta(String usuario) {
         this.usuario = usuario;
         initComponents();
         setDefaultCloseOperation(0);
         this.setLocationRelativeTo(null);
-        cargarCotizaciones();
+        cargarVentas();
     }
     
-    void cargarCotizaciones(){
-        ArrayList cotizaciones = controlCotizacion.cargarCotizaciones();
-        for(int i = 0; i < cotizaciones.size(); i++) {
-            this.cotizaciones.addItem(cotizaciones.get(i).toString());
+    void cargarVentas(){
+        ArrayList ventas = controlVenta.cargarVentas();
+        for(int i = 0; i < ventas.size(); i++) {
+            this.ventas.addItem(ventas.get(i).toString());
         }
     }
 
@@ -45,10 +45,10 @@ public class consultarCotizacion extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabelTituloConsultarCotizacion = new javax.swing.JLabel();
-        cotizaciones = new javax.swing.JComboBox<>();
+        ventas = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        cotizacion = new javax.swing.JTextField();
+        venta = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         vendedor = new javax.swing.JTextField();
         consultar = new javax.swing.JButton();
@@ -64,13 +64,13 @@ public class consultarCotizacion extends javax.swing.JFrame {
         setResizable(false);
 
         jLabelTituloConsultarCotizacion.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabelTituloConsultarCotizacion.setText("Consultar Cotizacion");
+        jLabelTituloConsultarCotizacion.setText("Consultar Venta");
 
-        jLabel1.setText("N° Cotización:");
+        jLabel1.setText("N° Venta:");
 
-        jLabel2.setText("N° Cotización:");
+        jLabel2.setText("N° Venta:");
 
-        cotizacion.setEditable(false);
+        venta.setEditable(false);
 
         jLabel3.setText("Cedula vendedor:");
 
@@ -145,11 +145,11 @@ public class consultarCotizacion extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cotizaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(ventas, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cotizacion)))
+                                        .addComponent(venta)))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -163,11 +163,12 @@ public class consultarCotizacion extends javax.swing.JFrame {
                                     .addComponent(consultar)))
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(214, 214, 214)
-                                .addComponent(jLabelTituloConsultarCotizacion)))
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(230, 230, 230)
+                .addComponent(jLabelTituloConsultarCotizacion)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -177,13 +178,13 @@ public class consultarCotizacion extends javax.swing.JFrame {
                 .addComponent(jLabelTituloConsultarCotizacion)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cotizaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ventas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(consultar))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(cotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(venta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(vendedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4)
@@ -204,23 +205,23 @@ public class consultarCotizacion extends javax.swing.JFrame {
 
     private void consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarActionPerformed
             try{
-                String id = this.cotizaciones.getSelectedItem().toString();
-                String[] cotizacion = controlCotizacion.consultarCotizacion(id);
+                String id = this.ventas.getSelectedItem().toString();
+                String[] venta = controlVenta.consultarVenta(id);
             
-                if (cotizacion == null) {
-                    JOptionPane.showMessageDialog(this, "No se pudo consultar la cotización seleccionada");
+                if (venta == null) {
+                    JOptionPane.showMessageDialog(this, "No se pudo consultar la venta seleccionada");
                 } else {                
-                    this.cotizacion.setText(cotizacion[0]);
-                    this.vendedor.setText(cotizacion[1]);
-                    this.fecha.setText(cotizacion[2]);
-                    this.total.setText(cotizacion[3]);
-                    tabla = this.controlCarritoCot.cargarProductosCot(this.cotizacion.getText());
+                    this.venta.setText(venta[0]);
+                    this.vendedor.setText(venta[1]);
+                    this.fecha.setText(venta[2]);
+                    this.total.setText(venta[3]);
+                    tabla = this.controlCarritoVen.cargarProductosVen(this.venta.getText());
                     this.productos.setModel(tabla);
                 }
             }catch(Exception e){
             JOptionPane.showMessageDialog(this, "Ha ocurrido un error al capturar los datos");
             System.out.println(e);
-            }
+        }
         
     }//GEN-LAST:event_consultarActionPerformed
 
@@ -237,8 +238,6 @@ public class consultarCotizacion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cerrar;
     private javax.swing.JButton consultar;
-    private javax.swing.JTextField cotizacion;
-    private javax.swing.JComboBox<String> cotizaciones;
     private javax.swing.JTextField fecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -250,5 +249,7 @@ public class consultarCotizacion extends javax.swing.JFrame {
     public static javax.swing.JTable productos;
     private javax.swing.JTextField total;
     private javax.swing.JTextField vendedor;
+    private javax.swing.JTextField venta;
+    private javax.swing.JComboBox<String> ventas;
     // End of variables declaration//GEN-END:variables
 }

@@ -161,7 +161,7 @@
                 <Column editable="false" title="PRODUCTO" type="java.lang.String"/>
                 <Column editable="false" title="CANTIDAD" type="java.lang.String"/>
                 <Column editable="false" title="PRECIO UNIDAD" type="java.lang.String"/>
-                <Column editable="false" title="PRECIO VENTA" type="java.lang.String"/>
+                <Column editable="false" title="SUBTOTAL" type="java.lang.String"/>
               </Table>
             </Property>
             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
