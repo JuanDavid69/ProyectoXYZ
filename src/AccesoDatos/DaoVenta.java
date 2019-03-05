@@ -10,11 +10,13 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author juandavid
  */
 public class DaoVenta {
+    DefaultTableModel tabla;
     FachadaBD fachada;
 
     public DaoVenta() {
@@ -90,7 +92,7 @@ public class DaoVenta {
     
     public String eliminarVenta(String id){
         String sql_delete;
-        sql_delete = "DELETE FROM ventas WHERE id_venta = " + id;
+        sql_delete = "DELETE FROM ventas WHERE id_venta = '" + id + "'";
         
         try{
             Connection conn= fachada.getConnetion();       
@@ -124,6 +126,55 @@ public class DaoVenta {
         }catch(Exception e){
             System.out.println(e);
             return null;
+        }
+    }
+    
+    public DefaultTableModel cargarInfoVentas(String busqueda){
+        String [] Titulo = {"N° VENTA","CEDULA VENDEDOR","FECHA","TOTAL"};
+        tabla=new DefaultTableModel(null,Titulo);
+        String sql_select;        
+        String consulta[] = new String[4];
+        sql_select = "SELECT * FROM ventas WHERE (id_venta) ilike '%" +busqueda + "%'";
+        try{
+            Connection conn= fachada.getConnetion();            
+            Statement sentencia = conn.createStatement();
+            ResultSet rs = sentencia.executeQuery(sql_select);   
+            
+            while(rs.next()){
+                consulta[0] = rs.getString(1);
+                consulta[1] = rs.getString(2);
+                consulta[2] = rs.getString(3);
+                consulta[3] = rs.getString(4);
+                tabla.addRow(consulta);
+            }
+            return tabla;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+    }
+    
+    public boolean verificarVenta(String id_producto, int peticion){
+        String sql_select; 
+        sql_select = "SELECT cantidad FROM inventario WHERE id_producto = '" + id_producto + "'";
+        try{
+            Connection conn= fachada.getConnetion();            
+            Statement sentencia = conn.createStatement();
+            ResultSet tabla = sentencia.executeQuery(sql_select); 
+            
+            if(tabla.next()){
+                int valorActual = Integer.parseInt(tabla.getString(1));
+                if(valorActual >= peticion){
+                        return true;
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        }catch(Exception e){
+            System.out.println(e);
+            return true;
         }
     }
     

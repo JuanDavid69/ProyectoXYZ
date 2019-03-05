@@ -100,4 +100,18 @@ public class DaoCarritoVen {
         }
     }
     
+    public void eliminarProductos(String id){
+        String sql_delete;
+        sql_delete = "DELETE FROM carritoVen WHERE id_venta = '" + id + "'";
+        
+        try{
+            Connection conn= fachada.getConnetion();       
+            Statement sentencia = conn.createStatement();
+            sentencia.executeUpdate(sql_delete);            
+                      
+        }catch(Exception e){
+            System.out.println(e);
+        }                             
+    }
+    
 }

@@ -72,4 +72,18 @@ public class DaoCarritoCot {
             return null;
         }
     }
+    
+    public void eliminarProductos(String id){
+        String sql_delete;
+        sql_delete = "DELETE FROM carritoCot WHERE id_cotizacion = '" + id + "'";
+        
+        try{
+            Connection conn= fachada.getConnetion();       
+            Statement sentencia = conn.createStatement();
+            sentencia.executeUpdate(sql_delete);            
+                      
+        }catch(Exception e){
+            System.out.println(e);
+        }                             
+    }
 }

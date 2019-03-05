@@ -28,4 +28,8 @@ public class ControlCarritoCot {
     public DefaultTableModel cargarProductosCot(String id_cotizacion){
         return daoCarritoCot.cargarProductosCot(id_cotizacion);
     }
+    
+    public void eliminarProductos (String id_cotizacion){
+        daoCarritoCot.eliminarProductos(id_cotizacion);
+    }
 }

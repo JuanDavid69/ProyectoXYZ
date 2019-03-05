@@ -31,4 +31,8 @@ public class ControlCarritoVen {
     public DefaultTableModel cargarProductosVen(String id_venta){
         return daoCarritoVen.cargarProductosVen(id_venta);
     }
+    
+    public void eliminarProductos (String id_venta){
+        daoCarritoVen.eliminarProductos(id_venta);
+    }
 }

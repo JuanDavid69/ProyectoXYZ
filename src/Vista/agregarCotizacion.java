@@ -227,11 +227,11 @@ public class agregarCotizacion extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(salir)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5)))
+                        .addComponent(jLabel5))
+                    .addComponent(salir))
                 .addGap(18, 18, 18))
         );
 
@@ -251,16 +251,18 @@ public class agregarCotizacion extends javax.swing.JFrame {
                 float total = Float.parseFloat(this.total.getText());
 
                 String mensaje = controlCotizacion.agregarCotizacion(id_cotizacion, id_vendedor, fecha, total);
+                
+                if (mensaje.equals("Cotizacion creada correctamente")){
+                    for(int i=0; i<this.tbdetbol.getRowCount(); i++){
 
-                for(int i=0; i<this.tbdetbol.getRowCount(); i++){
+                        String codigo = tbdetbol.getValueAt(i, 0).toString();
+                        String cantidad = tbdetbol.getValueAt(i, 2).toString();
+                        String valor = tbdetbol.getValueAt(i, 4).toString();
+                        int peticion = Integer.parseInt(cantidad);
+                        float subtotal = Float.parseFloat(valor);
 
-                    String codigo = tbdetbol.getValueAt(i, 0).toString();
-                    String cantidad = tbdetbol.getValueAt(i, 2).toString();
-                    String valor = tbdetbol.getValueAt(i, 4).toString();
-                    int peticion = Integer.parseInt(cantidad);
-                    float subtotal = Float.parseFloat(valor);
-
-                    controlCarritoCot.agregarProducto(id_cotizacion, codigo, peticion, subtotal);
+                        controlCarritoCot.agregarProducto(id_cotizacion, codigo, peticion, subtotal);
+                    }
                 }
 
                 JOptionPane.showMessageDialog(this, mensaje);
@@ -284,6 +286,7 @@ public class agregarCotizacion extends javax.swing.JFrame {
         int fila = tbdetbol.getSelectedRow();
         if(fila>=0) {
             model.removeRow(fila);
+            total.setText("");
         }
         else
         {

@@ -7,6 +7,7 @@ package Controlador;
 import Modelo.Cotizacion;
 import AccesoDatos.*;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author juandavid
@@ -38,6 +39,10 @@ public class ControlCotizacion {
     
     public ArrayList cargarCotizaciones(){
         return daoCotizacion.cargarCotizaciones();
+    }
+    
+    public DefaultTableModel cargarInfoCotizaciones(String busqueda){
+        return daoCotizacion.cargarInfoCotizaciones(busqueda);
     }
     
     public void cerrarConexionBD(){

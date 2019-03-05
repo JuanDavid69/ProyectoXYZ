@@ -12,24 +12,24 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Natalia
  */
-public class eliminarCotizacion extends javax.swing.JFrame {
+public class eliminarVenta extends javax.swing.JFrame {
     String usuario;
     DefaultTableModel tabla;
-    ControlCotizacion controlCotizacion = new ControlCotizacion();
-    ControlCarritoCot controlCarritoCot = new ControlCarritoCot();
+    ControlVenta controlVenta = new ControlVenta();
+    ControlCarritoVen controlCarritoVen = new ControlCarritoVen();
     /**
      * Creates new form eliminarCotizacion
      */
-    public eliminarCotizacion(String usuario) {
+    public eliminarVenta(String usuario) {
         this.usuario = usuario;
         initComponents();
         this.setLocationRelativeTo(null);
-        cargarCotizaciones("");
+        cargarVentas("");
     }
     
-    void cargarCotizaciones(String busqueda){
-        tabla = controlCotizacion.cargarInfoCotizaciones(busqueda);
-        this.cotizaciones.setModel(tabla);
+    void cargarVentas(String busqueda){
+        tabla = controlVenta.cargarInfoVentas(busqueda);
+        this.ventas.setModel(tabla);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -42,7 +42,7 @@ public class eliminarCotizacion extends javax.swing.JFrame {
 
         jLabelEliminarCotizacion = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        cotizaciones = new javax.swing.JTable();
+        ventas = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         busqueda = new javax.swing.JTextField();
@@ -51,9 +51,9 @@ public class eliminarCotizacion extends javax.swing.JFrame {
         setResizable(false);
 
         jLabelEliminarCotizacion.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabelEliminarCotizacion.setText("Eliminar Cotiazacion");
+        jLabelEliminarCotizacion.setText("Eliminar factura de venta");
 
-        cotizaciones.setModel(new javax.swing.table.DefaultTableModel(
+        ventas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -61,12 +61,12 @@ public class eliminarCotizacion extends javax.swing.JFrame {
                 "N° COTIZACION", "CEDULA VENDEDOR", "FECHA ", "TOTAL"
             }
         ));
-        cotizaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+        ventas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cotizacionesMouseClicked(evt);
+                ventasMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(cotizaciones);
+        jScrollPane1.setViewportView(ventas);
 
         jButton1.setText("Cerrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -75,7 +75,7 @@ public class eliminarCotizacion extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("N° Cotizacion:");
+        jLabel2.setText("N° Venta:");
 
         busqueda.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -88,19 +88,20 @@ public class eliminarCotizacion extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(191, 191, 191)
-                .addComponent(jLabelEliminarCotizacion)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 28, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(20, 20, 20))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabelEliminarCotizacion)
+                        .addGap(135, 135, 135))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,27 +122,27 @@ public class eliminarCotizacion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cotizacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cotizacionesMouseClicked
+    private void ventasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ventasMouseClicked
         try {
-            int  fila = cotizaciones.getSelectedRow();
+            int  fila = ventas.getSelectedRow();
 
-            String codigo = cotizaciones.getValueAt(fila, 0).toString();
+            String codigo = ventas.getValueAt(fila, 0).toString();
 
-            int  numero = JOptionPane.showConfirmDialog(rootPane, "¿Desea eliminar la cotizacion N°"+ codigo +"?");
+            int  numero = JOptionPane.showConfirmDialog(rootPane, "¿Desea eliminar la venta N°"+ codigo +"?");
             if((numero == 1) || (numero == 2)){
-                JOptionPane.showMessageDialog(this, "La cotizacion no fue eliminada");
+                JOptionPane.showMessageDialog(this, "La venta no fue eliminada");
             }
             else{
-                String mensaje = controlCotizacion.eliminarCotizacion(codigo);
-                controlCarritoCot.eliminarProductos(codigo);
+                String mensaje = controlVenta.eliminarVenta(codigo);
+                controlCarritoVen.eliminarProductos(codigo);
                 JOptionPane.showMessageDialog(this, mensaje);
-                cargarCotizaciones("");
+                cargarVentas("");
             }
 
         } catch (Exception e) {
             
         }
-    }//GEN-LAST:event_cotizacionesMouseClicked
+    }//GEN-LAST:event_ventasMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Vendedor v = new Vendedor(usuario);
@@ -151,7 +152,7 @@ public class eliminarCotizacion extends javax.swing.JFrame {
 
     private void busquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busquedaKeyReleased
         String busqueda = this.busqueda.getText();
-        cargarCotizaciones(busqueda);
+        cargarVentas(busqueda);
     }//GEN-LAST:event_busquedaKeyReleased
 
     /**
@@ -160,10 +161,10 @@ public class eliminarCotizacion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField busqueda;
-    private javax.swing.JTable cotizaciones;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelEliminarCotizacion;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable ventas;
     // End of variables declaration//GEN-END:variables
 }
