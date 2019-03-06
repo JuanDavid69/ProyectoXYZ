@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Vista;
+import Controlador.ControlUsuario;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,6 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class Vendedor extends javax.swing.JFrame {
     String usuario;
+    ControlUsuario controlUsuario = new ControlUsuario();
     /**
      * Creates new form Vendedor
      */
@@ -20,6 +22,7 @@ public class Vendedor extends javax.swing.JFrame {
         initComponents();
         setDefaultCloseOperation(0);
         this.setLocationRelativeTo(null);
+        cargarDatos();
     }
 
     /**
@@ -32,10 +35,6 @@ public class Vendedor extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         AgregarFacturacion = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -55,61 +54,33 @@ public class Vendedor extends javax.swing.JFrame {
         EliminarCotizacion = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        slide = new diu.swe.habib.JPanelSlider.JPanelSlider();
+        letrero = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        perfil = new javax.swing.JPanel();
+        jButton4 = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
+        nombre = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        idSede = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        telefono = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        cedula = new javax.swing.JTextField();
+        jButton5 = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel5.setBackground(new java.awt.Color(38, 39, 38));
-
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LogoXYZ.png"))); // NOI18N
-
-        jLabel11.setBackground(new java.awt.Color(250, 250, 250));
-        jLabel11.setFont(new java.awt.Font("Decker", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Vendedor");
-
-        jLabel12.setFont(new java.awt.Font("Decker", 0, 10)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Cerrar Sesion");
-        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel12MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addContainerGap(174, Short.MAX_VALUE)
-                        .addComponent(jLabel11)
-                        .addGap(104, 104, 104))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(jLabel15)
-                .addGap(74, 74, 74))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel12)
-                .addGap(14, 14, 14)
-                .addComponent(jLabel11)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 110));
 
         AgregarFacturacion.setBackground(new java.awt.Color(250, 250, 250));
         AgregarFacturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/AgregarFactura.png"))); // NOI18N
@@ -120,17 +91,17 @@ public class Vendedor extends javax.swing.JFrame {
                 AgregarFacturacionActionPerformed(evt);
             }
         });
-        jPanel4.add(AgregarFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 90, 90));
+        jPanel4.add(AgregarFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 90, 90));
 
         jLabel13.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(128, 49, 145));
         jLabel13.setText("Facturacion:");
-        jPanel4.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+        jPanel4.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(128, 49, 145));
         jLabel7.setText("Agregar");
-        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, -1, -1));
 
         ConsultarFacturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ConsultarFacturacion.png"))); // NOI18N
         ConsultarFacturacion.setBorder(null);
@@ -139,38 +110,38 @@ public class Vendedor extends javax.swing.JFrame {
                 ConsultarFacturacionActionPerformed(evt);
             }
         });
-        jPanel4.add(ConsultarFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 90, 90));
+        jPanel4.add(ConsultarFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 90, 90));
 
         jLabel8.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(128, 49, 145));
         jLabel8.setText("Consultar");
-        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, -1, -1));
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 500, -1, -1));
 
         ModificarFacturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ModificarFacturacion.png"))); // NOI18N
         ModificarFacturacion.setBorder(null);
-        jPanel4.add(ModificarFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 90, 90));
+        jPanel4.add(ModificarFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 90, 90));
 
         jLabel9.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(128, 49, 145));
         jLabel9.setText("Modificar");
-        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, -1, -1));
+        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 500, -1, -1));
 
         EliminarFacturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/EliminarPlantilla.png"))); // NOI18N
         EliminarFacturacion.setBorder(null);
-        jPanel4.add(EliminarFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 90, 90));
+        jPanel4.add(EliminarFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 90, 90));
 
         jLabel10.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(128, 49, 145));
         jLabel10.setText("Eliminar");
-        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, -1, -1));
+        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 500, -1, -1));
 
         jSeparator1.setForeground(new java.awt.Color(128, 49, 145));
-        jPanel4.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 530, 20));
+        jPanel4.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 530, 20));
 
         jLabel14.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(128, 49, 145));
         jLabel14.setText("Cotizacion:");
-        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
 
         AgregarCotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/AgregarFactura.png"))); // NOI18N
         AgregarCotizacion.setBorder(null);
@@ -179,12 +150,12 @@ public class Vendedor extends javax.swing.JFrame {
                 AgregarCotizacionActionPerformed(evt);
             }
         });
-        jPanel4.add(AgregarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 90, 90));
+        jPanel4.add(AgregarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 90, 90));
 
         jLabel1.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(128, 49, 145));
         jLabel1.setText("Agregar");
-        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, -1, -1));
+        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 500, -1, -1));
 
         ConsultarCotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ConsultarFacturacion.png"))); // NOI18N
         ConsultarCotizacion.setBorder(null);
@@ -193,45 +164,177 @@ public class Vendedor extends javax.swing.JFrame {
                 ConsultarCotizacionActionPerformed(evt);
             }
         });
-        jPanel4.add(ConsultarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 90, 90));
+        jPanel4.add(ConsultarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 90, 90));
 
         jLabel16.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(128, 49, 145));
         jLabel16.setText("Consultar");
-        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, -1, -1));
+        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, -1, -1));
 
-        ModificarCotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ConsultarFacturacion.png"))); // NOI18N
+        ModificarCotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ModificarFacturacion.png"))); // NOI18N
         ModificarCotizacion.setBorder(null);
-        jPanel4.add(ModificarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 90, 90));
+        jPanel4.add(ModificarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 90, 90));
 
         EliminarCotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/EliminarPlantilla.png"))); // NOI18N
         EliminarCotizacion.setBorder(null);
-        jPanel4.add(EliminarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, 90, 90));
+        jPanel4.add(EliminarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 410, 90, 90));
 
         jLabel17.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(128, 49, 145));
         jLabel17.setText("Modificar");
-        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, -1, -1));
+        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, -1, -1));
 
         jLabel18.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(128, 49, 145));
         jLabel18.setText("Eliminar");
-        jPanel4.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, -1));
+        jPanel4.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, -1, -1));
+
+        letrero.setBackground(new java.awt.Color(38, 39, 38));
+        letrero.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel11.setBackground(new java.awt.Color(250, 250, 250));
+        jLabel11.setFont(new java.awt.Font("Decker", 1, 36)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Vendedor");
+        letrero.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 180, 50));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LogoXYZ.png"))); // NOI18N
+        letrero.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, -1, 110));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tuperfil.png"))); // NOI18N
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        letrero.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, 32, 32));
+
+        slide.add(letrero, "card2");
+
+        perfil.setBackground(new java.awt.Color(38, 39, 38));
+        perfil.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton4.setBackground(new java.awt.Color(38, 39, 38));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/volver.png"))); // NOI18N
+        jButton4.setBorder(null);
+        jButton4.setBorderPainted(false);
+        jButton4.setContentAreaFilled(false);
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        perfil.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 32, 32));
+
+        jLabel27.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setText("NOMBRE");
+        perfil.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 60, -1));
+
+        nombre.setEditable(false);
+        nombre.setBackground(new java.awt.Color(38, 39, 38));
+        nombre.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        nombre.setForeground(new java.awt.Color(255, 255, 255));
+        nombre.setBorder(null);
+        nombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nombreActionPerformed(evt);
+            }
+        });
+        perfil.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 140, -1));
+
+        jLabel31.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setText("N° SEDE");
+        perfil.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 80, 20));
+
+        idSede.setEditable(false);
+        idSede.setBackground(new java.awt.Color(38, 39, 38));
+        idSede.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        idSede.setForeground(new java.awt.Color(255, 255, 255));
+        idSede.setBorder(null);
+        perfil.add(idSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 160, -1));
+
+        jLabel32.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setText("TELEFONO");
+        perfil.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 80, -1));
+
+        telefono.setEditable(false);
+        telefono.setBackground(new java.awt.Color(38, 39, 38));
+        telefono.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        telefono.setForeground(new java.awt.Color(255, 255, 255));
+        telefono.setBorder(null);
+        perfil.add(telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 160, -1));
+
+        jLabel33.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setText("CEDULA");
+        perfil.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 60, -1));
+
+        cedula.setEditable(false);
+        cedula.setBackground(new java.awt.Color(38, 39, 38));
+        cedula.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        cedula.setForeground(new java.awt.Color(255, 255, 255));
+        cedula.setBorder(null);
+        cedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cedulaActionPerformed(evt);
+            }
+        });
+        perfil.add(cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 140, -1));
+
+        jButton5.setBackground(new java.awt.Color(38, 39, 38));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logOut.png"))); // NOI18N
+        jButton5.setBorder(null);
+        jButton5.setBorderPainted(false);
+        jButton5.setContentAreaFilled(false);
+        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        perfil.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 32, 32));
+        perfil.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 160, 10));
+        perfil.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 62, 130, 0));
+        perfil.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 140, 10));
+        perfil.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 140, 10));
+        perfil.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 160, 10));
+
+        slide.add(perfil, "card3");
+
+        jPanel4.add(slide, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 170));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    private void cargarDatos(){
+        String consulta[] = controlUsuario.consultarUsuario(usuario);
+        this.nombre.setText(consulta[3]);
+        this.cedula.setText(consulta[0]);
+        this.idSede.setText(consulta[8]);
+        this.telefono.setText(consulta[9]);
+    }
     private void ConsultarCotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarCotizacionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ConsultarCotizacionActionPerformed
@@ -249,15 +352,31 @@ public class Vendedor extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_AgregarFacturacionActionPerformed
 
-    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
-        login U = new login();
-        U.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jLabel12MouseClicked
-
     private void ConsultarFacturacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarFacturacionActionPerformed
         JOptionPane.showMessageDialog(this, "Aqui ponemos toda l informacion jiji");
     }//GEN-LAST:event_ConsultarFacturacionActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        slide.nextPanel(20, perfil, slide.left);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        slide.nextPanel(20, letrero, slide.right);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreActionPerformed
+
+    }//GEN-LAST:event_nombreActionPerformed
+
+    private void cedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cedulaActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        login U = new login();
+        this.setVisible(false);
+        U.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -272,21 +391,38 @@ public class Vendedor extends javax.swing.JFrame {
     private javax.swing.JButton EliminarFacturacion;
     private javax.swing.JButton ModificarCotizacion;
     private javax.swing.JButton ModificarFacturacion;
+    private javax.swing.JTextField cedula;
+    private javax.swing.JTextField idSede;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JPanel letrero;
+    private javax.swing.JTextField nombre;
+    private javax.swing.JPanel perfil;
+    private diu.swe.habib.JPanelSlider.JPanelSlider slide;
+    private javax.swing.JTextField telefono;
     // End of variables declaration//GEN-END:variables
 }

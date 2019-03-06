@@ -5,12 +5,15 @@
  */
 package Vista;
 import javax.swing.JOptionPane;
+import Controlador.*;
+        
 /**
  *
  * @author Usuario
  */
 public class Menu_Gerente extends javax.swing.JFrame {
     String usuario;
+    ControlUsuario controlUsuario = new ControlUsuario();
     /**
      * Creates new form Menu_Principal
      */
@@ -19,6 +22,8 @@ public class Menu_Gerente extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         setDefaultCloseOperation(0);
+        cargarDatos();
+        
     }
 
     /**
@@ -31,210 +36,356 @@ public class Menu_Gerente extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        PanelPrincipal = new javax.swing.JTabbedPane();
-        Gestion = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
         jButtonAgregarSede = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
         jButtonConsultarSede = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
         jButtonModificarSede = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
         jButtonEliminarSede = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        activar = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
-        Usuario = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
         jButtonAgreagarEmpleado = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jButtonConsultarEmpleado = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jButtonModificarEmpleado = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jButtonEliminarEmpleado = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        activar = new javax.swing.JButton();
         activarE = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
+        slide = new diu.swe.habib.JPanelSlider.JPanelSlider();
+        letrero = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        perfil = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
+        nombre = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        idSede = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        telefono = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        cedula = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        Gestion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Gestion Sedes");
-        Gestion.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
+        jLabel15.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(128, 49, 145));
+        jLabel15.setText("Sedes:");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
+        jLabel16.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(128, 49, 145));
+        jLabel16.setText("Agregar");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(128, 49, 145));
+        jLabel17.setText("Consultar");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 550, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(128, 49, 145));
+        jLabel18.setText("Modificar");
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 550, -1, -1));
+
+        jLabel19.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(128, 49, 145));
+        jLabel19.setText("Eliminar");
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 550, -1, -1));
+
+        jSeparator1.setForeground(new java.awt.Color(128, 49, 145));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 530, 20));
+
+        jLabel20.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(128, 49, 145));
+        jLabel20.setText("Empleados:");
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
+
+        jLabel21.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(128, 49, 145));
+        jLabel21.setText("Agregar");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 550, -1, -1));
+
+        jLabel22.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(128, 49, 145));
+        jLabel22.setText("Consultar");
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, -1, -1));
+
+        jLabel23.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(128, 49, 145));
+        jLabel23.setText("Modificar");
+        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, -1, -1));
+
+        jLabel24.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(128, 49, 145));
+        jLabel24.setText("Eliminar");
+        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, -1, -1));
+
+        jButtonAgregarSede.setBackground(new java.awt.Color(255, 255, 255));
         jButtonAgregarSede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agregarSede.png"))); // NOI18N
+        jButtonAgregarSede.setBorder(null);
+        jButtonAgregarSede.setBorderPainted(false);
+        jButtonAgregarSede.setContentAreaFilled(false);
+        jButtonAgregarSede.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonAgregarSede.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAgregarSedeActionPerformed(evt);
             }
         });
-        Gestion.add(jButtonAgregarSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 65, 75));
+        jPanel1.add(jButtonAgregarSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 90, 90));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Agregar");
-        Gestion.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
-
+        jButtonConsultarSede.setBackground(new java.awt.Color(255, 255, 255));
         jButtonConsultarSede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/consultarSede.png"))); // NOI18N
+        jButtonConsultarSede.setBorder(null);
+        jButtonConsultarSede.setBorderPainted(false);
+        jButtonConsultarSede.setContentAreaFilled(false);
+        jButtonConsultarSede.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonConsultarSede.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonConsultarSedeActionPerformed(evt);
             }
         });
-        Gestion.add(jButtonConsultarSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 65, 75));
+        jPanel1.add(jButtonConsultarSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 90, 90));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Consultar");
-        Gestion.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, -1, -1));
-
-        jButtonModificarSede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/modificarSede.png"))); // NOI18N
+        jButtonModificarSede.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonModificarSede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ModificarSede.png"))); // NOI18N
+        jButtonModificarSede.setBorder(null);
+        jButtonModificarSede.setBorderPainted(false);
+        jButtonModificarSede.setContentAreaFilled(false);
+        jButtonModificarSede.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonModificarSede.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonModificarSedeActionPerformed(evt);
             }
         });
-        Gestion.add(jButtonModificarSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 65, 75));
+        jPanel1.add(jButtonModificarSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 90, 90));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Modificar");
-        Gestion.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, -1, -1));
-
+        jButtonEliminarSede.setBackground(new java.awt.Color(255, 255, 255));
         jButtonEliminarSede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminarSede.png"))); // NOI18N
+        jButtonEliminarSede.setBorder(null);
+        jButtonEliminarSede.setBorderPainted(false);
+        jButtonEliminarSede.setContentAreaFilled(false);
+        jButtonEliminarSede.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonEliminarSede.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonEliminarSedeActionPerformed(evt);
             }
         });
-        Gestion.add(jButtonEliminarSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 65, 75));
+        jPanel1.add(jButtonEliminarSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 90, 90));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Eliminar");
-        Gestion.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, -1, -1));
-
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Cerrar Sesion");
-        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel13MouseClicked(evt);
+        jButtonAgreagarEmpleado.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonAgreagarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agregarUsuario.png"))); // NOI18N
+        jButtonAgreagarEmpleado.setBorder(null);
+        jButtonAgreagarEmpleado.setBorderPainted(false);
+        jButtonAgreagarEmpleado.setContentAreaFilled(false);
+        jButtonAgreagarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAgreagarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAgreagarEmpleadoActionPerformed(evt);
             }
         });
-        Gestion.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, -1, -1));
+        jPanel1.add(jButtonAgreagarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, 90, 90));
 
+        jButtonConsultarEmpleado.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonConsultarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ConsultarUsuario.png"))); // NOI18N
+        jButtonConsultarEmpleado.setBorder(null);
+        jButtonConsultarEmpleado.setBorderPainted(false);
+        jButtonConsultarEmpleado.setContentAreaFilled(false);
+        jButtonConsultarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonConsultarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConsultarEmpleadoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonConsultarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 90, 90));
+
+        jButtonModificarEmpleado.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonModificarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/modificarUsuario.png"))); // NOI18N
+        jButtonModificarEmpleado.setBorder(null);
+        jButtonModificarEmpleado.setBorderPainted(false);
+        jButtonModificarEmpleado.setContentAreaFilled(false);
+        jButtonModificarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonModificarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonModificarEmpleadoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonModificarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, 90, 90));
+
+        jButtonEliminarEmpleado.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonEliminarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminarUsuario.png"))); // NOI18N
+        jButtonEliminarEmpleado.setBorder(null);
+        jButtonEliminarEmpleado.setBorderPainted(false);
+        jButtonEliminarEmpleado.setContentAreaFilled(false);
+        jButtonEliminarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonEliminarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEliminarEmpleadoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonEliminarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, 90, 90));
+
+        activar.setBackground(new java.awt.Color(255, 255, 255));
+        activar.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        activar.setForeground(new java.awt.Color(128, 49, 145));
         activar.setText("Activar sedes");
         activar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 activarActionPerformed(evt);
             }
         });
-        Gestion.add(activar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 330, -1));
+        jPanel1.add(activar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 300, 35));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoVendedor.jpg"))); // NOI18N
-        jLabel11.setText("ttt");
-        Gestion.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 190));
-
-        PanelPrincipal.addTab("Sede", Gestion);
-
-        Usuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Gestion Empleados");
-        Usuario.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 11, -1, -1));
-
-        jButtonAgreagarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agregarUsuario.png"))); // NOI18N
-        jButtonAgreagarEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAgreagarEmpleadoActionPerformed(evt);
-            }
-        });
-        Usuario.add(jButtonAgreagarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 60, 75));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Agregar");
-        Usuario.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
-
-        jButtonConsultarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/consultarUsuario.png"))); // NOI18N
-        jButtonConsultarEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonConsultarEmpleadoActionPerformed(evt);
-            }
-        });
-        Usuario.add(jButtonConsultarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 60, 75));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Consultar");
-        Usuario.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, -1, -1));
-
-        jButtonModificarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/modificarUsuario.png"))); // NOI18N
-        jButtonModificarEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonModificarEmpleadoActionPerformed(evt);
-            }
-        });
-        Usuario.add(jButtonModificarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 60, 75));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Modificar");
-        Usuario.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 120, -1, -1));
-
-        jButtonEliminarEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminarUsuario.png"))); // NOI18N
-        jButtonEliminarEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEliminarEmpleadoActionPerformed(evt);
-            }
-        });
-        Usuario.add(jButtonEliminarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 39, 60, 75));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Eliminar");
-        Usuario.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 120, -1, -1));
-
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Cerrar Sesion");
-        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel14MouseClicked(evt);
-            }
-        });
-        Usuario.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, -1, -1));
-
+        activarE.setBackground(new java.awt.Color(255, 255, 255));
+        activarE.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        activarE.setForeground(new java.awt.Color(128, 49, 145));
         activarE.setText("Activar empleados");
         activarE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 activarEActionPerformed(evt);
             }
         });
-        Usuario.add(activarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 330, -1));
+        jPanel1.add(activarE, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 590, 300, 35));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoVendedor.jpg"))); // NOI18N
-        Usuario.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 190));
+        letrero.setBackground(new java.awt.Color(38, 39, 38));
+        letrero.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PanelPrincipal.addTab("Empleado", Usuario);
+        jLabel25.setBackground(new java.awt.Color(250, 250, 250));
+        jLabel25.setFont(new java.awt.Font("Decker", 1, 36)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setText("Gerente");
+        letrero.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 180, 50));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LogoXYZ.png"))); // NOI18N
+        letrero.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, -1, 110));
+
+        jButton1.setBackground(new java.awt.Color(38, 39, 38));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tuperfil.png"))); // NOI18N
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        letrero.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, 32, 32));
+
+        slide.add(letrero, "card2");
+
+        perfil.setBackground(new java.awt.Color(38, 39, 38));
+        perfil.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton2.setBackground(new java.awt.Color(38, 39, 38));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/volver.png"))); // NOI18N
+        jButton2.setBorder(null);
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        perfil.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 32, 32));
+
+        jLabel27.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setText("NOMBRE");
+        perfil.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 60, -1));
+
+        nombre.setEditable(false);
+        nombre.setBackground(new java.awt.Color(38, 39, 38));
+        nombre.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        nombre.setForeground(new java.awt.Color(255, 255, 255));
+        nombre.setBorder(null);
+        nombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nombreActionPerformed(evt);
+            }
+        });
+        perfil.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 140, -1));
+
+        jLabel31.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setText("N° SEDE");
+        perfil.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 80, 20));
+
+        idSede.setEditable(false);
+        idSede.setBackground(new java.awt.Color(38, 39, 38));
+        idSede.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        idSede.setForeground(new java.awt.Color(255, 255, 255));
+        idSede.setBorder(null);
+        perfil.add(idSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 160, -1));
+
+        jLabel32.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setText("TELEFONO");
+        perfil.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 80, -1));
+
+        telefono.setEditable(false);
+        telefono.setBackground(new java.awt.Color(38, 39, 38));
+        telefono.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        telefono.setForeground(new java.awt.Color(255, 255, 255));
+        telefono.setBorder(null);
+        perfil.add(telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 160, -1));
+
+        jLabel33.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setText("CEDULA");
+        perfil.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 60, -1));
+
+        cedula.setEditable(false);
+        cedula.setBackground(new java.awt.Color(38, 39, 38));
+        cedula.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        cedula.setForeground(new java.awt.Color(255, 255, 255));
+        cedula.setBorder(null);
+        cedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cedulaActionPerformed(evt);
+            }
+        });
+        perfil.add(cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 140, -1));
+
+        jButton3.setBackground(new java.awt.Color(38, 39, 38));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logOut.png"))); // NOI18N
+        jButton3.setBorder(null);
+        jButton3.setBorderPainted(false);
+        jButton3.setContentAreaFilled(false);
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        perfil.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 32, 32));
+        perfil.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 160, 10));
+        perfil.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 62, 130, 0));
+        perfil.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 140, 10));
+        perfil.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 140, 10));
+        perfil.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 160, 10));
+
+        slide.add(perfil, "card3");
+
+        jPanel1.add(slide, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 170));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -244,12 +395,19 @@ public class Menu_Gerente extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 647, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cargarDatos(){
+        String consulta[] = controlUsuario.consultarUsuario(usuario);
+        this.nombre.setText(consulta[3]);
+        this.cedula.setText(consulta[0]);
+        this.idSede.setText(consulta[8]);
+        this.telefono.setText(consulta[9]);
+    }
     private void jButtonEliminarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarEmpleadoActionPerformed
         eliminarEmpleado e = new eliminarEmpleado(usuario);
         e.setVisible(true);
@@ -261,18 +419,6 @@ public class Menu_Gerente extends javax.swing.JFrame {
         e.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonModificarEmpleadoActionPerformed
-
-    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
-        login U = new login();
-        U.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jLabel13MouseClicked
-
-    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
-        login U = new login();
-        U.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jLabel14MouseClicked
 
     private void jButtonAgregarSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarSedeActionPerformed
         agregarSede g = new agregarSede(usuario);
@@ -322,16 +468,40 @@ public class Menu_Gerente extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_activarEActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        slide.nextPanel(20, perfil, slide.left);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        slide.nextPanel(20, letrero, slide.right);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreActionPerformed
+
+    }//GEN-LAST:event_nombreActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        login U = new login();
+        this.setVisible(false);
+        U.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void cedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cedulaActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Gestion;
-    private javax.swing.JTabbedPane PanelPrincipal;
-    private javax.swing.JPanel Usuario;
     private javax.swing.JButton activar;
     private javax.swing.JButton activarE;
+    private javax.swing.JTextField cedula;
+    private javax.swing.JTextField idSede;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButtonAgreagarEmpleado;
     private javax.swing.JButton jButtonAgregarSede;
     private javax.swing.JButton jButtonConsultarEmpleado;
@@ -340,20 +510,33 @@ public class Menu_Gerente extends javax.swing.JFrame {
     private javax.swing.JButton jButtonEliminarSede;
     private javax.swing.JButton jButtonModificarEmpleado;
     private javax.swing.JButton jButtonModificarSede;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JPanel letrero;
+    private javax.swing.JTextField nombre;
+    private javax.swing.JPanel perfil;
+    private diu.swe.habib.JPanelSlider.JPanelSlider slide;
+    private javax.swing.JTextField telefono;
     // End of variables declaration//GEN-END:variables
 }
