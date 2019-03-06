@@ -122,10 +122,6 @@ INSERT INTO inventario VALUES ('007', 'Escritorio', 11, 1500);
 INSERT INTO inventario VALUES ('008', 'Cama', 16, 750);
 INSERT INTO inventario VALUES ('009', 'Cuna', 2, 1050);
 
-INSERT INTO ventas VALUES ('001', '222', '04-02-2019', 400);
-
-INSERT INTO cotizaciones VALUES ('001', '222', '04-02-2019', 600);
-
 INSERT INTO ordenes VALUES ('001', '333', '001', 5, '04-02-2019', 'Sin aprobar');
 INSERT INTO ordenes VALUES ('002', '333', '002', 10, '04-02-2019', 'Sin aprobar');
 INSERT INTO ordenes VALUES ('003', '333', '003', 15, '04-02-2019', 'Sin aprobar');

@@ -10,13 +10,15 @@ import java.sql.*;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author juandavid
  */
 public class DaoCotizacion {
-    
+    DefaultTableModel tabla;
     FachadaBD fachada;
 
     public DaoCotizacion() {
@@ -70,6 +72,29 @@ public class DaoCotizacion {
         }
     }
     
+    public ArrayList cargarCotizaciones(){
+        String sql_select;
+        ArrayList<String> cotizaciones = new ArrayList<String>();
+        int i = 0;
+        sql_select = "SELECT id_cotizacion FROM cotizaciones";
+        try{
+            Connection conn= fachada.getConnetion();            
+            Statement sentencia = conn.createStatement();
+            ResultSet tabla = sentencia.executeQuery(sql_select);   
+            
+            while(tabla.next()){
+                cotizaciones.add(tabla.getString(1));
+                i++;  
+            }
+            return cotizaciones;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+    }
+    
+    
+    
     public String modificarCotizacion(Cotizacion c){
         String sql_modificar;
         sql_modificar = "UPDATE cotizaciones SET id_vendedor='" + c.getId_vendedor() +
@@ -105,6 +130,31 @@ public class DaoCotizacion {
             System.out.println(e);
             return "Ocurrió un problema al eliminar la cotizacion";
         }                             
+    }
+    
+    public DefaultTableModel cargarInfoCotizaciones(String busqueda){
+        String [] Titulo = {"N° COTIZACION","CEDULA VENDEDOR","FECHA","TOTAL"};
+        tabla=new DefaultTableModel(null,Titulo);
+        String sql_select;        
+        String consulta[] = new String[4];
+        sql_select = "SELECT * FROM cotizaciones WHERE (id_cotizacion) ilike '%" +busqueda + "%'";
+        try{
+            Connection conn= fachada.getConnetion();            
+            Statement sentencia = conn.createStatement();
+            ResultSet rs = sentencia.executeQuery(sql_select);   
+            
+            while(rs.next()){
+                consulta[0] = rs.getString(1);
+                consulta[1] = rs.getString(2);
+                consulta[2] = rs.getString(3);
+                consulta[3] = rs.getString(4);
+                tabla.addRow(consulta);
+            }
+            return tabla;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
     }
     
     public void cerrarConexionBD(){

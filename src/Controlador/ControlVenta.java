@@ -6,6 +6,8 @@
 package Controlador;
 import Modelo.Venta;
 import AccesoDatos.*;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -34,6 +36,18 @@ public class ControlVenta {
     
     public String eliminarVenta (String id){
         return daoVenta.eliminarVenta(id);
+    }
+    
+    public ArrayList cargarVentas(){
+        return daoVenta.cargarVentas();
+    }
+    
+    public DefaultTableModel cargarInfoVentas(String busqueda){
+        return daoVenta.cargarInfoVentas(busqueda);
+    }
+    
+    public boolean verificarVenta(String id_producto, int peticion){
+        return daoVenta.verificarVenta(id_producto, peticion);
     }
     
     public void cerrarConexionBD(){

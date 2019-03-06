@@ -10,11 +10,13 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author juandavid
  */
 public class DaoCarritoCot {
+    DefaultTableModel tabla;
     FachadaBD fachada;
     
     public DaoCarritoCot() {
@@ -41,5 +43,47 @@ public class DaoCarritoCot {
         catch(Exception e){ 
             System.out.println(e); 
         }        
+    }
+    
+    public DefaultTableModel cargarProductosCot(String id_cotizacion){
+        String [] Titulo = {"CODIGO","PRODUCTO","CANTIDAD","PRECIO UNIDAD", "SUBTOTAL"};
+        tabla=new DefaultTableModel(null,Titulo);
+        String sql_select;        
+        String consulta[] = new String[5];
+        sql_select = "SELECT carritoCot.id_producto,inventario.producto,carritoCot.cantidad, precio_unidad,subtotal \n" +
+                        "FROM carritoCot FULL JOIN inventario ON carritoCot.id_cotizacion = '" + id_cotizacion +"'\n" +
+                            "WHERE carritoCot.id_producto = inventario.id_producto";
+        try{
+            Connection conn= fachada.getConnetion();            
+            Statement sentencia = conn.createStatement();
+            ResultSet rs = sentencia.executeQuery(sql_select);   
+            
+            while(rs.next()){
+                consulta[0] = rs.getString(1);
+                consulta[1] = rs.getString(2);
+                consulta[2] = rs.getString(3);
+                consulta[3] = rs.getString(4);
+                consulta[4] = rs.getString(5);
+                tabla.addRow(consulta);
+            }
+            return tabla;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+    }
+    
+    public void eliminarProductos(String id){
+        String sql_delete;
+        sql_delete = "DELETE FROM carritoCot WHERE id_cotizacion = '" + id + "'";
+        
+        try{
+            Connection conn= fachada.getConnetion();       
+            Statement sentencia = conn.createStatement();
+            sentencia.executeUpdate(sql_delete);            
+                      
+        }catch(Exception e){
+            System.out.println(e);
+        }                             
     }
 }

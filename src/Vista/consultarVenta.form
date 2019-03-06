@@ -42,12 +42,12 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="cotizaciones" min="-2" pref="56" max="-2" attributes="0"/>
+                                      <Component id="ventas" min="-2" pref="56" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="cotizacion" max="32767" attributes="0"/>
+                                      <Component id="venta" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -68,14 +68,15 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jScrollPane2" min="-2" pref="576" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="214" max="-2" attributes="0"/>
-                              <Component id="jLabelTituloConsultarCotizacion" min="-2" max="-2" attributes="0"/>
-                          </Group>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="230" max="-2" attributes="0"/>
+              <Component id="jLabelTituloConsultarCotizacion" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -87,14 +88,14 @@
               <Component id="jLabelTituloConsultarCotizacion" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="cotizaciones" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ventas" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="consultar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cotizacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="venta" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="vendedor" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -121,10 +122,10 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Consultar Cotizacion"/>
+        <Property name="text" type="java.lang.String" value="Consultar Venta"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="cotizaciones">
+    <Component class="javax.swing.JComboBox" name="ventas">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
@@ -136,15 +137,15 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="N&#xb0; Cotizaci&#xf3;n:"/>
+        <Property name="text" type="java.lang.String" value="N&#xb0; Venta:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="N&#xb0; Cotizaci&#xf3;n:"/>
+        <Property name="text" type="java.lang.String" value="N&#xb0; Venta:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="cotizacion">
+    <Component class="javax.swing.JTextField" name="venta">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
       </Properties>

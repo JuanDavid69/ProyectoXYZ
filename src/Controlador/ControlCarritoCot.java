@@ -7,6 +7,7 @@ package Controlador;
 
 import AccesoDatos.DaoCarritoCot;
 import Modelo.CarritoCot;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -22,5 +23,13 @@ public class ControlCarritoCot {
     public void agregarProducto (String id_cotizacion, String id_producto, int cantidad, float subtotal) {
         CarritoCot cc = new CarritoCot(id_cotizacion, id_producto, cantidad, subtotal);
         daoCarritoCot.guardarProducto(cc);
+    }
+    
+    public DefaultTableModel cargarProductosCot(String id_cotizacion){
+        return daoCarritoCot.cargarProductosCot(id_cotizacion);
+    }
+    
+    public void eliminarProductos (String id_cotizacion){
+        daoCarritoCot.eliminarProductos(id_cotizacion);
     }
 }

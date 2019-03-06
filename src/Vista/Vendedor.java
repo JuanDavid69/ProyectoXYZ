@@ -128,7 +128,16 @@ public class Vendedor extends javax.swing.JFrame {
 
         EliminarFacturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/EliminarPlantilla.png"))); // NOI18N
         EliminarFacturacion.setBorder(null);
+<<<<<<< HEAD
         jPanel4.add(EliminarFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 90, 90));
+=======
+        EliminarFacturacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarFacturacionActionPerformed(evt);
+            }
+        });
+        jPanel4.add(EliminarFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 90, 90));
+>>>>>>> master
 
         jLabel10.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(128, 49, 145));
@@ -177,7 +186,16 @@ public class Vendedor extends javax.swing.JFrame {
 
         EliminarCotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/EliminarPlantilla.png"))); // NOI18N
         EliminarCotizacion.setBorder(null);
+<<<<<<< HEAD
         jPanel4.add(EliminarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 410, 90, 90));
+=======
+        EliminarCotizacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarCotizacionActionPerformed(evt);
+            }
+        });
+        jPanel4.add(EliminarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, 90, 90));
+>>>>>>> master
 
         jLabel17.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(128, 49, 145));
@@ -336,7 +354,9 @@ public class Vendedor extends javax.swing.JFrame {
         this.telefono.setText(consulta[9]);
     }
     private void ConsultarCotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarCotizacionActionPerformed
-        // TODO add your handling code here:
+        consultarCotizacion u = new consultarCotizacion(usuario);
+        u.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_ConsultarCotizacionActionPerformed
 
     private void AgregarCotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarCotizacionActionPerformed
@@ -353,9 +373,12 @@ public class Vendedor extends javax.swing.JFrame {
     }//GEN-LAST:event_AgregarFacturacionActionPerformed
 
     private void ConsultarFacturacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarFacturacionActionPerformed
-        JOptionPane.showMessageDialog(this, "Aqui ponemos toda l informacion jiji");
+        consultarVenta u = new consultarVenta(usuario);
+        u.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_ConsultarFacturacionActionPerformed
 
+<<<<<<< HEAD
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         slide.nextPanel(20, perfil, slide.left);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -377,6 +400,19 @@ public class Vendedor extends javax.swing.JFrame {
         this.setVisible(false);
         U.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
+=======
+    private void EliminarCotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarCotizacionActionPerformed
+        eliminarCotizacion u = new eliminarCotizacion(usuario);
+        u.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_EliminarCotizacionActionPerformed
+
+    private void EliminarFacturacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarFacturacionActionPerformed
+        eliminarVenta u = new eliminarVenta(usuario);
+        u.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_EliminarFacturacionActionPerformed
+>>>>>>> master
 
     /**
      * @param args the command line arguments
