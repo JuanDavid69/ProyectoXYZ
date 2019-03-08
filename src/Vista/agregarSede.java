@@ -131,6 +131,7 @@ public class agregarSede extends javax.swing.JFrame {
         jPanel1.add(agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 410, 150, 40));
 
         cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR2.png"))); // NOI18N
+        cerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cerrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR.png"))); // NOI18N
         cerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
