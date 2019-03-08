@@ -246,6 +246,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
         activar.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         activar.setForeground(new java.awt.Color(128, 49, 145));
         activar.setText("Activar sedes");
+        activar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         activar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 activarActionPerformed(evt);
@@ -257,6 +258,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
         activarE.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         activarE.setForeground(new java.awt.Color(128, 49, 145));
         activarE.setText("Activar empleados");
+        activarE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         activarE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 activarEActionPerformed(evt);

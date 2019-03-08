@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Usuario/Desktop/Version%20original%20proyexto%20XYZ/ProyectoXYZ/src/Vista/Vendedor.java</file>
-            <file>file:/C:/Users/Usuario/Desktop/Version%20original%20proyexto%20XYZ/ProyectoXYZ/src/Vista/consultarSede.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Version%20original%20proyexto%20XYZ/ProyectoXYZ/src/Vista/agregarEmpleado.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Version%20original%20proyexto%20XYZ/ProyectoXYZ/src/Vista/eliminarEmpleado.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Version%20original%20proyexto%20XYZ/ProyectoXYZ/src/Vista/ActivarSede.java</file>
             <file>file:/C:/Users/Usuario/Desktop/Version%20original%20proyexto%20XYZ/ProyectoXYZ/src/Vista/Menu_Gerente.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Version%20original%20proyexto%20XYZ/ProyectoXYZ/src/Vista/ActivarEmpleado.java</file>
+            <file>file:/C:/Users/Usuario/Desktop/Version%20original%20proyexto%20XYZ/ProyectoXYZ/src/Vista/modificarEmpleado.java</file>
         </group>
     </open-files>
 </project-private>

@@ -41,7 +41,17 @@ public class modificarEmpleado extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jSeparator11 = new javax.swing.JSeparator();
+        jSeparator12 = new javax.swing.JSeparator();
+        jSeparator13 = new javax.swing.JSeparator();
+        jSeparator14 = new javax.swing.JSeparator();
+        jSeparator15 = new javax.swing.JSeparator();
+        jSeparator16 = new javax.swing.JSeparator();
+        jSeparator17 = new javax.swing.JSeparator();
+        jSeparator18 = new javax.swing.JSeparator();
+        jSeparator19 = new javax.swing.JSeparator();
+        jSeparator20 = new javax.swing.JSeparator();
         busqueda = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         empleados = new javax.swing.JTable();
@@ -69,18 +79,47 @@ public class modificarEmpleado extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         Modificar = new javax.swing.JButton();
         cargo = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
+        jSeparator7 = new javax.swing.JSeparator();
+        jSeparator8 = new javax.swing.JSeparator();
+        jSeparator9 = new javax.swing.JSeparator();
+        jSeparator10 = new javax.swing.JSeparator();
+        jSeparator21 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Modificar Empleado");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, 170, 10));
+        jPanel1.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 420, 170, 10));
+        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 380, 170, 10));
+        jPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 340, 170, 10));
+        jPanel1.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 300, 170, 10));
+        jPanel1.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 170, 10));
+        jPanel1.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, 170, 10));
+        jPanel1.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 180, 170, 10));
+        jPanel1.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 170, 10));
+        jPanel1.add(jSeparator20, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 170, 10));
 
+        busqueda.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        busqueda.setBorder(null);
+        busqueda.setOpaque(false);
         busqueda.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 busquedaKeyReleased(evt);
             }
         });
+        jPanel1.add(busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 180, 25));
 
+        empleados.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 102), 3));
+        empleados.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         empleados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -92,36 +131,72 @@ public class modificarEmpleado extends javax.swing.JFrame {
 
             }
         ));
+        empleados.setPreferredSize(new java.awt.Dimension(300, 700));
+        empleados.setSelectionBackground(new java.awt.Color(102, 0, 102));
         jScrollPane1.setViewportView(empleados);
 
-        seleccionar.setText("Seleccionar");
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 350, 290));
+
+        seleccionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/SELECCIONAR2.png"))); // NOI18N
+        seleccionar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        seleccionar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/SELECCIONAR.png"))); // NOI18N
         seleccionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 seleccionarActionPerformed(evt);
             }
         });
+        jPanel1.add(seleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 520, 130, 40));
 
-        cerrar.setText("Cerrar");
+        cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR2.png"))); // NOI18N
+        cerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cerrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR.png"))); // NOI18N
         cerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cerrarActionPerformed(evt);
             }
         });
+        jPanel1.add(cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, 130, 40));
 
         fecha.setEditable(false);
+        fecha.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        fecha.setForeground(new java.awt.Color(102, 0, 102));
+        fecha.setBorder(null);
+        fecha.setOpaque(false);
+        jPanel1.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 280, 170, 25));
 
+        jLabel8.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel8.setText("Direccion");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 130, 25));
 
+        direccion.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        direccion.setForeground(new java.awt.Color(102, 0, 102));
+        direccion.setBorder(null);
+        direccion.setOpaque(false);
+        jPanel1.add(direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 170, 25));
+
+        jLabel9.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel9.setText("N° Sede");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 360, 130, 25));
 
+        sede.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        sede.setForeground(new java.awt.Color(102, 0, 102));
+        sede.setBorder(null);
+        sede.setOpaque(false);
         sede.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 sedeKeyTyped(evt);
             }
         });
+        jPanel1.add(sede, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 360, 170, 25));
 
+        jLabel10.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel10.setText("Telefono");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, 130, 25));
 
+        telefono.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        telefono.setForeground(new java.awt.Color(102, 0, 102));
+        telefono.setBorder(null);
+        telefono.setOpaque(false);
         telefono.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 telefonoKeyReleased(evt);
@@ -130,162 +205,114 @@ public class modificarEmpleado extends javax.swing.JFrame {
                 telefonoKeyTyped(evt);
             }
         });
+        jPanel1.add(telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 400, 170, 25));
 
+        jLabel11.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel11.setText("Cedula");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 130, 25));
 
+        jLabel12.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel12.setText("Estado");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 440, 130, 25));
 
         estado.setEditable(false);
+        estado.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        estado.setForeground(new java.awt.Color(102, 0, 102));
+        estado.setBorder(null);
+        estado.setOpaque(false);
+        jPanel1.add(estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 440, 170, 25));
 
+        jLabel3.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel3.setText("Buscar:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, -1, 25));
 
+        jLabel13.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel13.setText("Contraseña");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 480, 130, 25));
+
+        contraseña.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        contraseña.setForeground(new java.awt.Color(102, 0, 102));
+        contraseña.setBorder(null);
+        contraseña.setOpaque(false);
+        jPanel1.add(contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 480, 170, 25));
 
         cedula.setEditable(false);
+        cedula.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        cedula.setForeground(new java.awt.Color(102, 0, 102));
+        cedula.setBorder(null);
+        cedula.setOpaque(false);
+        jPanel1.add(cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, 170, 25));
 
+        jLabel5.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel5.setText("Nombre");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, 130, 25));
 
+        nombre.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        nombre.setForeground(new java.awt.Color(102, 0, 102));
+        nombre.setBorder(null);
+        nombre.setOpaque(false);
+        nombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nombreActionPerformed(evt);
+            }
+        });
+        jPanel1.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 160, 170, 25));
+
+        jLabel6.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel6.setText("Cargo");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, 130, 25));
 
+        jLabel7.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel7.setText("Salario");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, 130, 25));
 
+        salario.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        salario.setForeground(new java.awt.Color(102, 0, 102));
+        salario.setBorder(null);
+        salario.setOpaque(false);
         salario.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 salarioKeyTyped(evt);
             }
         });
+        jPanel1.add(salario, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 240, 170, 25));
 
+        jLabel14.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel14.setText("Fecha De Inicio");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, 130, 25));
 
-        Modificar.setText("Modificar");
+        Modificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MODIFICAR2.png"))); // NOI18N
+        Modificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Modificar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MODIFICAR.png"))); // NOI18N
         Modificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ModificarActionPerformed(evt);
             }
         });
+        jPanel1.add(Modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 520, 130, 40));
 
         cargo.setEditable(false);
+        cargo.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        cargo.setForeground(new java.awt.Color(102, 0, 102));
+        cargo.setBorder(null);
+        cargo.setOpaque(false);
+        jPanel1.add(cargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, 170, 25));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(219, 219, 219)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jLabel3)
-                            .addGap(18, 18, 18)
-                            .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(seleccionar))
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel7)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addComponent(jLabel14)
-                                .addComponent(jLabel8)
-                                .addComponent(jLabel9)
-                                .addComponent(jLabel10)
-                                .addComponent(jLabel12)
-                                .addComponent(jLabel13))
-                            .addGap(36, 36, 36)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(telefono, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
-                                    .addComponent(cedula)
-                                    .addComponent(nombre)
-                                    .addComponent(salario)
-                                    .addComponent(fecha)
-                                    .addComponent(direccion)
-                                    .addComponent(sede)
-                                    .addComponent(estado)
-                                    .addComponent(cargo))
-                                .addComponent(contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(32, 32, 32)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(Modificar)
-                        .addGap(66, 66, 66))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(seleccionar)
-                            .addComponent(cerrar)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(cargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(salario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel7))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel14))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(direccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel8))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(sede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel9))
-                                        .addGap(41, 41, 41))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel10)))
-                                .addGap(32, 32, 32))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel12)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addComponent(Modificar)
-                .addContainerGap())
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MODIFICAREMPLEADOS.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 100));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, 170, 10));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 420, 170, 10));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 380, 170, 10));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 340, 170, 10));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 300, 170, 10));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 170, 10));
+        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, 170, 10));
+        jPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 180, 170, 10));
+        jPanel1.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 170, 10));
+        jPanel1.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 170, 10));
+        jPanel1.add(jSeparator21, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 500, 170, 10));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 580));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -384,6 +411,10 @@ public class modificarEmpleado extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_telefonoKeyTyped
 
+    private void nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nombreActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -412,7 +443,29 @@ public class modificarEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JSeparator jSeparator13;
+    private javax.swing.JSeparator jSeparator14;
+    private javax.swing.JSeparator jSeparator15;
+    private javax.swing.JSeparator jSeparator16;
+    private javax.swing.JSeparator jSeparator17;
+    private javax.swing.JSeparator jSeparator18;
+    private javax.swing.JSeparator jSeparator19;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator20;
+    private javax.swing.JSeparator jSeparator21;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTextField nombre;
     private javax.swing.JTextField salario;
     private javax.swing.JTextField sede;

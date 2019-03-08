@@ -41,7 +41,14 @@ public class consultarSede extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel7 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
+        jSeparator7 = new javax.swing.JSeparator();
         jLabelNumeroOrden = new javax.swing.JLabel();
         consultar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
@@ -60,32 +67,56 @@ public class consultarSede extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         estado = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         jLabel7.setText("jLabel7");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Consultar Sede");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 150, 180, 10));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 180, 10));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, 180, 10));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, 180, 10));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, 180, 10));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 180, 10));
+        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 350, 180, 10));
 
+        jLabelNumeroOrden.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabelNumeroOrden.setText("Buscar:");
+        jPanel1.add(jLabelNumeroOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 70, 25));
 
-        consultar.setText("Consultar");
+        consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CONSULTAR2.png"))); // NOI18N
+        consultar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        consultar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CONSULTAR.png"))); // NOI18N
         consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 consultarActionPerformed(evt);
             }
         });
+        jPanel1.add(consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 150, 40));
 
-        jButton1.setText("Cerrar");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR2.png"))); // NOI18N
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 150, 40));
 
+        jLabel8.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel8.setText("N° Sede:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 150, 25));
 
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setOpaque(false);
+
+        sedes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 102), 3));
+        sedes.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         sedes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -97,125 +128,99 @@ public class consultarSede extends javax.swing.JFrame {
 
             }
         ));
+        sedes.setPreferredSize(new java.awt.Dimension(200, 150));
         jScrollPane1.setViewportView(sedes);
 
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 330, 150));
+
         sede.setEditable(false);
+        sede.setBackground(new java.awt.Color(255, 255, 255));
+        sede.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        sede.setForeground(new java.awt.Color(102, 0, 102));
+        sede.setBorder(null);
+        sede.setOpaque(false);
+        jPanel1.add(sede, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 130, 175, 25));
 
+        jLabel2.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel2.setText("Dirección:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 150, 25));
 
+        busqueda.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        busqueda.setForeground(new java.awt.Color(102, 0, 102));
+        busqueda.setBorder(null);
+        busqueda.setOpaque(false);
+        busqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                busquedaActionPerformed(evt);
+            }
+        });
         busqueda.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 busquedaKeyReleased(evt);
             }
         });
+        jPanel1.add(busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 180, -1));
 
         direccion.setEditable(false);
+        direccion.setBackground(new java.awt.Color(255, 255, 255));
+        direccion.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        direccion.setForeground(new java.awt.Color(102, 0, 102));
+        direccion.setBorder(null);
+        direccion.setOpaque(false);
+        jPanel1.add(direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 210, 175, 25));
 
         nombre.setEditable(false);
+        nombre.setBackground(new java.awt.Color(255, 255, 255));
+        nombre.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        nombre.setForeground(new java.awt.Color(102, 0, 102));
+        nombre.setBorder(null);
+        nombre.setOpaque(false);
+        jPanel1.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, 175, 25));
 
+        jLabel3.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel3.setText("Telefono:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 150, 25));
 
+        jLabel6.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel6.setText("Nombre sede:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 150, 25));
 
         telefono.setEditable(false);
+        telefono.setBackground(new java.awt.Color(255, 255, 255));
+        telefono.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        telefono.setForeground(new java.awt.Color(102, 0, 102));
+        telefono.setBorder(null);
+        telefono.setOpaque(false);
+        jPanel1.add(telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 290, 175, 25));
 
         ciudad.setEditable(false);
+        ciudad.setBackground(new java.awt.Color(255, 255, 255));
+        ciudad.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        ciudad.setForeground(new java.awt.Color(102, 0, 102));
+        ciudad.setBorder(null);
+        ciudad.setOpaque(false);
+        jPanel1.add(ciudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 250, 175, 25));
 
+        jLabel4.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel4.setText("Ciudad:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 150, 25));
 
+        jLabel5.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel5.setText("Estado:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, 150, 25));
 
         estado.setEditable(false);
+        estado.setBackground(new java.awt.Color(255, 255, 255));
+        estado.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        estado.setForeground(new java.awt.Color(102, 0, 102));
+        estado.setBorder(null);
+        estado.setOpaque(false);
+        jPanel1.add(estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, 175, 25));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelNumeroOrden)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(consultar))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addGap(20, 20, 20))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jLabel8)
-                            .addGap(18, 18, 18)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(18, 18, 18)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(direccion, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                    .addComponent(nombre)
-                    .addComponent(sede, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                    .addComponent(telefono, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                    .addComponent(ciudad)
-                    .addComponent(estado))
-                .addContainerGap(31, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(203, 203, 203)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelNumeroOrden, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(sede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(direccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ciudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addGap(11, 11, 11)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(consultar)
-                            .addComponent(jButton1))))
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CONSULTARSEDES.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 100));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -250,6 +255,10 @@ public class consultarSede extends javax.swing.JFrame {
         cargarSedes(this.busqueda.getText());
     }//GEN-LAST:event_busquedaKeyReleased
 
+    private void busquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busquedaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_busquedaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -270,7 +279,15 @@ public class consultarSede extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelNumeroOrden;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
     private javax.swing.JTextField nombre;
     private javax.swing.JTextField sede;
     private javax.swing.JTable sedes;
