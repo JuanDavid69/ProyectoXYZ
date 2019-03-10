@@ -16,6 +16,8 @@
             <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/eliminarVenta.java</file>
             <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/login.java</file>
             <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/Inventario.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Modelo/Venta.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/consultarVenta.java</file>
             <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/JefeTaller.java</file>
             <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/Menu_Gerente.java</file>
             <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/agregarCotizacion.java</file>
@@ -26,6 +28,7 @@
             <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/consultarSede.java</file>
             <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Controlador/ControlOrden.java</file>
             <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/AccesoDatos/DaoInventario.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/consularOrden.java</file>
             <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Controlador/ControlCarritoCot.java</file>
             <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/eliminarEmpleado.java</file>
             <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/AprobarOrden.java</file>

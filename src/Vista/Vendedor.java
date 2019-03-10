@@ -324,7 +324,7 @@ public class Vendedor extends javax.swing.JFrame {
         this.telefono.setText(consulta[9]);
     }
     private void ConsultarCotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarCotizacionActionPerformed
-        consultarVenta u = new consultarVenta(usuario);
+        consultarCotizacion u = new consultarCotizacion(usuario);
         u.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_ConsultarCotizacionActionPerformed
