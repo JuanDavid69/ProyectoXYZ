@@ -42,7 +42,7 @@ public class agregarCotizacion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         Agregar = new javax.swing.JButton();
         fecha = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -58,12 +58,18 @@ public class agregarCotizacion extends javax.swing.JFrame {
         total = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbdetbol = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setText("Registro de cotizaciones");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Agregar.setText("Registrar cotizacion");
         Agregar.addActionListener(new java.awt.event.ActionListener() {
@@ -71,23 +77,34 @@ public class agregarCotizacion extends javax.swing.JFrame {
                 AgregarActionPerformed(evt);
             }
         });
+        jPanel1.add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 210, 200, 25));
 
-        fecha.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        fecha.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        fecha.setForeground(new java.awt.Color(102, 0, 102));
         fecha.setText(" ");
+        jPanel1.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 150, 25));
 
+        jLabel2.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel2.setText("Cedula vendedor:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 150, 25));
 
-        jLabel4.setText("fecha de registro:");
+        jLabel4.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        jLabel4.setText("Fecha de registro:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 150, 25));
 
-        cedulaVen.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cedulaVen.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        cedulaVen.setForeground(new java.awt.Color(102, 0, 102));
         cedulaVen.setText(" ");
+        jPanel1.add(cedulaVen, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 150, 25));
 
-        agregarProducto.setText("Agregar producto");
+        agregarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/AGREGARPRODUCTOS.png"))); // NOI18N
+        agregarProducto.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/AGREGARPRODUCTOS2.png"))); // NOI18N
         agregarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 agregarProductoActionPerformed(evt);
             }
         });
+        jPanel1.add(agregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, 200, 25));
 
         eliminar.setText("Eliminar producto");
         eliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -95,9 +112,16 @@ public class agregarCotizacion extends javax.swing.JFrame {
                 eliminarActionPerformed(evt);
             }
         });
+        jPanel1.add(eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 200, 25));
 
+        jLabel1.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel1.setText("N° Cotizacion:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 150, 25));
 
+        NCotizacion.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        NCotizacion.setForeground(new java.awt.Color(102, 0, 102));
+        NCotizacion.setBorder(null);
+        NCotizacion.setOpaque(false);
         NCotizacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NCotizacionActionPerformed(evt);
@@ -111,25 +135,39 @@ public class agregarCotizacion extends javax.swing.JFrame {
                 NCotizacionKeyTyped(evt);
             }
         });
+        jPanel1.add(NCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 150, 25));
 
-        Calcular.setText("Calcular monto");
         Calcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CalcularActionPerformed(evt);
             }
         });
+        jPanel1.add(Calcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, 200, 25));
 
+        salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR2.png"))); // NOI18N
         salir.setText("Cerrar");
+        salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        salir.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR.png"))); // NOI18N
         salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 salirActionPerformed(evt);
             }
         });
+        jPanel1.add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 130, 40));
 
+        jLabel5.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel5.setText("Total:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 480, 60, 25));
 
         total.setEditable(false);
+        total.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        total.setForeground(new java.awt.Color(102, 0, 102));
+        total.setBorder(null);
+        total.setOpaque(false);
+        jPanel1.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 480, 150, 25));
 
+        tbdetbol.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        tbdetbol.setForeground(new java.awt.Color(102, 0, 102));
         tbdetbol.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -153,87 +191,21 @@ public class agregarCotizacion extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tbdetbol.setPreferredSize(new java.awt.Dimension(500, 700));
+        tbdetbol.setSelectionBackground(new java.awt.Color(102, 0, 102));
         jScrollPane2.setViewportView(tbdetbol);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(salir, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(fecha))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cedulaVen))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(NCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(agregarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Calcular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Agregar)))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(31, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(222, 222, 222))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(NCotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(cedulaVen))
-                        .addGap(3, 3, 3)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(fecha)
-                            .addComponent(jLabel4)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Calcular)
-                            .addComponent(agregarProducto))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Agregar)
-                            .addComponent(eliminar))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5))
-                    .addComponent(salir))
-                .addGap(18, 18, 18))
-        );
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 830, 170));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setText("Registro de cotizaciones");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, -1, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 170, 10));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 170, 10));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 500, 170, 10));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 170, 10));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -364,7 +336,12 @@ public class agregarCotizacion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JButton salir;
     public static javax.swing.JTable tbdetbol;
     private javax.swing.JTextField total;
