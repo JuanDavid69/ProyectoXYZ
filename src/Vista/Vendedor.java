@@ -324,7 +324,7 @@ public class Vendedor extends javax.swing.JFrame {
         this.telefono.setText(consulta[9]);
     }
     private void ConsultarCotizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarCotizacionActionPerformed
-        consultarVenta u = new consultarVenta(usuario);
+        consultarCotizacion u = new consultarCotizacion(usuario);
         u.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_ConsultarCotizacionActionPerformed
@@ -336,8 +336,8 @@ public class Vendedor extends javax.swing.JFrame {
     }//GEN-LAST:event_AgregarCotizacionActionPerformed
 
     private void AgregarFacturacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarFacturacionActionPerformed
-        // TODO add your handling code here:
-        agregarVenta agregarVenta = new agregarVenta(usuario);
+        String sede = this.idSede.getText();
+        agregarVenta agregarVenta = new agregarVenta(usuario, sede);
         agregarVenta.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_AgregarFacturacionActionPerformed

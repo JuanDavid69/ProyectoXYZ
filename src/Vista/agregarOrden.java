@@ -51,59 +51,99 @@ public class agregarOrden extends javax.swing.JFrame {
 
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        cantidad = new javax.swing.JTextField();
-        jButtonCerrar = new javax.swing.JButton();
-        agregar = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        cedulaJefe = new javax.swing.JLabel();
-        fecha = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel6 = new javax.swing.JLabel();
-        Busqueda = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         orden = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
+        cedulaJefe = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel4 = new javax.swing.JLabel();
+        cantidad = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel5 = new javax.swing.JLabel();
+        fecha = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        jLabel6 = new javax.swing.JLabel();
+        Busqueda = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButtonCerrar = new javax.swing.JButton();
+        agregar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("Agregar Ordenes");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/AOrden.png"))); // NOI18N
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, 80));
+
+        jLabel1.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel1.setText("N° de Orden:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+
+        orden.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        orden.setBorder(null);
+        jPanel1.add(orden, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 70, 20));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 70, 10));
+
+        jLabel2.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel2.setText("Jefe de Taller: ");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, -1, -1));
+
+        cedulaJefe.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        cedulaJefe.setText(" ");
+        jPanel1.add(cedulaJefe, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 90, 20));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 90, -1));
+
+        jLabel4.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel4.setText("Cantidad:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
+        cantidad.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        cantidad.setBorder(null);
         cantidad.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 cantidadKeyTyped(evt);
             }
         });
+        jPanel1.add(cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 70, 20));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 70, 20));
 
-        jButtonCerrar.setText("Cerrar");
-        jButtonCerrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCerrarActionPerformed(evt);
-            }
-        });
-
-        agregar.setText("Enviar orden");
-        agregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                agregarActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setText("Jefe de Taller: ");
-
+        jLabel5.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel5.setText("Fecha:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, -1, -1));
 
-        cedulaJefe.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        cedulaJefe.setText(" ");
-
-        fecha.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        fecha.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         fecha.setText(" ");
+        jPanel1.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 90, -1));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 90, -1));
+
+        jLabel6.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel6.setText("Buscar producto:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
+
+        Busqueda.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        Busqueda.setBorder(null);
+        Busqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BusquedaActionPerformed(evt);
+            }
+        });
+        Busqueda.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BusquedaKeyReleased(evt);
+            }
+        });
+        jPanel1.add(Busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 80, 20));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 80, 20));
+
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setFont(new java.awt.Font("Decker", 0, 12)); // NOI18N
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -120,91 +160,35 @@ public class agregarOrden extends javax.swing.JFrame {
     );
     jScrollPane1.setViewportView(jTable1);
 
-    jLabel6.setText("Buscar producto:");
+    jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 348, 103));
 
-    Busqueda.addActionListener(new java.awt.event.ActionListener() {
+    jButtonCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cerrarO.png"))); // NOI18N
+    jButtonCerrar.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            BusquedaActionPerformed(evt);
+            jButtonCerrarActionPerformed(evt);
         }
     });
-    Busqueda.addKeyListener(new java.awt.event.KeyAdapter() {
-        public void keyReleased(java.awt.event.KeyEvent evt) {
-            BusquedaKeyReleased(evt);
-        }
-    });
+    jPanel1.add(jButtonCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 100, 40));
 
-    jLabel1.setText("N° de Orden:");
+    agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/EnviarO.png"))); // NOI18N
+    agregar.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            agregarActionPerformed(evt);
+        }
+    });
+    jPanel1.add(agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 100, 40));
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(layout.createSequentialGroup()
-            .addGap(30, 30, 30)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1)
-                        .addComponent(jLabel4))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(orden, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
-                        .addComponent(cantidad))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel5))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(cedulaJefe, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
-                        .addComponent(fecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jButtonCerrar)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(agregar)))
-                    .addGap(0, 27, Short.MAX_VALUE))))
-        .addGroup(layout.createSequentialGroup()
-            .addGap(140, 140, 140)
-            .addComponent(jLabel3)
-            .addGap(0, 0, Short.MAX_VALUE))
+        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
     );
     layout.setVerticalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(layout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(jLabel3)
-            .addGap(21, 21, 21)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel2)
-                .addComponent(cedulaJefe)
-                .addComponent(jLabel1)
-                .addComponent(orden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel4)
-                .addComponent(cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jLabel5)
-                .addComponent(fecha))
-            .addGap(18, 18, 18)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel6)
-                .addComponent(Busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(18, 18, 18)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(agregar)
-                .addComponent(jButtonCerrar))
-            .addContainerGap(27, Short.MAX_VALUE))
+            .addGap(0, 0, 0)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 361, Short.MAX_VALUE))
     );
 
     pack();
@@ -278,11 +262,17 @@ public class agregarOrden extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCerrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField orden;
     // End of variables declaration//GEN-END:variables

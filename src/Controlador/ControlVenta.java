@@ -20,8 +20,8 @@ public class ControlVenta {
         daoVenta = new DaoVenta();
     }
     
-    public String agregarVenta (String id_venta, String id_vendedor, String fecha, float total) {
-        Venta c = new Venta(id_venta, id_vendedor, fecha, total);
+    public String agregarVenta (String id_venta, String id_vendedor, String fecha, float total, String id_sede) {
+        Venta c = new Venta(id_venta, id_vendedor, fecha, total, id_sede);
         return daoVenta.guardarVenta(c);
     }
     
@@ -30,7 +30,7 @@ public class ControlVenta {
     }
     
     public String modificarVenta(String id_venta, String id_vendedor, String fecha, float total){
-        Venta u = new Venta(id_venta, id_vendedor, fecha, total);
+        Venta u = new Venta(id_venta, id_vendedor, fecha, total, "");
         return daoVenta.modificarVenta(u);
     }
     

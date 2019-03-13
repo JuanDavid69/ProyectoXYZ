@@ -43,8 +43,10 @@ CREATE TABLE ventas
 	id_vendedor VARCHAR(30) NOT NULL,
 	fecha DATE,
 	total FLOAT,
+	id_sede VARCHAR(30) NOT NULL,
 
-	FOREIGN KEY (id_vendedor) REFERENCES usuarios (cedula) ON DELETE CASCADE
+	FOREIGN KEY (id_vendedor) REFERENCES usuarios (cedula) ON DELETE CASCADE,
+	FOREIGN KEY (id_sede) REFERENCES sedes (id_sede) ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS cotizaciones CASCADE;
