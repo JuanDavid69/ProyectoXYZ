@@ -178,6 +178,52 @@ public class DaoVenta {
         }
     }
     
+    public DefaultTableModel ventasSede(){
+        String [] Titulo = {"Sede","Número de ventas"};
+        tabla=new DefaultTableModel(null,Titulo);
+        String sql_select;        
+        String consulta[] = new String[2];
+        sql_select = "select id_sede, count(*) as numero_ventas from ventas group by id_sede";
+        try{
+            Connection conn= fachada.getConnetion();            
+            Statement sentencia = conn.createStatement();
+            ResultSet rs = sentencia.executeQuery(sql_select);   
+            
+            while(rs.next()){
+                consulta[0] = rs.getString(1);
+                consulta[1] = rs.getString(2);
+                tabla.addRow(consulta);
+            }
+            return tabla;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+    }
+    
+    public DefaultTableModel ventasVendedor(){
+        String [] Titulo = {"Vendedor","Número de ventas"};
+        tabla=new DefaultTableModel(null,Titulo);
+        String sql_select;        
+        String consulta[] = new String[2];
+        sql_select = "select id_vendedor, count(*) as numero_ventas from ventas group by id_vendedor";
+        try{
+            Connection conn= fachada.getConnetion();            
+            Statement sentencia = conn.createStatement();
+            ResultSet rs = sentencia.executeQuery(sql_select);   
+            
+            while(rs.next()){
+                consulta[0] = rs.getString(1);
+                consulta[1] = rs.getString(2);
+                tabla.addRow(consulta);
+            }
+            return tabla;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+    }
+    
     public void cerrarConexionBD(){
         fachada.closeConection(fachada.getConnetion());
     }

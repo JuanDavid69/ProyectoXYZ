@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
             <file>file:/C:/Users/Usuario/Desktop/Version%20original%20proyexto%20XYZ/ProyectoXYZ/src/Vista/InventarioCot.java</file>
             <file>file:/C:/Users/Usuario/Desktop/Version%20original%20proyexto%20XYZ/ProyectoXYZ/src/Vista/agregarCotizacion.java</file>
@@ -47,6 +48,24 @@
             <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/eliminarOrden.java</file>
             <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/AccesoDatos/DaoCotizacion.java</file>
 >>>>>>> master
+=======
+            <file>file:/C:/Users/Soupbizkit/Desktop/Desarrollo%20software%201/ProyectoXYZ/src/Vista/agregarSede.java</file>
+            <file>file:/C:/Users/Soupbizkit/Desktop/Desarrollo%20software%201/ProyectoXYZ/src/Vista/eliminarCotizacion.java</file>
+            <file>file:/C:/Users/Soupbizkit/Desktop/Desarrollo%20software%201/ProyectoXYZ/src/Vista/modificarEmpleado.java</file>
+            <file>file:/C:/Users/Soupbizkit/Desktop/Desarrollo%20software%201/ProyectoXYZ/src/AccesoDatos/DaoCotizacion.java</file>
+            <file>file:/C:/Users/Soupbizkit/Desktop/Desarrollo%20software%201/ProyectoXYZ/src/Vista/Menu_Gerente.java</file>
+            <file>file:/C:/Users/Soupbizkit/Desktop/Desarrollo%20software%201/ProyectoXYZ/src/Vista/agregarCotizacion.java</file>
+            <file>file:/C:/Users/Soupbizkit/Desktop/Desarrollo%20software%201/ProyectoXYZ/src/Vista/agregarVenta.java</file>
+            <file>file:/C:/Users/Soupbizkit/Desktop/Desarrollo%20software%201/ProyectoXYZ/src/Vista/Vendedor.java</file>
+            <file>file:/C:/Users/Soupbizkit/Desktop/Desarrollo%20software%201/ProyectoXYZ/src/Vista/consularOrden.java</file>
+            <file>file:/C:/Users/Soupbizkit/Desktop/Desarrollo%20software%201/ProyectoXYZ/src/Vista/consultarSede.java</file>
+            <file>file:/C:/Users/Soupbizkit/Desktop/Desarrollo%20software%201/ProyectoXYZ/src/Vista/ReportesVendedor.java</file>
+            <file>file:/C:/Users/Soupbizkit/Desktop/Desarrollo%20software%201/ProyectoXYZ/src/Vista/ReportesGerente.java</file>
+            <file>file:/C:/Users/Soupbizkit/Desktop/Desarrollo%20software%201/ProyectoXYZ/src/AccesoDatos/DaoVenta.java</file>
+            <file>file:/C:/Users/Soupbizkit/Desktop/Desarrollo%20software%201/ProyectoXYZ/src/Controlador/ControlVenta.java</file>
+            <file>file:/C:/Users/Soupbizkit/Desktop/Desarrollo%20software%201/ProyectoXYZ/src/Vista/login.java</file>
+            <file>file:/C:/Users/Soupbizkit/Desktop/Desarrollo%20software%201/ProyectoXYZ/src/Vista/agregarEmpleado.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
