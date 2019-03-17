@@ -43,72 +43,64 @@ public class modificarOrden extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabelModificarOrden = new javax.swing.JLabel();
-        modificar = new javax.swing.JButton();
         jLabelModificacionProducto = new javax.swing.JLabel();
         jLabelFecha = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        estado = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jLabelNumeroOrden1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        consultar = new javax.swing.JButton();
-        fecha = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        orden = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        producto = new javax.swing.JTextField();
+        busqueda = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         ordenes = new javax.swing.JTable();
-        jLabel4 = new javax.swing.JLabel();
-        busqueda = new javax.swing.JTextField();
-        cantidad = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        consultar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        orden = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel6 = new javax.swing.JLabel();
         cedula = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
+        jLabel3 = new javax.swing.JLabel();
+        producto = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLabel4 = new javax.swing.JLabel();
+        cantidad = new javax.swing.JTextField();
+        jSeparator6 = new javax.swing.JSeparator();
+        fecha = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        jSeparator7 = new javax.swing.JSeparator();
+        estado = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jSeparator8 = new javax.swing.JSeparator();
+        modificar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jLabelModificacionProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(504, 204, -1, -1));
+        getContentPane().add(jLabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 204, -1, -1));
 
-        jLabelModificarOrden.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabelModificarOrden.setText("Modificar Orden de Trabajo");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        modificar.setText("Modificar");
-        modificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modificarActionPerformed(evt);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/EncabezadoModOrd.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabelNumeroOrden1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/magnifier.png"))); // NOI18N
+        jPanel1.add(jLabelNumeroOrden1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+
+        busqueda.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        busqueda.setBorder(null);
+        busqueda.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                busquedaKeyReleased(evt);
             }
         });
+        jPanel1.add(busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 114, 20));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 110, 20));
 
-        jButton1.setText("Cerrar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setText("Cedula Jefe:");
-
-        estado.setEditable(false);
-
-        jLabelNumeroOrden1.setText("Buscar:");
-
-        jLabel5.setText("Estado:");
-
-        consultar.setText("Seleccionar");
-        consultar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consultarActionPerformed(evt);
-            }
-        });
-
-        fecha.setEditable(false);
-
-        jLabel2.setText("N° Orden:");
-
-        orden.setEditable(false);
-
-        jLabel3.setText("Producto:");
-
+        ordenes.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         ordenes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -122,126 +114,94 @@ public class modificarOrden extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(ordenes);
 
-        jLabel4.setText("Cantidad:");
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 250, 180));
 
-        busqueda.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                busquedaKeyReleased(evt);
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR2.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 110, 30));
+
+        consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Seleccionar_1.png"))); // NOI18N
+        consultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 100, 30));
+
+        jLabel2.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel2.setText("N° Orden:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, -1, -1));
+
+        orden.setEditable(false);
+        orden.setBackground(new java.awt.Color(255, 255, 255));
+        orden.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        orden.setBorder(null);
+        jPanel1.add(orden, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, 110, 20));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, -1, -1));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, 110, 10));
+
+        jLabel6.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel6.setText("Cedula Jefe:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, -1, -1));
 
         cedula.setEditable(false);
+        cedula.setBackground(new java.awt.Color(255, 255, 255));
+        cedula.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        cedula.setBorder(null);
+        jPanel1.add(cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, 110, 20));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 110, 10));
 
+        jLabel3.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel3.setText("Producto:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, -1, -1));
+
+        producto.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        producto.setBorder(null);
+        jPanel1.add(producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 116, 20));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 110, 20));
+
+        jLabel4.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel4.setText("Cantidad:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, -1, -1));
+
+        cantidad.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        cantidad.setBorder(null);
+        jPanel1.add(cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 240, 110, 20));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 110, 20));
+
+        fecha.setEditable(false);
+        fecha.setBackground(new java.awt.Color(255, 255, 255));
+        fecha.setBorder(null);
+        jPanel1.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 110, 20));
+
+        jLabel7.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel7.setText("Fecha:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, -1, -1));
+        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, 110, 20));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelNumeroOrden1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(busqueda))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(18, 18, 18)
-                                .addComponent(cedula, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel5))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(producto, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(fecha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(estado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(10, 10, 10)
-                                            .addComponent(modificar)))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(orden, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addComponent(jLabelModificacionProducto)
-                        .addGap(156, 156, 156)
-                        .addComponent(jLabelFecha))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(jLabelModificarOrden)))
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(5, 5, 5)
-                .addComponent(jLabelModificarOrden)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNumeroOrden1)
-                    .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(consultar)
-                            .addComponent(jButton1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabelModificacionProducto)
-                                    .addComponent(jLabelFecha)))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel2)
-                                .addComponent(orden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cedula, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addGap(14, 14, 14)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(modificar)))
-                .addContainerGap(17, Short.MAX_VALUE))
-        );
+        estado.setEditable(false);
+        estado.setBackground(new java.awt.Color(255, 255, 255));
+        estado.setBorder(null);
+        jPanel1.add(estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, 110, 20));
+
+        jLabel5.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel5.setText("Estado:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, -1, -1));
+        jPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, 110, 20));
+
+        modificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MODIFICAR2.png"))); // NOI18N
+        modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 150, 40));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -324,6 +284,7 @@ public class modificarOrden extends javax.swing.JFrame {
     private javax.swing.JTextField estado;
     private javax.swing.JTextField fecha;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -332,9 +293,17 @@ public class modificarOrden extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelFecha;
     private javax.swing.JLabel jLabelModificacionProducto;
-    private javax.swing.JLabel jLabelModificarOrden;
     private javax.swing.JLabel jLabelNumeroOrden1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
     private javax.swing.JButton modificar;
     private javax.swing.JTextField orden;
     private javax.swing.JTable ordenes;

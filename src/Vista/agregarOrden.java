@@ -111,8 +111,8 @@ public class agregarOrden extends javax.swing.JFrame {
                 cantidadKeyTyped(evt);
             }
         });
-        jPanel1.add(cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 70, 20));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 70, 20));
+        jPanel1.add(cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 80, 20));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 80, 10));
 
         jLabel5.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel5.setText("Fecha:");
@@ -124,8 +124,8 @@ public class agregarOrden extends javax.swing.JFrame {
         jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 90, -1));
 
         jLabel6.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
-        jLabel6.setText("Buscar producto:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/magnifier.png"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
 
         Busqueda.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         Busqueda.setBorder(null);
@@ -139,12 +139,13 @@ public class agregarOrden extends javax.swing.JFrame {
                 BusquedaKeyReleased(evt);
             }
         });
-        jPanel1.add(Busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 80, 20));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 80, 20));
+        jPanel1.add(Busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 80, 20));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 80, 20));
 
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setFont(new java.awt.Font("Decker", 0, 12)); // NOI18N
 
+        jTable1.setFont(new java.awt.Font("Decker", 0, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -162,7 +163,7 @@ public class agregarOrden extends javax.swing.JFrame {
 
     jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 348, 103));
 
-    jButtonCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cerrarO.png"))); // NOI18N
+    jButtonCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR2.png"))); // NOI18N
     jButtonCerrar.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             jButtonCerrarActionPerformed(evt);
