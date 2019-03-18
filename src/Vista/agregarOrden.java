@@ -33,6 +33,7 @@ public class agregarOrden extends javax.swing.JFrame {
         this.fecha.setText(dateFormat.format(date));
         this.cedulaJefe.setText(usuario);
         cargarInventario("");
+        this.orden.setText(controlOrden.generarIdOrden());
     }
     
     void cargarInventario(String busqueda){
@@ -86,10 +87,11 @@ public class agregarOrden extends javax.swing.JFrame {
         jLabel1.setText("N° de Orden:");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
+        orden.setEditable(false);
         orden.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         orden.setBorder(null);
         jPanel1.add(orden, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 70, 20));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 70, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 80, 10));
 
         jLabel2.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel2.setText("Jefe de Taller: ");
@@ -159,6 +161,7 @@ public class agregarOrden extends javax.swing.JFrame {
         )
         {public boolean isCellEditable(int row, int column){return false;}}
     );
+    jTable1.setSelectionBackground(new java.awt.Color(102, 0, 102));
     jScrollPane1.setViewportView(jTable1);
 
     jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 348, 103));
@@ -239,6 +242,7 @@ public class agregarOrden extends javax.swing.JFrame {
                 
                     String mensaje = controlOrden.agregarOrden(id_orden, id_jefe, id_producto, cantidad, fecha, "Sin aprobar");
                     JOptionPane.showMessageDialog(this, mensaje);
+                    this.orden.setText(controlOrden.generarIdOrden());
                 }
             }
             

@@ -134,7 +134,7 @@ public class DaoVenta {
         tabla=new DefaultTableModel(null,Titulo);
         String sql_select;        
         String consulta[] = new String[4];
-        sql_select = "SELECT * FROM ventas WHERE (id_venta) ilike '%" +busqueda + "%'";
+        sql_select = "SELECT * FROM ventas WHERE (id_venta) ilike '%" +busqueda + "%' ORDER BY id_venta";
         try{
             Connection conn= fachada.getConnetion();            
             Statement sentencia = conn.createStatement();
@@ -218,6 +218,40 @@ public class DaoVenta {
                 tabla.addRow(consulta);
             }
             return tabla;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+    }
+    
+    public String generarIdVenta(){
+        String sql_select;        
+        String id_venta = "001"; 
+        sql_select = "SELECT MAX(id_venta) FROM ventas";
+        try{
+            Connection conn= fachada.getConnetion();            
+            Statement sentencia = conn.createStatement();
+            ResultSet tabla = sentencia.executeQuery(sql_select);   
+            
+            if(tabla.next()){
+                if(tabla.getString(1) != null){
+                    int codigo = Integer.parseInt(tabla.getString(1)) + 1;
+                    if((codigo >= 100) && (codigo < 1000)){
+                        id_venta = Integer.toString(codigo);
+                    }
+                    if((codigo >= 10) && (codigo < 100)){
+                        id_venta = "0" + codigo;
+                    }
+                    if(codigo <= 9){
+                        id_venta = "00" + codigo;
+                    }
+                }else{
+                    id_venta = "001";
+                }
+            }else{
+                id_venta = "001";
+            }
+            return id_venta;
         }catch(Exception e){
             System.out.println(e);
             return null;

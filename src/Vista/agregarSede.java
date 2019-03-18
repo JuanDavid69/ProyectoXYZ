@@ -21,6 +21,7 @@ public class agregarSede extends javax.swing.JFrame {
         initComponents();
         setDefaultCloseOperation(0);
         this.setLocationRelativeTo(null);
+        this.id_sede.setText(controlSedes.generarIdSede());
     }
 
     /**
@@ -65,6 +66,7 @@ public class agregarSede extends javax.swing.JFrame {
         jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 200, 10));
         jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 200, 10));
 
+        id_sede.setEditable(false);
         id_sede.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         id_sede.setForeground(new java.awt.Color(102, 0, 102));
         id_sede.setBorder(null);
@@ -182,6 +184,7 @@ public class agregarSede extends javax.swing.JFrame {
                 String telefono = this.telefono.getText();
                 
                 String mensaje = controlSedes.agregarSede(id_sede, nombre, direccion, ciudad, telefono);
+                this.id_sede.setText(controlSedes.generarIdSede());
                 JOptionPane.showMessageDialog(this, mensaje);
             }
         }catch(Exception e){

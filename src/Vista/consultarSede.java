@@ -113,7 +113,7 @@ public class consultarSede extends javax.swing.JFrame {
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 150, 25));
 
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane1.setOpaque(false);
+        jScrollPane1.setFont(new java.awt.Font("Decker", 0, 11)); // NOI18N
 
         sedes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 102), 3));
         sedes.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
@@ -129,6 +129,7 @@ public class consultarSede extends javax.swing.JFrame {
             }
         ));
         sedes.setPreferredSize(new java.awt.Dimension(200, 150));
+        sedes.setSelectionBackground(new java.awt.Color(102, 0, 102));
         jScrollPane1.setViewportView(sedes);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 330, 150));

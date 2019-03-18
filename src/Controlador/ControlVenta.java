@@ -56,6 +56,10 @@ public class ControlVenta {
         return daoVenta.ventasVendedor();
     }
     
+    public String generarIdVenta(){
+        return daoVenta.generarIdVenta();
+    }
+    
     public void cerrarConexionBD(){
         daoVenta.cerrarConexionBD();
     }

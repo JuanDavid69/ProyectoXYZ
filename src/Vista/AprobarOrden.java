@@ -84,6 +84,7 @@ public class AprobarOrden extends javax.swing.JFrame {
 
             }
         ));
+        ordenes.setSelectionBackground(new java.awt.Color(102, 0, 102));
         ordenes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ordenesMouseClicked(evt);

@@ -69,7 +69,6 @@ public class agregarEmpleado extends javax.swing.JFrame {
         cerrar = new javax.swing.JButton();
         cargo = new javax.swing.JComboBox<>();
         fecha = new javax.swing.JLabel();
-        estado = new javax.swing.JComboBox<>();
         password = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -83,6 +82,7 @@ public class agregarEmpleado extends javax.swing.JFrame {
         jSeparator9 = new javax.swing.JSeparator();
         jSeparator10 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
+        estado = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -215,7 +215,6 @@ public class agregarEmpleado extends javax.swing.JFrame {
         });
         jPanel1.add(cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 510, 130, 40));
 
-        cargo.setEditable(true);
         cargo.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         cargo.setForeground(new java.awt.Color(102, 0, 102));
         cargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerente", "Vendedor", "Jefe de taller" }));
@@ -224,18 +223,9 @@ public class agregarEmpleado extends javax.swing.JFrame {
         cargo.setOpaque(false);
         jPanel1.add(cargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 170, 25));
 
-        fecha.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        fecha.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         fecha.setForeground(new java.awt.Color(102, 0, 102));
         jPanel1.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 170, 21));
-
-        estado.setEditable(true);
-        estado.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
-        estado.setForeground(new java.awt.Color(102, 0, 102));
-        estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
-        estado.setBorder(null);
-        estado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        estado.setOpaque(false);
-        jPanel1.add(estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 170, 25));
 
         password.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         password.setForeground(new java.awt.Color(102, 0, 102));
@@ -260,6 +250,19 @@ public class agregarEmpleado extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/AGREGAREMPLEADOS.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 80));
 
+        estado.setEditable(false);
+        estado.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        estado.setForeground(new java.awt.Color(102, 0, 102));
+        estado.setText("Activo");
+        estado.setBorder(null);
+        estado.setOpaque(false);
+        estado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                estadoKeyTyped(evt);
+            }
+        });
+        jPanel1.add(estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 170, 25));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 580));
 
         pack();
@@ -280,7 +283,7 @@ public class agregarEmpleado extends javax.swing.JFrame {
             else{
                 String cedula = this.cedula.getText();
                 String password = this.password.getText();
-                String estado = this.estado.getSelectedItem().toString();
+                String estado = this.estado.getText();
                 String nombre = this.nombre.getText();
                 String cargo = this.cargo.getSelectedItem().toString();
                 String salario = this.salario.getText();
@@ -334,6 +337,10 @@ public class agregarEmpleado extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_telefonoKeyTyped
 
+    private void estadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_estadoKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_estadoKeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agregar;
@@ -341,7 +348,7 @@ public class agregarEmpleado extends javax.swing.JFrame {
     private javax.swing.JTextField cedula;
     private javax.swing.JButton cerrar;
     private javax.swing.JTextField direccion;
-    private javax.swing.JComboBox<String> estado;
+    private javax.swing.JTextField estado;
     private javax.swing.JLabel fecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

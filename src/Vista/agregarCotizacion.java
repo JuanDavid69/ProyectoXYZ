@@ -31,6 +31,7 @@ public class agregarCotizacion extends javax.swing.JFrame {
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         this.cedulaVen.setText(usuario);
         this.fecha.setText(dateFormat.format(date));
+        this.NCotizacion.setText(controlCotizacion.generarIdCotizacion());
     }
 
     /**
@@ -118,6 +119,7 @@ public class agregarCotizacion extends javax.swing.JFrame {
         jLabel1.setText("N° Cotizacion:");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 150, 25));
 
+        NCotizacion.setEditable(false);
         NCotizacion.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         NCotizacion.setForeground(new java.awt.Color(102, 0, 102));
         NCotizacion.setBorder(null);
@@ -234,6 +236,7 @@ public class agregarCotizacion extends javax.swing.JFrame {
                         float subtotal = Float.parseFloat(valor);
 
                         controlCarritoCot.agregarProducto(id_cotizacion, codigo, peticion, subtotal);
+                        this.NCotizacion.setText(controlCotizacion.generarIdCotizacion());
                     }
                 }
 

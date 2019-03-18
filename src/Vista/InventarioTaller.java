@@ -88,6 +88,7 @@ public class InventarioTaller extends javax.swing.JFrame {
 
             }
         ));
+        inventario.setSelectionBackground(new java.awt.Color(102, 0, 102));
         jScrollPane1.setViewportView(inventario);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 440, 228));

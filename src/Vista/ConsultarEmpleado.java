@@ -99,7 +99,7 @@ public class ConsultarEmpleado extends javax.swing.JFrame {
                 busquedaKeyReleased(evt);
             }
         });
-        jPanel1.add(busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 160, 25));
+        jPanel1.add(busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 160, 25));
 
         empleados.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 102), 3));
         empleados.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N

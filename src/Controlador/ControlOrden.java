@@ -48,6 +48,10 @@ public class ControlOrden {
         return daoOrden.cargarTodasOrdenes(busqueda);
     }
     
+    public String generarIdOrden(){
+        return daoOrden.generarIdOrden();
+    }
+    
     public void cerrarConexionBD(){
         daoOrden.cerrarConexionBD();
     }

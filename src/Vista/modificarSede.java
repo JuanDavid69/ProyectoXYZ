@@ -192,6 +192,7 @@ public class modificarSede extends javax.swing.JFrame {
             }
         ));
         sedes.setPreferredSize(new java.awt.Dimension(300, 200));
+        sedes.setSelectionBackground(new java.awt.Color(102, 0, 102));
         jScrollPane1.setViewportView(sedes);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 310, 170));

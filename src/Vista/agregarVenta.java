@@ -37,6 +37,7 @@ public class agregarVenta extends javax.swing.JFrame {
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         this.cedulaVen.setText(usuario);
         this.fecha.setText(dateFormat.format(date));
+        this.NVenta.setText(controlVenta.generarIdVenta());
         cargarCotizaciones();
     }
     
@@ -115,6 +116,7 @@ public class agregarVenta extends javax.swing.JFrame {
 
         jLabel1.setText("N° Venta:");
 
+        NVenta.setEditable(false);
         NVenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NVentaActionPerformed(evt);
@@ -384,6 +386,7 @@ public class agregarVenta extends javax.swing.JFrame {
                         this.tbdetbol.setModel(newTabla);
                         this.total.setText("");
                         this.NVenta.setText("");
+                        this.NVenta.setText(controlVenta.generarIdVenta());
                     }
                 
                     JOptionPane.showMessageDialog(this, mensaje);

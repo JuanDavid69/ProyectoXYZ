@@ -44,7 +44,6 @@ public class modificarOrden extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabelModificacionProducto = new javax.swing.JLabel();
-        jLabelFecha = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabelNumeroOrden1 = new javax.swing.JLabel();
@@ -79,7 +78,6 @@ public class modificarOrden extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jLabelModificacionProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(504, 204, -1, -1));
-        getContentPane().add(jLabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 204, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -112,6 +110,8 @@ public class modificarOrden extends javax.swing.JFrame {
 
             }
         ));
+        ordenes.setSelectionBackground(new java.awt.Color(102, 0, 102));
+        ordenes.setShowHorizontalLines(false);
         jScrollPane1.setViewportView(ordenes);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 250, 180));
@@ -291,7 +291,6 @@ public class modificarOrden extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabelFecha;
     private javax.swing.JLabel jLabelModificacionProducto;
     private javax.swing.JLabel jLabelNumeroOrden1;
     private javax.swing.JPanel jPanel1;

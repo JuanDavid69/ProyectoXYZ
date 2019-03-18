@@ -104,6 +104,7 @@ public class consularOrden extends javax.swing.JFrame {
 
             }
         ));
+        ordenes.setSelectionBackground(new java.awt.Color(102, 0, 102));
         jScrollPane1.setViewportView(ordenes);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 260, 152));
