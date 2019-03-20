@@ -76,7 +76,7 @@ public class DaoCotizacion {
         String sql_select;
         ArrayList<String> cotizaciones = new ArrayList<String>();
         int i = 0;
-        sql_select = "SELECT id_cotizacion FROM cotizaciones";
+        sql_select = "SELECT id_cotizacion FROM cotizaciones ORDER BY id_cotizacion";
         try{
             Connection conn= fachada.getConnetion();            
             Statement sentencia = conn.createStatement();
@@ -137,7 +137,7 @@ public class DaoCotizacion {
         tabla=new DefaultTableModel(null,Titulo);
         String sql_select;        
         String consulta[] = new String[4];
-        sql_select = "SELECT * FROM cotizaciones WHERE (id_cotizacion) ilike '%" +busqueda + "%'";
+        sql_select = "SELECT * FROM cotizaciones WHERE (id_cotizacion) ilike '%" +busqueda + "%' ORDER BY id_cotizacion";
         try{
             Connection conn= fachada.getConnetion();            
             Statement sentencia = conn.createStatement();
@@ -151,6 +151,40 @@ public class DaoCotizacion {
                 tabla.addRow(consulta);
             }
             return tabla;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+    }
+    
+    public String generarIdCotizacion(){
+        String sql_select;        
+        String id_cotizacion = "001"; 
+        sql_select = "SELECT MAX(id_cotizacion) FROM cotizaciones";
+        try{
+            Connection conn= fachada.getConnetion();            
+            Statement sentencia = conn.createStatement();
+            ResultSet tabla = sentencia.executeQuery(sql_select);   
+            
+            if(tabla.next()){
+                if(tabla.getString(1) != null){
+                    int codigo = Integer.parseInt(tabla.getString(1)) + 1;
+                    if((codigo >= 100) && (codigo < 1000)){
+                        id_cotizacion = Integer.toString(codigo);
+                    }
+                    if((codigo >= 10) && (codigo < 100)){
+                        id_cotizacion = "0" + codigo;
+                    }
+                    if(codigo <= 9){
+                        id_cotizacion = "00" + codigo;
+                    }
+                }else{
+                    id_cotizacion = "001";
+                }
+            }else{
+                id_cotizacion = "001";
+            }
+            return id_cotizacion;
         }catch(Exception e){
             System.out.println(e);
             return null;

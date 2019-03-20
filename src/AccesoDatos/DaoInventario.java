@@ -52,7 +52,7 @@ public class DaoInventario {
         tabla=new DefaultTableModel(null,Titulo);
         String sql_select;        
         String consulta[] = new String[4];
-        sql_select = "SELECT * FROM inventario WHERE (producto) ilike '%" +busqueda + "%'";
+        sql_select = "SELECT * FROM inventario WHERE (producto) ilike '%" +busqueda + "%' ORDER BY id_producto";
         try{
             Connection conn= fachada.getConnetion();            
             Statement sentencia = conn.createStatement();

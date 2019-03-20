@@ -119,7 +119,7 @@ public class DaoOrden {
         tabla=new DefaultTableModel(null,Titulo);
         String sql_select;        
         String consulta[] = new String[6];
-        sql_select = "SELECT * FROM ordenes WHERE (id_orden) ilike '%" +busqueda + "%' and estado = 'Sin aprobar'";
+        sql_select = "SELECT * FROM ordenes WHERE (id_orden) ilike '%" +busqueda + "%' and estado = 'Sin aprobar' ORDER BY id_orden";
         try{
             Connection conn= fachada.getConnetion();            
             Statement sentencia = conn.createStatement();
@@ -146,7 +146,7 @@ public class DaoOrden {
         tabla=new DefaultTableModel(null,Titulo);
         String sql_select;        
         String consulta[] = new String[6];
-        sql_select = "SELECT * FROM ordenes WHERE (id_orden) ilike '%" + busqueda + "%'";
+        sql_select = "SELECT * FROM ordenes WHERE (id_orden) ilike '%" + busqueda + "%' ORDER BY id_orden";
         try{
             Connection conn= fachada.getConnetion();            
             Statement sentencia = conn.createStatement();
@@ -208,7 +208,39 @@ public class DaoOrden {
         }
     }
     
-    
+    public String generarIdOrden(){
+        String sql_select;        
+        String id_orden = "001"; 
+        sql_select = "SELECT MAX(id_orden) FROM ordenes";
+        try{
+            Connection conn= fachada.getConnetion();            
+            Statement sentencia = conn.createStatement();
+            ResultSet tabla = sentencia.executeQuery(sql_select);   
+            
+            if(tabla.next()){
+                if(tabla.getString(1) != null){
+                    int codigo = Integer.parseInt(tabla.getString(1)) + 1;
+                    if((codigo >= 100) && (codigo < 1000)){
+                        id_orden = Integer.toString(codigo);
+                    }
+                    if((codigo >= 10) && (codigo < 100)){
+                        id_orden = "0" + codigo;
+                    }
+                    if(codigo <= 9){
+                        id_orden = "00" + codigo;
+                    }
+                }else{
+                    id_orden = "001";
+                }
+            }else{
+                id_orden = "001";
+            }
+            return id_orden;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+    }
     
     
 }

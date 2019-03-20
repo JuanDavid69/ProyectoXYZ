@@ -191,7 +191,7 @@ public class DaoUsuario {
         tabla=new DefaultTableModel(null,Titulo);
         String sql_select;        
         String consulta[] = new String[2];
-        sql_select = "SELECT * FROM usuarios WHERE (nombre) ilike '%" +busqueda + "%'";
+        sql_select = "SELECT * FROM usuarios WHERE (nombre) ilike '%" +busqueda + "%' ORDER BY cedula";
         try{
             Connection conn= fachada.getConnetion();            
             Statement sentencia = conn.createStatement();
@@ -214,7 +214,7 @@ public class DaoUsuario {
         tabla=new DefaultTableModel(null,Titulo);
         String sql_select;        
         String consulta[] = new String[2];
-        sql_select = "SELECT * FROM usuarios WHERE (nombre) ilike '%" +busqueda + "%' and estado = 'Activo' and cargo != 'Gerente'";
+        sql_select = "SELECT * FROM usuarios WHERE (nombre) ilike '%" +busqueda + "%' and estado = 'Activo' and cargo != 'Gerente' ORDER BY cedula";
         try{
             Connection conn= fachada.getConnetion();            
             Statement sentencia = conn.createStatement();
@@ -237,7 +237,7 @@ public class DaoUsuario {
         tabla=new DefaultTableModel(null,Titulo);
         String sql_select;        
         String consulta[] = new String[8];
-        sql_select = "SELECT * FROM usuarios WHERE (nombre) ilike '%" +busqueda + "%' and estado = 'Inactivo' and cargo != 'Gerente'";
+        sql_select = "SELECT * FROM usuarios WHERE (nombre) ilike '%" +busqueda + "%' and estado = 'Inactivo' and cargo != 'Gerente' ORDER BY cedula";
         try{
             Connection conn= fachada.getConnetion();            
             Statement sentencia = conn.createStatement();

@@ -48,6 +48,10 @@ public class ControlSedes {
         return daoSedes.activarSede(id);
     }
     
+    public String generarIdSede(){
+        return daoSedes.generarIdSede();
+    }
+    
     public void cerrarConexionBD(){
         daoSedes.cerrarConexionBD();
     }

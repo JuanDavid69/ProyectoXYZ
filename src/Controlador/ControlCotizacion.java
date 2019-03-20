@@ -45,6 +45,10 @@ public class ControlCotizacion {
         return daoCotizacion.cargarInfoCotizaciones(busqueda);
     }
     
+    public String generarIdCotizacion(){
+        return daoCotizacion.generarIdCotizacion();
+    }
+    
     public void cerrarConexionBD(){
         daoCotizacion.cerrarConexionBD();
     }

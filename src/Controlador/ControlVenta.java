@@ -49,6 +49,16 @@ public class ControlVenta {
     public boolean verificarVenta(String id_producto, int peticion){
         return daoVenta.verificarVenta(id_producto, peticion);
     }
+    public DefaultTableModel ventasSede(){
+        return daoVenta.ventasSede();
+    }
+    public DefaultTableModel ventasVendedor(){
+        return daoVenta.ventasVendedor();
+    }
+    
+    public String generarIdVenta(){
+        return daoVenta.generarIdVenta();
+    }
     
     public void cerrarConexionBD(){
         daoVenta.cerrarConexionBD();

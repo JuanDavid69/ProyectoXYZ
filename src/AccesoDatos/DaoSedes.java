@@ -115,7 +115,7 @@ public class DaoSedes {
         String sql_select;        
         String consulta[] = new String[2];
         sql_select = "SELECT id_sede,nombre FROM sedes WHERE (nombre) ilike '%" + 
-                busqueda + "%' and estado LIKE '%" + estado + "%'";
+                busqueda + "%' and estado LIKE '%" + estado + "%' ORDER BY id_sede";
         try{
             Connection conn= fachada.getConnetion();            
             Statement sentencia = conn.createStatement();
@@ -165,6 +165,37 @@ public class DaoSedes {
         }catch(Exception e){
             System.out.println(e);
             return "Ha ocurrido un error al activar la sede";
+        }
+    }
+    
+    public String generarIdSede(){
+        String sql_select;        
+        String id_sede = "001"; 
+        sql_select = "SELECT MAX(id_sede) FROM sedes";
+        try{
+            Connection conn= fachada.getConnetion();            
+            Statement sentencia = conn.createStatement();
+            ResultSet tabla = sentencia.executeQuery(sql_select);   
+            
+            if(tabla.next()){
+                int codigo = Integer.parseInt(tabla.getString(1)) + 1;
+                if((codigo >= 100) && (codigo < 1000)){
+                    id_sede = Integer.toString(codigo);
+                }
+                if((codigo >= 10) && (codigo < 100)){
+                    id_sede = "0" + codigo;
+                }
+                if(codigo <= 9){
+                    id_sede = "00" + codigo;
+                }
+                
+            }else{
+                id_sede = "001";
+            }
+            return id_sede;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
         }
     }
     

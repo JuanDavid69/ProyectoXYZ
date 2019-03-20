@@ -78,6 +78,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -143,7 +144,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
         jButtonAgregarSede.setBorder(null);
         jButtonAgregarSede.setBorderPainted(false);
         jButtonAgregarSede.setContentAreaFilled(false);
-        jButtonAgregarSede.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAgregarSede.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonAgregarSede.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAgregarSedeActionPerformed(evt);
@@ -156,7 +157,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
         jButtonConsultarSede.setBorder(null);
         jButtonConsultarSede.setBorderPainted(false);
         jButtonConsultarSede.setContentAreaFilled(false);
-        jButtonConsultarSede.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonConsultarSede.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonConsultarSede.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonConsultarSedeActionPerformed(evt);
@@ -169,7 +170,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
         jButtonModificarSede.setBorder(null);
         jButtonModificarSede.setBorderPainted(false);
         jButtonModificarSede.setContentAreaFilled(false);
-        jButtonModificarSede.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonModificarSede.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonModificarSede.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonModificarSedeActionPerformed(evt);
@@ -182,7 +183,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
         jButtonEliminarSede.setBorder(null);
         jButtonEliminarSede.setBorderPainted(false);
         jButtonEliminarSede.setContentAreaFilled(false);
-        jButtonEliminarSede.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonEliminarSede.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonEliminarSede.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonEliminarSedeActionPerformed(evt);
@@ -195,7 +196,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
         jButtonAgreagarEmpleado.setBorder(null);
         jButtonAgreagarEmpleado.setBorderPainted(false);
         jButtonAgreagarEmpleado.setContentAreaFilled(false);
-        jButtonAgreagarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAgreagarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonAgreagarEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAgreagarEmpleadoActionPerformed(evt);
@@ -208,7 +209,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
         jButtonConsultarEmpleado.setBorder(null);
         jButtonConsultarEmpleado.setBorderPainted(false);
         jButtonConsultarEmpleado.setContentAreaFilled(false);
-        jButtonConsultarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonConsultarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonConsultarEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonConsultarEmpleadoActionPerformed(evt);
@@ -221,7 +222,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
         jButtonModificarEmpleado.setBorder(null);
         jButtonModificarEmpleado.setBorderPainted(false);
         jButtonModificarEmpleado.setContentAreaFilled(false);
-        jButtonModificarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonModificarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonModificarEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonModificarEmpleadoActionPerformed(evt);
@@ -234,7 +235,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
         jButtonEliminarEmpleado.setBorder(null);
         jButtonEliminarEmpleado.setBorderPainted(false);
         jButtonEliminarEmpleado.setContentAreaFilled(false);
-        jButtonEliminarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonEliminarEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonEliminarEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonEliminarEmpleadoActionPerformed(evt);
@@ -246,7 +247,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
         activar.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         activar.setForeground(new java.awt.Color(128, 49, 145));
         activar.setText("Activar sedes");
-        activar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        activar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         activar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 activarActionPerformed(evt);
@@ -258,7 +259,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
         activarE.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         activarE.setForeground(new java.awt.Color(128, 49, 145));
         activarE.setText("Activar empleados");
-        activarE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        activarE.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         activarE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 activarEActionPerformed(evt);
@@ -283,7 +284,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -301,7 +302,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -372,7 +373,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -388,6 +389,14 @@ public class Menu_Gerente extends javax.swing.JFrame {
         slide.add(perfil, "card3");
 
         jPanel1.add(slide, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 170));
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Reportes.png"))); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -492,6 +501,12 @@ public class Menu_Gerente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cedulaActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        ReportesGerente U = new ReportesGerente(usuario);
+        this.setVisible(false);
+        U.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -504,6 +519,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButtonAgreagarEmpleado;
     private javax.swing.JButton jButtonAgregarSede;
     private javax.swing.JButton jButtonConsultarEmpleado;
