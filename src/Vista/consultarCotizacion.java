@@ -44,6 +44,11 @@ public class consultarCotizacion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
         jLabelTituloConsultarCotizacion = new javax.swing.JLabel();
         cotizaciones = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
@@ -61,32 +66,75 @@ public class consultarCotizacion extends javax.swing.JFrame {
         total = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 60, 10));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 480, 170, 10));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, 160, 10));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 170, 160, 10));
 
         jLabelTituloConsultarCotizacion.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabelTituloConsultarCotizacion.setText("Consultar Cotizacion");
+        jLabelTituloConsultarCotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CONSULTARCOTIZACION.png"))); // NOI18N
+        jPanel1.add(jLabelTituloConsultarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(-6, -5, 800, 90));
 
+        cotizaciones.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        cotizaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(cotizaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 80, 25));
+
+        jLabel1.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel1.setText("N° Cotización:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel2.setText("N° Cotización:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
         cotizacion.setEditable(false);
+        cotizacion.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        cotizacion.setBorder(null);
+        cotizacion.setOpaque(false);
+        jPanel1.add(cotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 56, -1));
 
+        jLabel3.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel3.setText("Cedula vendedor:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, -1, -1));
 
         vendedor.setEditable(false);
+        vendedor.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        vendedor.setBorder(null);
+        vendedor.setOpaque(false);
+        jPanel1.add(vendedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 160, -1));
 
-        consultar.setText("Consultar");
+        consultar.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CONSULTAR2.png"))); // NOI18N
+        consultar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        consultar.setOpaque(false);
+        consultar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CONSULTAR.png"))); // NOI18N
         consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 consultarActionPerformed(evt);
             }
         });
+        jPanel1.add(consultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 150, 40));
 
+        jLabel4.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel4.setText("Fecha:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 60, -1));
 
         fecha.setEditable(false);
+        fecha.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        fecha.setBorder(null);
+        fecha.setOpaque(false);
+        jPanel1.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 150, 160, -1));
 
+        jScrollPane2.setOpaque(false);
+
+        productos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 102), 3));
+        productos.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         productos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -111,93 +159,35 @@ public class consultarCotizacion extends javax.swing.JFrame {
             }
         });
         productos.setEnabled(false);
+        productos.setGridColor(new java.awt.Color(255, 255, 255));
+        productos.setPreferredSize(new java.awt.Dimension(375, 200));
+        productos.setSelectionBackground(new java.awt.Color(102, 0, 102));
         jScrollPane2.setViewportView(productos);
 
-        cerrar.setText("Cerrar");
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 740, 230));
+
+        cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR2.png"))); // NOI18N
+        cerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cerrar.setOpaque(false);
+        cerrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR.png"))); // NOI18N
         cerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cerrarActionPerformed(evt);
             }
         });
+        jPanel1.add(cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 130, 40));
 
+        jLabel5.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel5.setText("Total:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 460, 90, -1));
 
         total.setEditable(false);
+        total.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        total.setBorder(null);
+        total.setOpaque(false);
+        jPanel1.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 460, 170, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(cerrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cotizaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cotizacion)))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(vendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(consultar)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(214, 214, 214)
-                                .addComponent(jLabelTituloConsultarCotizacion)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelTituloConsultarCotizacion)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cotizaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(consultar))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(cotizacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(vendedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5))
-                    .addComponent(cerrar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -246,7 +236,12 @@ public class consultarCotizacion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelTituloConsultarCotizacion;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     public static javax.swing.JTable productos;
     private javax.swing.JTextField total;
     private javax.swing.JTextField vendedor;

@@ -194,7 +194,6 @@ public class agregarEmpleado extends javax.swing.JFrame {
         jPanel1.add(telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 170, 25));
 
         agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/AGREGAR2.png"))); // NOI18N
-        agregar.setText("Agregar");
         agregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         agregar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/AGREGAR.png"))); // NOI18N
         agregar.addActionListener(new java.awt.event.ActionListener() {
@@ -202,10 +201,9 @@ public class agregarEmpleado extends javax.swing.JFrame {
                 agregarActionPerformed(evt);
             }
         });
-        jPanel1.add(agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 510, 130, 40));
+        jPanel1.add(agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, 150, 40));
 
         cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR2.png"))); // NOI18N
-        cerrar.setText("Cerrar");
         cerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cerrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR.png"))); // NOI18N
         cerrar.addActionListener(new java.awt.event.ActionListener() {
@@ -213,7 +211,7 @@ public class agregarEmpleado extends javax.swing.JFrame {
                 cerrarActionPerformed(evt);
             }
         });
-        jPanel1.add(cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 510, 130, 40));
+        jPanel1.add(cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 510, 150, 40));
 
         cargo.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         cargo.setForeground(new java.awt.Color(102, 0, 102));

@@ -76,7 +76,8 @@ public class agregarCotizacion extends javax.swing.JFrame {
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 500, 170, 10));
         jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 170, 10));
 
-        Agregar.setText("Registrar cotizacion");
+        Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/REGISTRARCOTIZACION.png"))); // NOI18N
+        Agregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Agregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AgregarActionPerformed(evt);
@@ -103,6 +104,7 @@ public class agregarCotizacion extends javax.swing.JFrame {
         jPanel1.add(cedulaVen, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 150, 25));
 
         agregarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/AGREGARPRODUCTOS.png"))); // NOI18N
+        agregarProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         agregarProducto.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/AGREGARPRODUCTOS2.png"))); // NOI18N
         agregarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +113,9 @@ public class agregarCotizacion extends javax.swing.JFrame {
         });
         jPanel1.add(agregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, 200, 25));
 
-        eliminar.setText("Eliminar producto");
+        eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ELIMINARPRODUCTOS.png"))); // NOI18N
+        eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        eliminar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ELIMINARPRODUCTOS2.png"))); // NOI18N
         eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eliminarActionPerformed(evt);
@@ -143,6 +147,9 @@ public class agregarCotizacion extends javax.swing.JFrame {
         });
         jPanel1.add(NCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 150, 25));
 
+        Calcular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CALCULARMONTOS.png"))); // NOI18N
+        Calcular.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Calcular.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CALCULARMONTOS2.png"))); // NOI18N
         Calcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CalcularActionPerformed(evt);
@@ -151,7 +158,6 @@ public class agregarCotizacion extends javax.swing.JFrame {
         jPanel1.add(Calcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, 200, 25));
 
         salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR2.png"))); // NOI18N
-        salir.setText("Cerrar");
         salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         salir.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR.png"))); // NOI18N
         salir.addActionListener(new java.awt.event.ActionListener() {
@@ -159,7 +165,7 @@ public class agregarCotizacion extends javax.swing.JFrame {
                 salirActionPerformed(evt);
             }
         });
-        jPanel1.add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 130, 40));
+        jPanel1.add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 150, 40));
 
         jLabel5.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel5.setText("Total:");
@@ -172,6 +178,7 @@ public class agregarCotizacion extends javax.swing.JFrame {
         total.setOpaque(false);
         jPanel1.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 480, 150, 25));
 
+        tbdetbol.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 102), 3));
         tbdetbol.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         tbdetbol.setForeground(new java.awt.Color(102, 0, 102));
         tbdetbol.setModel(new javax.swing.table.DefaultTableModel(
@@ -204,8 +211,8 @@ public class agregarCotizacion extends javax.swing.JFrame {
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 830, 170));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setText("Registro de cotizaciones");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, -1, -1));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/REGISTRODECOTIZACIONES.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 90));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 530));
 

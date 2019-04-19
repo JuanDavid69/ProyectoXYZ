@@ -54,7 +54,7 @@ public class eliminarSede extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 150, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 150, 10));
 
         busqueda.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         busqueda.setForeground(new java.awt.Color(102, 0, 102));
@@ -65,7 +65,7 @@ public class eliminarSede extends javax.swing.JFrame {
                 busquedaKeyReleased(evt);
             }
         });
-        jPanel1.add(busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 150, 25));
+        jPanel1.add(busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 150, 25));
 
         sedes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 102), 3));
         sedes.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
@@ -99,11 +99,11 @@ public class eliminarSede extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 120, 30));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 150, 40));
 
         jLabel4.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel4.setText("Buscar:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, -1, 25));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, 25));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ELIMINARSEDES.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 60));

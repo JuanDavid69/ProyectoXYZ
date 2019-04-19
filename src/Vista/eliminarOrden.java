@@ -56,10 +56,10 @@ public class eliminarOrden extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/EncabezadoEliOrd.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ELIMINARORDENFONDO.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel2.setText("N° Orden:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
@@ -70,9 +70,11 @@ public class eliminarOrden extends javax.swing.JFrame {
                 busquedaKeyReleased(evt);
             }
         });
-        jPanel1.add(busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 70, 20));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 70, 10));
+        jPanel1.add(busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 140, 20));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 130, 10));
 
+        ordenes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 102), 3));
+        ordenes.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         ordenes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -84,6 +86,7 @@ public class eliminarOrden extends javax.swing.JFrame {
 
             }
         ));
+        ordenes.setPreferredSize(new java.awt.Dimension(300, 300));
         ordenes.setSelectionBackground(new java.awt.Color(102, 0, 102));
         ordenes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -92,7 +95,7 @@ public class eliminarOrden extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(ordenes);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 460, 180));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 460, 180));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR2.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -100,9 +103,9 @@ public class eliminarOrden extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 150, 40));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 150, 40));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 380));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

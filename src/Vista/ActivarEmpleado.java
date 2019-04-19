@@ -102,7 +102,7 @@ public class ActivarEmpleado extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 130, 40));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 150, 40));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 180, 10));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ACTIVAREMPLEADOS.png"))); // NOI18N

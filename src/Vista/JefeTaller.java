@@ -32,9 +32,26 @@ public class JefeTaller extends javax.swing.JFrame {
 
         jButton4 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        slide = new diu.swe.habib.JPanelSlider.JPanelSlider();
+        letrero = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        perfil = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        nombre = new javax.swing.JTextField();
+        cedula = new javax.swing.JTextField();
+        telefono = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        idSede = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
         jButtonAgregarOrden = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -54,177 +71,225 @@ public class JefeTaller extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(38, 39, 38));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        letrero.setBackground(new java.awt.Color(38, 39, 38));
+        letrero.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LogoXYZ.png"))); // NOI18N
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, -10, -1, -1));
+        letrero.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, -10, -1, -1));
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Decker", 0, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Jefe de Taller");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
+        letrero.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Tuperfil.png"))); // NOI18N
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        letrero.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, 32, 32));
+
+        slide.add(letrero, "card2");
+
+        perfil.setBackground(new java.awt.Color(38, 39, 38));
+        perfil.setPreferredSize(new java.awt.Dimension(630, 122));
+        perfil.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton2.setBackground(new java.awt.Color(38, 39, 38));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/volver.png"))); // NOI18N
+        jButton2.setBorder(null);
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        perfil.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 20, 32, 32));
+        perfil.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 140, 10));
+        perfil.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 140, 10));
+        perfil.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 160, 10));
+        perfil.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 160, 10));
+
+        jLabel33.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setText("CEDULA");
+        perfil.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 60, -1));
+
+        jLabel27.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setText("NOMBRE");
+        perfil.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 60, -1));
+
+        nombre.setEditable(false);
+        nombre.setBackground(new java.awt.Color(38, 39, 38));
+        nombre.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        nombre.setForeground(new java.awt.Color(255, 255, 255));
+        nombre.setBorder(null);
+        nombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nombreActionPerformed(evt);
+            }
+        });
+        perfil.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 140, -1));
+
+        cedula.setEditable(false);
+        cedula.setBackground(new java.awt.Color(38, 39, 38));
+        cedula.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        cedula.setForeground(new java.awt.Color(255, 255, 255));
+        cedula.setBorder(null);
+        cedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cedulaActionPerformed(evt);
+            }
+        });
+        perfil.add(cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 140, -1));
+
+        telefono.setEditable(false);
+        telefono.setBackground(new java.awt.Color(38, 39, 38));
+        telefono.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        telefono.setForeground(new java.awt.Color(255, 255, 255));
+        telefono.setBorder(null);
+        perfil.add(telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 160, -1));
+
+        jLabel32.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setText("TELEFONO");
+        perfil.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 80, -1));
+
+        jLabel31.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setText("N° SEDE");
+        perfil.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 80, 20));
+
+        idSede.setEditable(false);
+        idSede.setBackground(new java.awt.Color(38, 39, 38));
+        idSede.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        idSede.setForeground(new java.awt.Color(255, 255, 255));
+        idSede.setBorder(null);
+        perfil.add(idSede, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 160, -1));
+
+        jButton3.setBackground(new java.awt.Color(38, 39, 38));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logOut.png"))); // NOI18N
+        jButton3.setBorder(null);
+        jButton3.setBorderPainted(false);
+        jButton3.setContentAreaFilled(false);
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        perfil.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, 32, 32));
+
+        slide.add(perfil, "card3");
+
+        jPanel1.add(slide, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 110));
 
         jButtonAgregarOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/AgregarOrden.png"))); // NOI18N
+        jButtonAgregarOrden.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonAgregarOrden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAgregarOrdenActionPerformed(evt);
             }
         });
+        jPanel1.add(jButtonAgregarOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 170, 90, 90));
 
         jLabel1.setBackground(new java.awt.Color(83, 15, 105));
         jLabel1.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(83, 15, 105));
         jLabel1.setText("Agregar");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 267, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(83, 15, 105));
         jLabel3.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(83, 15, 105));
         jLabel3.setText("Ordenes de Trabajo:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 129, -1, -1));
 
         jButtonModificarOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ModificarOrden.png"))); // NOI18N
+        jButtonModificarOrden.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonModificarOrden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonModificarOrdenActionPerformed(evt);
             }
         });
+        jPanel1.add(jButtonModificarOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 170, 90, 90));
 
         jLabel2.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(83, 15, 105));
         jLabel2.setText("Modificar");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 267, -1, -1));
 
         jButtonConsultarOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ConsultarOrden.png"))); // NOI18N
+        jButtonConsultarOrden.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonConsultarOrden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonConsultarOrdenActionPerformed(evt);
             }
         });
+        jPanel1.add(jButtonConsultarOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 170, 90, 90));
 
         jLabel4.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(83, 15, 105));
         jLabel4.setText("Consultar");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 267, -1, -1));
 
         jButtonEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/EliminarOrden.png"))); // NOI18N
+        jButtonEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonEliminarActionPerformed(evt);
             }
         });
+        jPanel1.add(jButtonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 170, 90, 90));
 
         jLabel5.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(83, 15, 105));
         jLabel5.setText("Eliminar");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(413, 267, -1, -1));
 
         jButtonInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/InventarioOrden.png"))); // NOI18N
+        jButtonInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonInventarioActionPerformed(evt);
             }
         });
+        jPanel1.add(jButtonInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(509, 170, 90, 90));
 
         jLabel6.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(83, 15, 105));
         jLabel6.setText("Inventario");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 267, -1, -1));
 
         jButtonAprobar.setBackground(new java.awt.Color(255, 255, 255));
         jButtonAprobar.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jButtonAprobar.setForeground(new java.awt.Color(83, 15, 105));
         jButtonAprobar.setText("Aprobar ordenes");
         jButtonAprobar.setBorder(null);
+        jButtonAprobar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonAprobar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAprobarActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonAgregarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel1)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jButtonModificarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(jLabel2)))
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButtonConsultarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(jButtonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel4)
-                        .addGap(59, 59, 59)
-                        .addComponent(jLabel5)))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel6)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonAprobar, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(121, 121, 121))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(jButtonModificarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButtonAgregarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(61, 61, 61)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButtonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButtonConsultarOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButtonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(jButtonAprobar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
-        );
+        jPanel1.add(jButtonAprobar, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 313, 390, 32));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,11 +336,38 @@ public class JefeTaller extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButtonAprobarActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        slide.nextPanel(20, perfil, slide.left);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreActionPerformed
+
+    }//GEN-LAST:event_nombreActionPerformed
+
+    private void cedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cedulaActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        slide.nextPanel(20, letrero, slide.right);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        login U = new login();
+        this.setVisible(false);
+        U.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField cedula;
+    private javax.swing.JTextField idSede;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButtonAgregarOrden;
     private javax.swing.JButton jButtonAprobar;
@@ -286,12 +378,24 @@ public class JefeTaller extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JPanel letrero;
+    private javax.swing.JTextField nombre;
+    private javax.swing.JPanel perfil;
+    private diu.swe.habib.JPanelSlider.JPanelSlider slide;
+    private javax.swing.JTextField telefono;
     // End of variables declaration//GEN-END:variables
 }

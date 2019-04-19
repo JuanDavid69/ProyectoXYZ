@@ -28,6 +28,7 @@ public class modificarCotizacion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jLabelModificarCotizacion = new javax.swing.JLabel();
         jLabelNumeroCotizacionModificar = new javax.swing.JLabel();
         jTextFieldCotizacionModificar = new javax.swing.JTextField();
@@ -37,88 +38,109 @@ public class modificarCotizacion extends javax.swing.JFrame {
         jTextFieldValorModificar = new javax.swing.JTextField();
         jButtonModificarCotizacion = new javax.swing.JButton();
         jButtonModificar = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        cerrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelModificarCotizacion.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabelModificarCotizacion.setText("Modificar cotizacion");
+        jLabelModificarCotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MODIFICARCOTIZACIONFONDO.png"))); // NOI18N
+        jPanel1.add(jLabelModificarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 80));
 
+        jLabelNumeroCotizacionModificar.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabelNumeroCotizacionModificar.setText("Numero cotizacion: ");
+        jPanel1.add(jLabelNumeroCotizacionModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
+        jTextFieldCotizacionModificar.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        jTextFieldCotizacionModificar.setForeground(new java.awt.Color(102, 0, 102));
+        jTextFieldCotizacionModificar.setBorder(null);
+        jTextFieldCotizacionModificar.setOpaque(false);
+        jPanel1.add(jTextFieldCotizacionModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 180, -1));
+
+        jLabelVendedorModificar.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabelVendedorModificar.setText("Vendedor");
+        jPanel1.add(jLabelVendedorModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, -1));
 
+        jTextFieldVendedorModificar.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        jTextFieldVendedorModificar.setForeground(new java.awt.Color(102, 0, 102));
+        jTextFieldVendedorModificar.setBorder(null);
+        jTextFieldVendedorModificar.setOpaque(false);
+        jPanel1.add(jTextFieldVendedorModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 210, -1));
+
+        jLabelValorModificar.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabelValorModificar.setText("Valor");
+        jPanel1.add(jLabelValorModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 70, -1));
 
-        jButtonModificarCotizacion.setText("Buscar");
+        jTextFieldValorModificar.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        jTextFieldValorModificar.setForeground(new java.awt.Color(102, 0, 102));
+        jTextFieldValorModificar.setBorder(null);
+        jTextFieldValorModificar.setOpaque(false);
+        jTextFieldValorModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldValorModificarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextFieldValorModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 210, -1));
 
-        jButtonModificar.setText("Modificar");
+        jButtonModificarCotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CONSULTAR2.png"))); // NOI18N
+        jButtonModificarCotizacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonModificarCotizacion.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CONSULTAR.png"))); // NOI18N
+        jPanel1.add(jButtonModificarCotizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 150, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(51, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabelModificarCotizacion)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabelVendedorModificar)
-                                .addComponent(jLabelValorModificar))
-                            .addGap(28, 28, 28)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextFieldVendedorModificar)
-                                .addComponent(jTextFieldValorModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(45, 45, 45)
-                            .addComponent(jButtonModificar)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelNumeroCotizacionModificar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldCotizacionModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonModificarCotizacion)
-                .addGap(39, 39, 39))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabelModificarCotizacion)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNumeroCotizacionModificar)
-                    .addComponent(jTextFieldCotizacionModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonModificarCotizacion))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelVendedorModificar)
-                    .addComponent(jTextFieldVendedorModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelValorModificar)
-                    .addComponent(jTextFieldValorModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButtonModificar)
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
+        jButtonModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MODIFICAR2.png"))); // NOI18N
+        jButtonModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonModificar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MODIFICAR.png"))); // NOI18N
+        jPanel1.add(jButtonModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 150, 40));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 210, 10));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 210, 10));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 180, 10));
+
+        cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR2.png"))); // NOI18N
+        cerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cerrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR.png"))); // NOI18N
+        cerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cerrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 150, 40));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 370));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextFieldValorModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldValorModificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldValorModificarActionPerformed
+
+    private void cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cerrarActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cerrar;
     private javax.swing.JButton jButtonModificar;
     private javax.swing.JButton jButtonModificarCotizacion;
     private javax.swing.JLabel jLabelModificarCotizacion;
     private javax.swing.JLabel jLabelNumeroCotizacionModificar;
     private javax.swing.JLabel jLabelValorModificar;
     private javax.swing.JLabel jLabelVendedorModificar;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTextField jTextFieldCotizacionModificar;
     private javax.swing.JTextField jTextFieldValorModificar;
     private javax.swing.JTextField jTextFieldVendedorModificar;

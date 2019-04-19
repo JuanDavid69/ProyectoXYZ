@@ -198,7 +198,7 @@ public class ReportesGerente extends javax.swing.JFrame {
        try{
        if(RBVentasSedes.isSelected()){
         for (int i=0; i < filas; i++){
-            Datos.setValue(Integer.parseInt(jTable2.getValueAt(i, 1).toString()),jTable2.getValueAt(i, 0).toString(),jTable2.getValueAt(i, 0).toString()); //captura de datos de la tabla para nombre de valores variables.
+            Datos.setValue(Integer.parseInt(jTable2.getValueAt(i, 1).toString()),jTable2.getValueAt(i, 1).toString(),jTable2.getValueAt(i, 0).toString()); //captura de datos de la tabla para nombre de valores variables.
         }
         JFreeChart grafica = ChartFactory.createBarChart3D(titulo,jTable2.getColumnName(0), jTable2.getColumnName(1), Datos, PlotOrientation.VERTICAL, true, true,false); //nombre de valores variables
         ChartFrame panelGrafica = new ChartFrame(titulo, grafica);

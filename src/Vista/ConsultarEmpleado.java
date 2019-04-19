@@ -42,6 +42,17 @@ public class ConsultarEmpleado extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jSeparator12 = new javax.swing.JSeparator();
+        jSeparator13 = new javax.swing.JSeparator();
+        jSeparator14 = new javax.swing.JSeparator();
+        jSeparator15 = new javax.swing.JSeparator();
+        jSeparator16 = new javax.swing.JSeparator();
+        jSeparator17 = new javax.swing.JSeparator();
+        jSeparator18 = new javax.swing.JSeparator();
+        jSeparator19 = new javax.swing.JSeparator();
+        jSeparator20 = new javax.swing.JSeparator();
+        jSeparator21 = new javax.swing.JSeparator();
+        jSeparator22 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
         busqueda = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -86,6 +97,17 @@ public class ConsultarEmpleado extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, 170, 10));
+        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 280, 170, 10));
+        jPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, 170, 10));
+        jPanel1.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 440, 170, 10));
+        jPanel1.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 170, 10));
+        jPanel1.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 170, 10));
+        jPanel1.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, 170, 10));
+        jPanel1.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 160, 170, 10));
+        jPanel1.add(jSeparator20, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 400, 170, 10));
+        jPanel1.add(jSeparator21, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 520, 170, 10));
+        jPanel1.add(jSeparator22, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 480, 170, 10));
 
         jLabel2.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel2.setText("Buscar:");
@@ -129,18 +151,18 @@ public class ConsultarEmpleado extends javax.swing.JFrame {
                 constularActionPerformed(evt);
             }
         });
-        jPanel1.add(constular, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 490, 130, 40));
+        jPanel1.add(constular, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 490, 150, 40));
 
         cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR2.png"))); // NOI18N
-        cerrar.setText("Cerrar");
         cerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cerrar.setPreferredSize(new java.awt.Dimension(150, 40));
         cerrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR.png"))); // NOI18N
         cerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cerrarActionPerformed(evt);
             }
         });
-        jPanel1.add(cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, 130, 40));
+        jPanel1.add(cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 150, 40));
 
         cedula.setEditable(false);
         cedula.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
@@ -339,7 +361,18 @@ public class ConsultarEmpleado extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JSeparator jSeparator13;
+    private javax.swing.JSeparator jSeparator14;
+    private javax.swing.JSeparator jSeparator15;
+    private javax.swing.JSeparator jSeparator16;
+    private javax.swing.JSeparator jSeparator17;
+    private javax.swing.JSeparator jSeparator18;
+    private javax.swing.JSeparator jSeparator19;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator20;
+    private javax.swing.JSeparator jSeparator21;
+    private javax.swing.JSeparator jSeparator22;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;

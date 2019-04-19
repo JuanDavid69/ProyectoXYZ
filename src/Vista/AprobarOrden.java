@@ -58,21 +58,24 @@ public class AprobarOrden extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/EncabezadoAprobOrd.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         jLabel2.setText("N° Orden:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
-        busqueda.setFont(new java.awt.Font("Decker", 0, 12)); // NOI18N
+        busqueda.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         busqueda.setBorder(null);
         busqueda.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 busquedaKeyReleased(evt);
             }
         });
-        jPanel1.add(busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 70, 20));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 70, 10));
+        jPanel1.add(busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 140, 20));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 150, 10));
 
-        ordenes.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setOpaque(false);
+
+        ordenes.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         ordenes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -84,6 +87,7 @@ public class AprobarOrden extends javax.swing.JFrame {
 
             }
         ));
+        ordenes.setPreferredSize(new java.awt.Dimension(400, 400));
         ordenes.setSelectionBackground(new java.awt.Color(102, 0, 102));
         ordenes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -95,6 +99,8 @@ public class AprobarOrden extends javax.swing.JFrame {
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 450, 167));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR2.png"))); // NOI18N
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

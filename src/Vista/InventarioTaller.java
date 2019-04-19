@@ -57,7 +57,8 @@ public class InventarioTaller extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/INVENTARIOS.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        busqueda.setFont(new java.awt.Font("Decker", 0, 12)); // NOI18N
+        busqueda.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        busqueda.setForeground(new java.awt.Color(102, 0, 102));
         busqueda.setBorder(null);
         busqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,14 +70,17 @@ public class InventarioTaller extends javax.swing.JFrame {
                 busquedaKeyReleased(evt);
             }
         });
-        jPanel1.add(busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 111, 20));
+        jPanel1.add(busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 170, 20));
 
         jLabel2.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/magnifier.png"))); // NOI18N
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 110, 20));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 170, 20));
 
-        inventario.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        inventario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 102), 3));
+        inventario.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        inventario.setForeground(new java.awt.Color(102, 0, 102));
         inventario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -88,18 +92,21 @@ public class InventarioTaller extends javax.swing.JFrame {
 
             }
         ));
+        inventario.setPreferredSize(new java.awt.Dimension(200, 300));
         inventario.setSelectionBackground(new java.awt.Color(102, 0, 102));
         jScrollPane1.setViewportView(inventario);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 440, 228));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR2.png"))); // NOI18N
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 140, 40));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 150, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 400));
 

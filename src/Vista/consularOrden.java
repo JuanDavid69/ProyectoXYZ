@@ -42,9 +42,15 @@ public class consularOrden extends javax.swing.JFrame {
 
         jSeparator6 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator7 = new javax.swing.JSeparator();
+        jSeparator8 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
         busqueda = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
         jLabelNumeroOrden = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ordenes = new javax.swing.JTable();
@@ -52,22 +58,16 @@ public class consularOrden extends javax.swing.JFrame {
         consultar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         orden = new javax.swing.JTextField();
-        jSeparator2 = new javax.swing.JSeparator();
         cedula = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jSeparator3 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
         producto = new javax.swing.JTextField();
-        jSeparator4 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         cantidad = new javax.swing.JTextField();
-        jSeparator5 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
         fecha = new javax.swing.JTextField();
-        jSeparator7 = new javax.swing.JSeparator();
         estado = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jSeparator8 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -75,6 +75,13 @@ public class consularOrden extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 110, 20));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, 110, 10));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, 110, 10));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 110, 10));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, 110, 10));
+        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 110, 10));
+        jPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, 110, 10));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/EncabezadoConsOrd.png"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -87,7 +94,6 @@ public class consularOrden extends javax.swing.JFrame {
             }
         });
         jPanel1.add(busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 110, 30));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 110, 20));
 
         jLabelNumeroOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/magnifier.png"))); // NOI18N
         jPanel1.add(jLabelNumeroOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
@@ -104,12 +110,14 @@ public class consularOrden extends javax.swing.JFrame {
 
             }
         ));
+        ordenes.setPreferredSize(new java.awt.Dimension(300, 300));
         ordenes.setSelectionBackground(new java.awt.Color(102, 0, 102));
         jScrollPane1.setViewportView(ordenes);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 260, 152));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR2.png"))); // NOI18N
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -118,6 +126,7 @@ public class consularOrden extends javax.swing.JFrame {
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 130, 40));
 
         consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CONSULTAR2.png"))); // NOI18N
+        consultar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 consultarActionPerformed(evt);
@@ -133,7 +142,6 @@ public class consularOrden extends javax.swing.JFrame {
         orden.setBackground(new java.awt.Color(255, 255, 255));
         orden.setBorder(null);
         jPanel1.add(orden, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, 110, 20));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, 110, 10));
 
         cedula.setEditable(false);
         cedula.setBackground(new java.awt.Color(255, 255, 255));
@@ -143,7 +151,6 @@ public class consularOrden extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel6.setText("Cedula:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, -1, -1));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, 110, 10));
 
         jLabel2.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel2.setText("Producto:");
@@ -153,7 +160,6 @@ public class consularOrden extends javax.swing.JFrame {
         producto.setBackground(new java.awt.Color(255, 255, 255));
         producto.setBorder(null);
         jPanel1.add(producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 110, 20));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 110, 10));
 
         jLabel3.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel3.setText("Cantidad:");
@@ -164,7 +170,6 @@ public class consularOrden extends javax.swing.JFrame {
         cantidad.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         cantidad.setBorder(null);
         jPanel1.add(cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 110, 20));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, 110, 10));
 
         jLabel4.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel4.setText("Fecha:");
@@ -180,7 +185,6 @@ public class consularOrden extends javax.swing.JFrame {
             }
         });
         jPanel1.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 240, 110, 20));
-        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 110, 10));
 
         estado.setEditable(false);
         estado.setBackground(new java.awt.Color(255, 255, 255));
@@ -191,7 +195,6 @@ public class consularOrden extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel5.setText("Estado:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, -1, -1));
-        jPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, 110, 10));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 380));
 

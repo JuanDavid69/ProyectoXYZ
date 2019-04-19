@@ -95,7 +95,6 @@ public class eliminarEmpleado extends javax.swing.JFrame {
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 280, 230));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR2.png"))); // NOI18N
-        jButton2.setText("Cerrar");
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +102,7 @@ public class eliminarEmpleado extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 130, 40));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 150, 40));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 112, 160, 10));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ELIMINAREMPLEADOS.png"))); // NOI18N

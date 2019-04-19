@@ -71,7 +71,6 @@ public class Vendedor extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
-        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -82,6 +81,7 @@ public class Vendedor extends javax.swing.JFrame {
         AgregarFacturacion.setBackground(new java.awt.Color(250, 250, 250));
         AgregarFacturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/AgregarFactura.png"))); // NOI18N
         AgregarFacturacion.setBorder(null);
+        AgregarFacturacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         AgregarFacturacion.setPreferredSize(new java.awt.Dimension(90, 90));
         AgregarFacturacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +102,7 @@ public class Vendedor extends javax.swing.JFrame {
 
         ConsultarFacturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ConsultarFacturacion.png"))); // NOI18N
         ConsultarFacturacion.setBorder(null);
+        ConsultarFacturacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ConsultarFacturacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConsultarFacturacionActionPerformed(evt);
@@ -116,6 +117,7 @@ public class Vendedor extends javax.swing.JFrame {
 
         EliminarFacturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/EliminarPlantilla.png"))); // NOI18N
         EliminarFacturacion.setBorder(null);
+        EliminarFacturacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         EliminarFacturacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EliminarFacturacionActionPerformed(evt);
@@ -138,6 +140,7 @@ public class Vendedor extends javax.swing.JFrame {
 
         AgregarCotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/AgregarFactura.png"))); // NOI18N
         AgregarCotizacion.setBorder(null);
+        AgregarCotizacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         AgregarCotizacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AgregarCotizacionActionPerformed(evt);
@@ -152,6 +155,7 @@ public class Vendedor extends javax.swing.JFrame {
 
         ConsultarCotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ConsultarFacturacion.png"))); // NOI18N
         ConsultarCotizacion.setBorder(null);
+        ConsultarCotizacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ConsultarCotizacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConsultarCotizacionActionPerformed(evt);
@@ -166,6 +170,7 @@ public class Vendedor extends javax.swing.JFrame {
 
         EliminarCotizacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/EliminarPlantilla.png"))); // NOI18N
         EliminarCotizacion.setBorder(null);
+        EliminarCotizacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         EliminarCotizacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EliminarCotizacionActionPerformed(evt);
@@ -194,7 +199,7 @@ public class Vendedor extends javax.swing.JFrame {
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -212,13 +217,13 @@ public class Vendedor extends javax.swing.JFrame {
         jButton4.setBorder(null);
         jButton4.setBorderPainted(false);
         jButton4.setContentAreaFilled(false);
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        perfil.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 32, 32));
+        perfil.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 30, 32));
 
         jLabel27.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
@@ -283,7 +288,7 @@ public class Vendedor extends javax.swing.JFrame {
         jButton5.setBorder(null);
         jButton5.setBorderPainted(false);
         jButton5.setContentAreaFilled(false);
-        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -299,14 +304,6 @@ public class Vendedor extends javax.swing.JFrame {
         slide.add(perfil, "card3");
 
         jPanel4.add(slide, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 170));
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Reportes.png"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 490, 60, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -391,12 +388,6 @@ public class Vendedor extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_EliminarCotizacionActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        ReportesVendedor u = new ReportesVendedor(usuario);
-        u.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -411,7 +402,6 @@ public class Vendedor extends javax.swing.JFrame {
     private javax.swing.JTextField cedula;
     private javax.swing.JTextField idSede;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;

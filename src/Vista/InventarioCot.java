@@ -71,15 +71,16 @@ public class InventarioCot extends javax.swing.JFrame {
         jPanel1.add(Busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 160, 25));
 
         cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR2.png"))); // NOI18N
-        cerrar.setText("Cerrar");
         cerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cerrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CERRAR.png"))); // NOI18N
         cerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cerrarActionPerformed(evt);
             }
         });
-        jPanel1.add(cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 130, 40));
+        jPanel1.add(cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 150, 40));
 
+        inventario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 102), 3));
         inventario.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         inventario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
