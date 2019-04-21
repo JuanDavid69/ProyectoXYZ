@@ -332,7 +332,7 @@ public class agregarVenta extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             if((NVenta.getText().equals(""))||(total.getText().equals(""))){
-            JOptionPane.showMessageDialog(this, "Ingrese el numero de la venta o realice el calculo del monto");
+            JOptionPane.showMessageDialog(this, "Realice el calculo del monto");
             }
             else{
                 boolean permitirVenta = true;

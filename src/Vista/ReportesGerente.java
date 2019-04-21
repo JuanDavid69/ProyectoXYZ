@@ -202,7 +202,7 @@ public class ReportesGerente extends javax.swing.JFrame {
         }
         JFreeChart grafica = ChartFactory.createBarChart3D(titulo,jTable2.getColumnName(0), jTable2.getColumnName(1), Datos, PlotOrientation.VERTICAL, true, true,false); //nombre de valores variables
         ChartFrame panelGrafica = new ChartFrame(titulo, grafica);
-        panelGrafica.setSize(1000,600);
+        panelGrafica.setSize(600,600);
         panelGrafica.setLocationRelativeTo(null);
         panelGrafica.setVisible(true);
         

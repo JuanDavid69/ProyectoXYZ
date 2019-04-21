@@ -101,6 +101,7 @@ public class consultarVenta extends javax.swing.JFrame {
         jPanel1.add(fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 160, 160, -1));
 
         productos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 102), 3));
+        productos.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
         productos.setForeground(new java.awt.Color(102, 0, 102));
         productos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

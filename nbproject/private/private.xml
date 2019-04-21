@@ -3,8 +3,53 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/C:/Users/Usuario/Desktop/Version%20original%20proyexto%20XYZ/ProyectoXYZ/src/Vista/JefeTaller.java</file>
             <file>file:/C:/Users/Usuario/Desktop/Version%20original%20proyexto%20XYZ/ProyectoXYZ/src/Vista/Menu_Gerente.java</file>
+=======
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Controlador/ControlUsuario.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/ActivarSede.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Controlador/ControlVenta.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Modelo/Sedes.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Controlador/ControlCotizacion.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Controlador/ControlCarritoVen.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/AccesoDatos/DaoOrden.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/AccesoDatos/DaoCarritoVen.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Controlador/ControlSedes.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/AccesoDatos/DaoUsuario.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/agregarSede.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/eliminarVenta.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/login.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/agregarOrden.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/agregarEmpleado.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/Inventario.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Modelo/Venta.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/consultarVenta.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/JefeTaller.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/Menu_Gerente.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/agregarCotizacion.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/AccesoDatos/DaoVenta.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/eliminarSede.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/AccesoDatos/DaoCarritoCot.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/AccesoDatos/DaoSedes.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/consultarSede.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Controlador/ControlOrden.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/AccesoDatos/DaoInventario.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/consularOrden.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/ConsultarEmpleado.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Controlador/ControlCarritoCot.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/eliminarEmpleado.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/AprobarOrden.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/AccesoDatos/FachadaBD.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/eliminarCotizacion.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/consultarCotizacion.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/ActivarEmpleado.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/modificarSede.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/Vendedor.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/agregarVenta.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/eliminarOrden.java</file>
+            <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/AccesoDatos/DaoCotizacion.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>

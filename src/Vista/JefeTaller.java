@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 package Vista;
-
+import javax.swing.JOptionPane;
+import Controlador.*;
 /**
  *
  * @author Usuario
  */
 public class JefeTaller extends javax.swing.JFrame {
     String usuario;
+    ControlUsuario controlUsuario = new ControlUsuario();
     /**
      * Creates new form JefeTaller
      */
@@ -19,6 +21,7 @@ public class JefeTaller extends javax.swing.JFrame {
         initComponents();
         setDefaultCloseOperation(0);
         this.setLocationRelativeTo(null);
+        cargarDatos();
     }
 
     /**
@@ -293,12 +296,18 @@ public class JefeTaller extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private void cargarDatos(){
+        String consulta[] = controlUsuario.consultarUsuario(usuario);
+        this.nombre.setText(consulta[3]);
+        this.cedula.setText(consulta[0]);
+        this.idSede.setText(consulta[8]);
+        this.telefono.setText(consulta[9]);
+    }
     private void jButtonAgregarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarOrdenActionPerformed
        agregarOrden u = new agregarOrden(usuario);
        u.setVisible(true);

@@ -223,7 +223,7 @@ public class agregarCotizacion extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             if((NCotizacion.getText().equals(""))||(total.getText().equals(""))){
-                JOptionPane.showMessageDialog(this, "Ingrese el numero de la cotizacion o realice el calculo del monto");
+                JOptionPane.showMessageDialog(this, "Realice el calculo del monto");
             }
             else{
                 String id_cotizacion = this.NCotizacion.getText();
