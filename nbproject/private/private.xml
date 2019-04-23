@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< Updated upstream
-            <file>file:/C:/Users/Usuario/Desktop/Version%20original%20proyexto%20XYZ/ProyectoXYZ/src/Vista/JefeTaller.java</file>
-            <file>file:/C:/Users/Usuario/Desktop/Version%20original%20proyexto%20XYZ/ProyectoXYZ/src/Vista/Menu_Gerente.java</file>
-=======
             <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Controlador/ControlUsuario.java</file>
             <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/ActivarSede.java</file>
             <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Controlador/ControlVenta.java</file>
@@ -49,7 +44,6 @@
             <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/agregarVenta.java</file>
             <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/Vista/eliminarOrden.java</file>
             <file>file:/D:/Usuarios/Juan%20David/Desktop/ProyectoXYZ/src/AccesoDatos/DaoCotizacion.java</file>
->>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>

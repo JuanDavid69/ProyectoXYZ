@@ -368,17 +368,17 @@ public class DaoVenta {
         meses.add("Noviembre");
         meses.add("Diciembre");
         try{
-            for (int i=1; i<meses.size(); i++){
+            for (int i=0; i<meses.size(); i++){
                 String sql_select;        
                 String consulta[] = new String[2];
-                consulta[0] = meses.get(i-1);
-                
-                if(i<=9){
+                consulta[0] = meses.get(i);
+                int j = i + 1;
+                if(j<=9){
                     sql_select = "SELECT SUM(total) AS ganacia FROM ventas \n" +
-                                    "WHERE TO_CHAR(fecha,'YYYY-MM')='" + year + "-0" + i + "';";
+                                    "WHERE TO_CHAR(fecha,'YYYY-MM')='" + year + "-0" + j + "';";
                 }else{
                     sql_select = "SELECT SUM(total) AS ganacia FROM ventas \n" +
-                                    "WHERE TO_CHAR(fecha,'YYYY-MM')='" + year + "-" + i + "';";
+                                    "WHERE TO_CHAR(fecha,'YYYY-MM')='" + year + "-" + j + "';";
                 }
                 
                 Connection conn= fachada.getConnetion();            
