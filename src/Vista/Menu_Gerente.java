@@ -390,7 +390,8 @@ public class Menu_Gerente extends javax.swing.JFrame {
 
         jPanel1.add(slide, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 170));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Reportes.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporte.png"))); // NOI18N
+        jButton4.setPreferredSize(new java.awt.Dimension(60, 60));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);

@@ -49,24 +49,25 @@ public class ReporteVentas extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
-        graficar = new javax.swing.JButton();
-        cerrar = new javax.swing.JButton();
-        start = new com.toedter.calendar.JDateChooser();
-        jButtonGenerarTabla = new javax.swing.JButton();
-        end = new com.toedter.calendar.JDateChooser();
-        vendedores = new javax.swing.JRadioButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         sedes = new javax.swing.JRadioButton();
-        pastel = new javax.swing.JRadioButton();
-        barras = new javax.swing.JRadioButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        reporte = new javax.swing.JTable();
+        vendedores = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
+        start = new com.toedter.calendar.JDateChooser();
         jLabel3 = new javax.swing.JLabel();
-        ganacias = new javax.swing.JRadioButton();
-        productos = new javax.swing.JRadioButton();
+        end = new com.toedter.calendar.JDateChooser();
+        jButtonGenerarTabla = new javax.swing.JButton();
         reporteAnual = new javax.swing.JToggleButton();
         año = new javax.swing.JComboBox<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        reporte = new javax.swing.JTable();
+        barras = new javax.swing.JRadioButton();
+        pastel = new javax.swing.JRadioButton();
+        cerrar = new javax.swing.JButton();
+        graficar = new javax.swing.JButton();
+        ganacias = new javax.swing.JRadioButton();
+        productos = new javax.swing.JRadioButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -95,52 +96,71 @@ public class ReporteVentas extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTable2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("REPORTES");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        graficar.setText("Graficar");
-        graficar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                graficarActionPerformed(evt);
-            }
-        });
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ReporteEncabezado.png"))); // NOI18N
 
-        cerrar.setText("Cerrar");
-        cerrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cerrarActionPerformed(evt);
-            }
-        });
-
-        jButtonGenerarTabla.setText("Generar");
-        jButtonGenerarTabla.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonGenerarTablaActionPerformed(evt);
-            }
-        });
-
-        buttonGroup1.add(vendedores);
-        vendedores.setText("Vendedor");
-
+        sedes.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(sedes);
-        sedes.setText("Sedes");
+        sedes.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        sedes.setForeground(new java.awt.Color(128, 49, 145));
+        sedes.setText("Venta por sedes");
         sedes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sedesActionPerformed(evt);
             }
         });
 
-        buttonGroup2.add(pastel);
-        pastel.setText("Pastel");
+        vendedores.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(vendedores);
+        vendedores.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        vendedores.setForeground(new java.awt.Color(128, 49, 145));
+        vendedores.setText("Venta por vendedor");
 
-        buttonGroup2.add(barras);
-        barras.setText("Barras");
-        barras.addActionListener(new java.awt.event.ActionListener() {
+        jLabel2.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(128, 49, 145));
+        jLabel2.setText("Fecha inicial:");
+
+        start.setBackground(new java.awt.Color(255, 255, 255));
+        start.setForeground(new java.awt.Color(128, 49, 145));
+
+        jLabel3.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(128, 49, 145));
+        jLabel3.setText("Fecha final:");
+
+        end.setBackground(new java.awt.Color(255, 255, 255));
+        end.setForeground(new java.awt.Color(128, 49, 145));
+
+        jButtonGenerarTabla.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonGenerarTabla.setFont(new java.awt.Font("Decker", 0, 18)); // NOI18N
+        jButtonGenerarTabla.setForeground(new java.awt.Color(128, 49, 145));
+        jButtonGenerarTabla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/AgreagarReporte.png"))); // NOI18N
+        jButtonGenerarTabla.setPreferredSize(new java.awt.Dimension(100, 25));
+        jButtonGenerarTabla.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/AgreagarReporte2.png"))); // NOI18N
+        jButtonGenerarTabla.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                barrasActionPerformed(evt);
+                jButtonGenerarTablaActionPerformed(evt);
             }
         });
 
+        reporteAnual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GananciaAnual2.png"))); // NOI18N
+        reporteAnual.setPreferredSize(new java.awt.Dimension(300, 25));
+        reporteAnual.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GananciaAnual.png"))); // NOI18N
+        reporteAnual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reporteAnualActionPerformed(evt);
+            }
+        });
+
+        año.setFont(new java.awt.Font("Decker", 0, 11)); // NOI18N
+        año.setForeground(new java.awt.Color(128, 49, 145));
+        año.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2019", "2020", "2021", "2022" }));
+        año.setPreferredSize(new java.awt.Dimension(49, 25));
+
+        reporte.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        reporte.setForeground(new java.awt.Color(128, 49, 145));
         reporte.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -154,107 +174,138 @@ public class ReporteVentas extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(reporte);
 
-        jLabel2.setText("Fecha inicial:");
-
-        jLabel3.setText("Fecha final:");
-
-        buttonGroup1.add(ganacias);
-        ganacias.setText("Ganacias");
-
-        buttonGroup1.add(productos);
-        productos.setText("Productos");
-
-        reporteAnual.setText("Reporte de ganancias anual");
-        reporteAnual.addActionListener(new java.awt.event.ActionListener() {
+        barras.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup2.add(barras);
+        barras.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        barras.setForeground(new java.awt.Color(128, 49, 145));
+        barras.setText("Barras");
+        barras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reporteAnualActionPerformed(evt);
+                barrasActionPerformed(evt);
             }
         });
 
-        año.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2019", "2020", "2021", "2022" }));
+        pastel.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup2.add(pastel);
+        pastel.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        pastel.setForeground(new java.awt.Color(128, 49, 145));
+        pastel.setText("Pastel");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(sedes)
+        cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CerrarRepo.png"))); // NOI18N
+        cerrar.setPreferredSize(new java.awt.Dimension(100, 25));
+        cerrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CerrarRepo2.png"))); // NOI18N
+        cerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cerrarActionPerformed(evt);
+            }
+        });
+
+        graficar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Graficar.png"))); // NOI18N
+        graficar.setPreferredSize(new java.awt.Dimension(100, 25));
+        graficar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Graficar2.png"))); // NOI18N
+        graficar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graficarActionPerformed(evt);
+            }
+        });
+
+        ganacias.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(ganacias);
+        ganacias.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        ganacias.setForeground(new java.awt.Color(128, 49, 145));
+        ganacias.setText("Ganancias por sede");
+
+        buttonGroup1.add(productos);
+        productos.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
+        productos.setForeground(new java.awt.Color(128, 49, 145));
+        productos.setText("Unidades vendidas por producto");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel4)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3))
                                 .addGap(18, 18, 18)
-                                .addComponent(vendedores)
-                                .addGap(18, 18, 18)
-                                .addComponent(ganacias)
-                                .addGap(18, 18, 18)
-                                .addComponent(productos))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jButtonGenerarTabla)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(reporteAnual)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                                    .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(start, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(end, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(barras)
                                     .addGap(18, 18, 18)
                                     .addComponent(pastel)
-                                    .addGap(32, 32, 32)
-                                    .addComponent(graficar)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cerrar))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(5, 5, 5)
-                                            .addComponent(jLabel3))
-                                        .addComponent(jLabel2))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(end, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
-                                        .addComponent(start, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(173, 173, 173)
-                        .addComponent(jLabel1)))
-                .addContainerGap(46, Short.MAX_VALUE))
+                                    .addGap(49, 49, 49)
+                                    .addComponent(graficar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(74, 74, 74)
+                                    .addComponent(cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jScrollPane3)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jButtonGenerarTabla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(reporteAnual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ganacias)
+                            .addComponent(sedes))
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(vendedores)
+                            .addComponent(productos))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sedes)
-                    .addComponent(vendedores)
+                    .addComponent(vendedores))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ganacias)
                     .addComponent(productos))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(start, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(end, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonGenerarTabla)
-                    .addComponent(reporteAnual)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(start, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(end, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jButtonGenerarTabla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(reporteAnual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(barras)
                     .addComponent(pastel)
-                    .addComponent(graficar)
-                    .addComponent(cerrar))
-                .addGap(21, 21, 21))
+                    .addComponent(cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(graficar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -370,9 +421,10 @@ public class ReporteVentas extends javax.swing.JFrame {
     private javax.swing.JRadioButton ganacias;
     private javax.swing.JButton graficar;
     private javax.swing.JButton jButtonGenerarTabla;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
