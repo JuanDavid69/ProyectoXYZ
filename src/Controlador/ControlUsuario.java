@@ -79,6 +79,10 @@ public class ControlUsuario {
         return daoUsuario.cargarUsuariosInactivos(busqueda);
     }
     
+    public DefaultTableModel cargarVendedores(){
+         return daoUsuario.cargarVendedores();
+    }
+    
     public String desactivarUsuario(String cedula){
         return daoUsuario.desactivarUsuario(cedula);
     }

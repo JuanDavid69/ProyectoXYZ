@@ -502,7 +502,7 @@ public class Menu_Gerente extends javax.swing.JFrame {
     }//GEN-LAST:event_cedulaActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        ReportesGerente U = new ReportesGerente(usuario);
+        ReporteVentas U= new ReporteVentas(usuario);
         this.setVisible(false);
         U.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed

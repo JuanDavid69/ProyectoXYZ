@@ -5,11 +5,10 @@
  */
 package AccesoDatos;
 import Modelo.Venta;
+import Controlador.*;
 import java.sql.*;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.*;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -18,6 +17,10 @@ import javax.swing.table.DefaultTableModel;
 public class DaoVenta {
     DefaultTableModel tabla;
     FachadaBD fachada;
+    DefaultTableModel tablaAux;
+    ControlSedes controlSedes = new ControlSedes();
+    ControlUsuario controlUsuario = new ControlUsuario();
+    ControlInventario controlInventario = new ControlInventario();
 
     public DaoVenta() {
         fachada = new FachadaBD();
@@ -178,52 +181,6 @@ public class DaoVenta {
         }
     }
     
-    public DefaultTableModel ventasSede(){
-        String [] Titulo = {"Sede","Número de ventas"};
-        tabla=new DefaultTableModel(null,Titulo);
-        String sql_select;        
-        String consulta[] = new String[2];
-        sql_select = "select id_sede, count(*) as numero_ventas from ventas group by id_sede";
-        try{
-            Connection conn= fachada.getConnetion();            
-            Statement sentencia = conn.createStatement();
-            ResultSet rs = sentencia.executeQuery(sql_select);   
-            
-            while(rs.next()){
-                consulta[0] = rs.getString(1);
-                consulta[1] = rs.getString(2);
-                tabla.addRow(consulta);
-            }
-            return tabla;
-        }catch(Exception e){
-            System.out.println(e);
-            return null;
-        }
-    }
-    
-    public DefaultTableModel ventasVendedor(){
-        String [] Titulo = {"Vendedor","Número de ventas"};
-        tabla=new DefaultTableModel(null,Titulo);
-        String sql_select;        
-        String consulta[] = new String[2];
-        sql_select = "select id_vendedor, count(*) as numero_ventas from ventas group by id_vendedor";
-        try{
-            Connection conn= fachada.getConnetion();            
-            Statement sentencia = conn.createStatement();
-            ResultSet rs = sentencia.executeQuery(sql_select);   
-            
-            while(rs.next()){
-                consulta[0] = rs.getString(1);
-                consulta[1] = rs.getString(2);
-                tabla.addRow(consulta);
-            }
-            return tabla;
-        }catch(Exception e){
-            System.out.println(e);
-            return null;
-        }
-    }
-    
     public String generarIdVenta(){
         String sql_select;        
         String id_venta = "001"; 
@@ -252,6 +209,191 @@ public class DaoVenta {
                 id_venta = "001";
             }
             return id_venta;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+    }
+    
+    //REPORTES
+    
+    public DefaultTableModel ventasSede(String start, String end){
+        String [] Titulo = {"SEDE","NUMERO DE VENTAS"};
+        tabla=new DefaultTableModel(null,Titulo);
+        tablaAux = controlSedes.cargarSedes("" , "");
+        try{
+            for (int i=0; i<tablaAux.getRowCount(); i++){
+                String sql_select;        
+                String consulta[] = new String[2];
+                consulta[0] = tablaAux.getValueAt(i, 1).toString();
+
+                sql_select = "SELECT count(*) AS numero_ventas FROM ventas \n" +
+                                "WHERE id_sede = '" + tablaAux.getValueAt(i, 0).toString() +"' AND \n"
+                                    + "fecha BETWEEN '" + start + "'AND'" + end + "'group by id_sede";
+
+                Connection conn= fachada.getConnetion();            
+                Statement sentencia = conn.createStatement();
+                ResultSet rs = sentencia.executeQuery(sql_select);
+
+                if(rs.next()){
+                    consulta[1] = rs.getString(1);
+                    tabla.addRow(consulta);
+                }else{
+                    consulta[1] = "0";
+                    tabla.addRow(consulta);
+                }
+            }
+
+            return tabla;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+    }
+    
+    public DefaultTableModel ventasVendedor(String start, String end){
+        String [] Titulo = {"VENDEDOR","NUMERO DE VENTAS"};
+        tabla=new DefaultTableModel(null,Titulo);
+        tablaAux = controlUsuario.cargarVendedores();
+        try{
+            for (int i=0; i<tablaAux.getRowCount(); i++){
+                String sql_select;        
+                String consulta[] = new String[2];
+                consulta[0] = tablaAux.getValueAt(i, 0).toString() + " - " + tablaAux.getValueAt(i, 1).toString();
+
+                sql_select = "SELECT count(*) AS numero_ventas FROM ventas \n" +
+                                "WHERE id_vendedor = '" + tablaAux.getValueAt(i, 0).toString() +"' AND \n"
+                                    + "fecha BETWEEN '" + start + "'AND'" + end + "'group by id_vendedor";
+                
+                Connection conn= fachada.getConnetion();            
+                Statement sentencia = conn.createStatement();
+                ResultSet rs = sentencia.executeQuery(sql_select);
+
+                if(rs.next()){
+                    consulta[1] = rs.getString(1);
+                    tabla.addRow(consulta);
+                }else{
+                    consulta[1] = "0";
+                    tabla.addRow(consulta);
+                }
+            }
+            return tabla;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+    }
+    
+    public DefaultTableModel gananciasSedes(String start, String end){
+        String [] Titulo = {"SEDE","GANANCIA TOTAL"};
+        tabla=new DefaultTableModel(null,Titulo);
+        tablaAux = controlSedes.cargarSedes("" , "");
+        try{
+            for (int i=0; i<tablaAux.getRowCount(); i++){
+                String sql_select;        
+                String consulta[] = new String[2];
+                consulta[0] = tablaAux.getValueAt(i, 1).toString();
+
+                sql_select = "SELECT SUM(total) AS ganacia FROM ventas \n" +
+                                "WHERE id_sede = '" + tablaAux.getValueAt(i, 0).toString() +"' AND \n"
+                                    + "fecha BETWEEN '" + start + "'AND'" + end + "'";
+                
+                Connection conn= fachada.getConnetion();            
+                Statement sentencia = conn.createStatement();
+                ResultSet rs = sentencia.executeQuery(sql_select);
+                
+                if(rs.next() && (rs.getString(1) != null)){
+                    consulta[1] = rs.getString(1);
+                    tabla.addRow(consulta);
+                }else{
+                    consulta[1] = "0";
+                    tabla.addRow(consulta);
+                }
+            }
+            return tabla;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+    }
+    
+    public DefaultTableModel productosVendidos(String start, String end){
+        String [] Titulo = {"PRODUCTO","UNIDADES VENDIDAS"};
+        tabla=new DefaultTableModel(null,Titulo);
+        tablaAux = controlInventario.cargarInventario("");
+        try{
+            for (int i=0; i<tablaAux.getRowCount(); i++){
+                String sql_select;        
+                String consulta[] = new String[2];
+                consulta[0] = tablaAux.getValueAt(i, 1).toString();
+
+                sql_select = "SELECT SUM(cantidad) AS unidades_vendidas\n" +
+                                "FROM carritoVen full join ventas on carritoVen.id_venta = ventas.id_venta\n" +
+                                    "WHERE id_producto = '" + tablaAux.getValueAt(i, 0).toString() + "' AND fecha BETWEEN '"+ start +"' AND '"+ end +"'";
+                       
+                
+                Connection conn= fachada.getConnetion();            
+                Statement sentencia = conn.createStatement();
+                ResultSet rs = sentencia.executeQuery(sql_select);
+                
+                if(rs.next() && (rs.getString(1) != null)){
+                    consulta[1] = rs.getString(1);
+                    tabla.addRow(consulta);
+                }else{
+                    consulta[1] = "0";
+                    tabla.addRow(consulta);
+                }
+            }
+            return tabla;
+        }catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+    }
+    
+    public DefaultTableModel gananciaAnual(String year){
+        String [] Titulo = {"MESES DE " + year,"GANACIA MENSUAL"};
+        tabla=new DefaultTableModel(null,Titulo);
+        ArrayList<String> meses = new ArrayList<String>();
+        meses.add("Enero");
+        meses.add("Febrero");
+        meses.add("Marzo");
+        meses.add("Abril");
+        meses.add("Mayo");
+        meses.add("Junio");
+        meses.add("Julio");
+        meses.add("Agosto");
+        meses.add("Septiembre");
+        meses.add("Octubre");
+        meses.add("Noviembre");
+        meses.add("Diciembre");
+        try{
+            for (int i=1; i<meses.size(); i++){
+                String sql_select;        
+                String consulta[] = new String[2];
+                consulta[0] = meses.get(i-1);
+                
+                if(i<=9){
+                    sql_select = "SELECT SUM(total) AS ganacia FROM ventas \n" +
+                                    "WHERE TO_CHAR(fecha,'YYYY-MM')='" + year + "-0" + i + "';";
+                }else{
+                    sql_select = "SELECT SUM(total) AS ganacia FROM ventas \n" +
+                                    "WHERE TO_CHAR(fecha,'YYYY-MM')='" + year + "-" + i + "';";
+                }
+                
+                Connection conn= fachada.getConnetion();            
+                Statement sentencia = conn.createStatement();
+                ResultSet rs = sentencia.executeQuery(sql_select);
+                
+                if(rs.next() && (rs.getString(1) != null)){
+                    consulta[1] = rs.getString(1);
+                    tabla.addRow(consulta);
+                }else{
+                    consulta[1] = "0";
+                    tabla.addRow(consulta);
+                }
+            }
+            return tabla;
         }catch(Exception e){
             System.out.println(e);
             return null;

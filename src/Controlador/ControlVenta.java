@@ -49,11 +49,23 @@ public class ControlVenta {
     public boolean verificarVenta(String id_producto, int peticion){
         return daoVenta.verificarVenta(id_producto, peticion);
     }
-    public DefaultTableModel ventasSede(){
-        return daoVenta.ventasSede();
+    public DefaultTableModel ventasSede(String start, String end){
+        return daoVenta.ventasSede(start, end);
     }
-    public DefaultTableModel ventasVendedor(){
-        return daoVenta.ventasVendedor();
+    public DefaultTableModel ventasVendedor(String start, String end){
+        return daoVenta.ventasVendedor(start, end);
+    }
+    
+    public DefaultTableModel gananciasSedes(String start, String end){
+        return daoVenta.gananciasSedes(start, end);
+    }
+    
+    public DefaultTableModel productosVendidos(String start, String end){
+        return daoVenta.productosVendidos(start, end);
+    }
+    
+    public DefaultTableModel gananciaAnual(String year){
+        return daoVenta.gananciaAnual(year);
     }
     
     public String generarIdVenta(){
