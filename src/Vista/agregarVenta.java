@@ -21,14 +21,16 @@ public class agregarVenta extends javax.swing.JFrame {
     ControlCotizacion controlCotizacion = new ControlCotizacion();
     ControlCarritoCot controlCarritoCot = new ControlCarritoCot();
     String usuario;
+    String sede;
     DefaultTableModel tabla;
     Date date = new Date();
     
     /**
      * Creates new form agregarVenta
      */
-    public agregarVenta(String usuario) {
+    public agregarVenta(String usuario, String sede) {
         this.usuario = usuario;
+        this.sede = sede;
         initComponents();
         setDefaultCloseOperation(0);
         this.setLocationRelativeTo(null);
@@ -363,7 +365,7 @@ public class agregarVenta extends javax.swing.JFrame {
                     String fecha = this.fecha.getText();
                     float total = Float.parseFloat(this.total.getText());
 
-                    String mensaje = controlVenta.agregarVenta(id_venta, id_vendedor, fecha, total);
+                    String mensaje = controlVenta.agregarVenta(id_venta, id_vendedor, fecha, total, sede);
                     
                     if (mensaje.equals("Venta creada correctamente")){
                         for(int i=0; i<this.tbdetbol.getRowCount(); i++){
@@ -377,8 +379,12 @@ public class agregarVenta extends javax.swing.JFrame {
                             controlCarritoVen.agregarProducto(id_venta, codigo, peticion, subtotal);
                             controlCarritoVen.restarProducto(codigo, peticion);
                         }
+                        String [] Titulo = {"CODIGO", "PRODUCTO", "CANTIDAD", "PRECIO UNIDAD", "SUBTOTAL"};
+                        DefaultTableModel newTabla = new DefaultTableModel(null,Titulo);
+                        this.tbdetbol.setModel(newTabla);
+                        this.total.setText("");
+                        this.NVenta.setText("");
                     }
-                    
                 
                     JOptionPane.showMessageDialog(this, mensaje);
                 }

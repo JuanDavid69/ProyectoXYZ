@@ -25,9 +25,9 @@ public class DaoVenta {
     
     public String guardarVenta(Venta v){
         String sql_guardar;
-        sql_guardar = "INSERT INTO ventas(id_venta, id_vendedor, fecha, total) VALUES('" + 
+        sql_guardar = "INSERT INTO ventas(id_venta, id_vendedor, fecha, total, id_sede) VALUES('" + 
                 v.getId_venta() + "', '" + v.getId_vendedor() + "', '" + v.getFecha() + 
-                "', " + v.getTotal() + ")";
+                "', " + v.getTotal() + ", '"+ v.getId_sede() +"')";
         try{
             Connection conn= fachada.conectar();
             Statement sentencia = conn.createStatement();             

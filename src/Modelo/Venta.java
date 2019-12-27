@@ -14,12 +14,14 @@ public class Venta {
     private String id_vendedor;
     private String fecha;
     private float total;
+    private String id_sede;
 
-    public Venta(String id_venta, String id_vendedor, String fecha, float total) {
+    public Venta(String id_venta, String id_vendedor, String fecha, float total, String id_sede) {
         this.id_venta = id_venta;
         this.id_vendedor = id_vendedor;
         this.fecha = fecha;
         this.total = total;
+        this.id_sede = id_sede;
     }
 
     public String getId_venta() {
@@ -50,5 +52,12 @@ public class Venta {
         this.total = total;
     }
 
+    public String getId_sede() {
+        return id_sede;
+    }
+
+    public void setId_sede(String id_sede) {
+        this.id_sede = id_sede;
+    }
     
 }
